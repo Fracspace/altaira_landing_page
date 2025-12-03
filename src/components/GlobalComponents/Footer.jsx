@@ -66,7 +66,7 @@ const Footer = () => {
             <MapPinCheck className="mr-2" /> Bulathkohupitiya, Sri Lanka
           </li>
            <li className="font-poppins mt-3 flex text-white">
-            <Globe className="mr-2" /> <NavigationLink to="https://altaira.in" target="_blank" className="cursor-pointer">altaira.in</NavigationLink>, {" "} <NavigationLink className="cursor-pointer" target="_blank" to="https://altaira.lk">altaira.lk</NavigationLink>
+            <Globe className="mr-2" /> <NavigationLink to="https://altaira.in" target="_blank" className="cursor-pointer mr-2">altaira.in ,</NavigationLink> <NavigationLink className="cursor-pointer" target="_blank" to="https://altaira.lk">altaira.lk</NavigationLink>
           </li>
         </ul>
       </div>
