@@ -118,6 +118,9 @@ const Hero = () => {
         country: "",
         // preferredInvestmentLocation: "",
         Budget: "",
+        Occupation:"",
+        Designation:"",
+        IncomeRange:"",
         // purposeOfInvestment: ""
       });
 
@@ -147,19 +150,18 @@ const Hero = () => {
       <div className="custom-div absolute inset-0 flex flex-col items-center justify-center gap-10 bg-black/40 px-4 text-center text-white sm:px-10 lg:flex-row lg:justify-between lg:gap-20 lg:px-20">
         <div className="mt-30 w-full space-y-4 text-left md:mt-0 md:w-full lg:max-w-xl lg:space-y-6">
           <h2 className="font-montserrat font-primary leading-relaxed font-bold text-3xl">
-            Welcome to Altaira
+           Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the Adventure Capital of the Island.
           </h2>
           <h1 className="font-poppins font-primary leading-relaxed font-bold text-2xl">
-            An extraordinary lifestyle destination nestled in the breathtaking
-            landscapes of Sri Lanka.
+           Limited early-stage investment slots with high projected returns driven by booming eco-tourism & post-2025 tourism surge.
           </h1>
         </div>
         <div className="w-full rounded-lg p-2 text-black md:w-[60vw] lg:h-auto lg:w-auto">
           <form
             onSubmit={handleSubmit}
-            className="flex h-auto flex-col gap-3 space-y-3 bg-white p-4 text-black shadow-lg lg:w-[25vw]"
+            className="flex h-auto flex-col gap-3 space-y-3 bg-[#0A0A0A8C] rounded-md p-4 text-black shadow-lg lg:w-[25vw]"
           >
-            <h2 className="font-montserrat text-xl font-bold text-[#c6af83]">
+            <h2 className="font-montserrat text-xl font-bold text-white">
               Enquire Now
             </h2>
             <input
@@ -170,7 +172,7 @@ const Hero = () => {
               onChange={handleChange}
               placeholder="Name*"
               required
-              className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
+              className="w-full border text-white placeholder:font-montserrat rounded-md border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
 
             <input
@@ -181,7 +183,7 @@ const Hero = () => {
               onChange={handleChange}
               placeholder="Email*"
               required
-              className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
+              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
 
             {/* <input
@@ -211,7 +213,7 @@ const Hero = () => {
               }}
               placeholder="Mobile"
               inputClass="w-full"
-              containerClass="w-full"
+              containerClass="w-full rounded-md text-white placeholder:font-montserrat"
               buttonClass=""
               dropdownClass="text-sm"
               className="w-full"
@@ -228,8 +230,8 @@ const Hero = () => {
               styles={{
                 control: (base) => ({
                   ...base,
-                  backgroundColor: "#f3f4f6",
-                  borderColor: "#e5e7eb",
+                  backgroundColor: "#0A0A0A8C",
+                  borderColor: "#D4AF37",
                   paddingLeft: "0.5rem",
                   paddingRight: "0.5rem",
                   paddingTop: "0.25rem",
@@ -242,6 +244,13 @@ const Hero = () => {
                   ...base,
                   textAlign: "left",
                   marginLeft: "0px",
+                  color: "white",
+                  fontFamily: "Montserrat, sans-serif",
+                }),
+                singleValue: (base) => ({
+                  ...base,
+                  color: "white",
+                  fontFamily: "Montserrat, sans-serif",
                 }),
                 menu: (base) => ({
                   ...base,
@@ -275,17 +284,50 @@ const Hero = () => {
               value={formData.Budget}
               onChange={handleChange}
               required
-              className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
+              className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
             >
-              <option value="" disabled>
-                Investment Budget range
+              <option value="" disabled className="bg-[#D4AF37]">
+                Investment Budget Range*
               </option>
               {budgetRanges.map((range) => (
-                <option key={range} value={range}>
+                <option key={range} value={range} className="bg-[#D4AF37]">
                   {range}
                 </option>
               ))}
             </select>
+
+             <input
+              type="text"
+              id="occupation"
+              name="occupation"
+              value={formData.occupation}
+              onChange={handleChange}
+              placeholder="Occupation*"
+              required
+              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+            />
+
+             <input
+              type="text"
+              id="designation"
+              name="designation"
+              value={formData.designation}
+              onChange={handleChange}
+              placeholder="Designation*"
+              required
+              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+            />
+
+             <input
+              type="text"
+              id="companyName"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+              placeholder="Company Name*"
+              required
+              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+            />
 
             {/* <select
               id="purposeOfInvestment"
@@ -309,7 +351,7 @@ const Hero = () => {
 
             <button
               type="submit"
-              className="w-full font-montserrat cursor-pointer rounded bg-[#c6af83] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+              className="w-full font-montserrat cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
             >
               Submit
             </button>

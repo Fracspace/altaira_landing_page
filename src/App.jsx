@@ -18,8 +18,8 @@ const App = () => {
           <div>
             <Navbar />
             <Hero />
-            <About />
             <Invest />
+            <About />
             <ImageGallery />
             <NearByLocations />
             <Footer />

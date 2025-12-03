@@ -2,12 +2,17 @@ import React, { useMemo, useState, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import HighYield from "../../assets/Invest/HighYield.png";
+import HighYield1 from "../../assets/Invest/HighYield1.png";
 import invest from "../../assets/Invest/invest.jpeg";
+import invest1 from "../../assets/Invest/invest1.png";
 import EarlyEntry from "../../assets/Invest/EarlyEntry.png";
+import EarlyEntry1 from "../../assets/Invest/EarlyEntry1.png";
 import TourismGrowth from "../../assets/Invest/TourismGrowth.png";
-import CurrencyAdvantage from "../../assets/Invest/CurrencyAdvantage.png";
+import CurrencyAdvantage1 from "../../assets/Invest/CurrencyAdvantage1.png";
+import TourismGrowth1 from "../../assets/Invest/TourismGrowth1.png";
 import Currency from "../../assets/Invest/Currency.png";
 import Returns from "../../assets/Invest/Returns.png";
+import RecurringReturns1 from "../../assets/Invest/RecurringReturns1.png";
 
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -131,91 +136,100 @@ const Invest = () => {
     }
   };
   return (
-    <div id="amenities" className="mt-10 grid grid-cols-1 p-10 lg:grid-cols-2">
+    <>
+    <div className="p-10 bg-[#0A0A0A] text-white">
+    <div className="mt-4" id="amenities">
+      <h2 className="font-montserrat text-center text-2xl font-bold md:text-3xl">  Why Altaira is a winning Investment</h2>
+    </div>
+    <div className="pt-10 pl-5 flex flex-col md:flex-row items-center gap-10">
       <img
-        src={invest}
+        src={invest1}
         alt="Why Invest?"
-        className="hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-full md:w-full lg:block"
+        className="hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
       />
       <div className="p-5">
-        <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">
-          Why Invest in Altaira?
-        </h2>
-        <div className="grid grid-cols-1 text-center md:grid-cols-2">
-          <div className="mb-5 pb-5 lg:w-[20vw]">
-            <div className="flex items-center justify-center">
-              <img src={HighYield} className="h-15 w-15" alt="High Yield" />
-            </div>
-            <div className="flex flex-col items-center justify-center">
+        {/* <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">
+          Why Altaira is a winning Investment?
+        </h2> */}
+        <div className="flex flex-col gap-6 lg:justify-center">
+          <div className="mb-2 pb-2">
+            <div className="flex items-center justify-left gap-3">
+              <img src={HighYield1} className="h-15 w-15" alt="High Yield" />
+           
+            <div className="flex flex-col">
               <h2 className="font-montserrat mb-1 text-lg font-bold">
-                High-Yield Asset Class
+                High-Yield Asset Class:
               </h2>
               <h2 className="font-poppins text-base">
                 Resort + villa model designed for stronger ROI.
               </h2>
-            </div>
+            </div> </div>
           </div>
-          <div className="mb-5 pb-5 lg:w-[20vw]">
-            <div className="flex flex-col items-center justify-center">
+          <div className="mb-2 pb-2">
+            <div className="flex items-center justify-center gap-3">
               <img
-                src={Currency}
+                src={ CurrencyAdvantage1}
                 className="h-15 w-15"
                 alt="Currency Advantage"
               />
-            </div>
-            <div className="flex flex-col items-center justify-center">
+           
+            <div className="flex flex-col">
               <h2 className="font-montserrat mb-1 text-lg font-bold">
-                Currency Advantage
+                Currency Advantage:
               </h2>
               <h2 className="font-poppins text-base">
                 {" "}
                 INR investments gain added appreciation from LKR value rise.
               </h2>
             </div>
+             </div>
           </div>
-          <div className="mb-5 pb-5 lg:w-[20vw]">
-            <div className="flex items-center justify-center">
+          <div className="mb-2 pb-2">
+            <div className="flex items-center justify-center gap-3">
               <img
-                src={TourismGrowth}
+                src={TourismGrowth1}
                 className="h-15 w-15"
                 alt="Tourism Growth"
               />
-            </div>
-            <div className="flex flex-col items-center justify-center">
+            
+            <div className="flex flex-col">
               <h2 className="font-montserrat mb-1 text-lg font-bold">
-                Tourism Growth
+                Tourism Growth:
               </h2>
               <h2 className="font-poppins text-base">
                 {" "}
                 Sri Lanka aims for 4M+ arrivals by 2025-26, boosting demand.
               </h2>
             </div>
-          </div>
-          <div className="mb-5 pb-5 lg:w-[20vw]">
-            <div className="flex items-center justify-center">
-              <img src={EarlyEntry} className="h-15 w-15" alt="Early Entry" />
             </div>
-            <div className="flex flex-col items-center justify-center">
-              <h2 className="font-montserrat mb-1 text-lg font-bold">Early Entry</h2>
+          </div>
+          <div className="mb-2 pb-2">
+            <div className="flex items-center justify-left gap-3">
+              <img src={EarlyEntry1} className="h-15 w-15" alt="Early Entry" />
+           
+            <div className="flex flex-col">
+              <h2 className="font-montserrat mb-1 text-lg font-bold">Early Entry:</h2>
               <h2 className="font-poppins text-base">
                 {" "}
                 Invest before valuations climb.
               </h2>
             </div>
+             </div>
           </div>
-          <div className="lg:w-[20vw]">
-            <div className="flex items-center justify-center">
-              <img src={Returns} className="h-15 w-15" alt="Returns" />
-            </div>
-            <div className="flex flex-col items-center justify-center">
+          <div>
+            <div className="flex items-center justify-left gap-3">
+              <img src={RecurringReturns1} className="h-15 w-15" alt="Returns" />
+           
+            <div className="flex flex-col">
               <h2 className="font-montserrat mb-1 text-lg font-bold">
-                Recurring Returns
+                Recurring Returns:
               </h2>
               <h2 className="font-poppins text-base">
                 {" "}
                 Annual payouts, resale flexibility, and lifetime stay benefits.
               </h2>
             </div>
+             </div>
           </div>
           {/* <div>
                         <div className='flex items-center justify-center'>
@@ -226,14 +240,14 @@ const Invest = () => {
                         </div>
                     </div> */}
         </div>
-        <div className="mt-10 flex items-center justify-center">
+        {/* <div className="mt-10 flex items-center justify-center">
           <button
             onClick={handleShowForm}
             className="w-full cursor-pointer rounded-md bg-[#c6af83] px-6 py-2 text-white transition-transform duration-200 hover:scale-105"
           >
             REGISTER YOUR INTEREST
           </button>
-        </div>
+        </div> */}
       </div>
       {showForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
@@ -391,8 +405,11 @@ const Invest = () => {
             </form>
           </div>
         </div>
+        
       )}
     </div>
+     </div>
+    </>
   );
 };
 

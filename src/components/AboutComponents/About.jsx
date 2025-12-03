@@ -125,7 +125,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="w-full bg-black px-4 py-12 sm:px-6 lg:px-10"
+      className="w-full bg-[#0A0A0A] px-4 py-12 sm:px-6 lg:px-10"
     >
       <div className="mx-auto flex flex-col items-center gap-8 text-white lg:flex-row lg:items-start lg:gap-20">
         <div className="w-full lg:w-1/2">

@@ -21,9 +21,14 @@
   }
 }
 
+select option {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 .react-tel-input .form-control {
-  border: 1px solid #e5e7eb !important;
-  background-color: #f3f4f6 !important;
+  color: white !important;
+  border: 1px solid #D4AF37 !important;
+  background-color: #0A0A0A8C !important;
   width: 100% !important;
   height: 40px !important;
   padding-left: 48px !important;
@@ -35,14 +40,14 @@
 }
 
 .react-tel-input .form-control:focus {
-  border: 1px solid #c6af83 !important;
-  box-shadow: 0 0 0 2px #c6af83 !important;
-  background-color: #f3f4f6 !important;
+  border: 1px solid #D4AF37 !important;
+  /* box-shadow: 0 0 0 2px #c6af83 !important;
+  background-color: #f3f4f6 !important; */
   outline: none !important;
 }
 
 .react-tel-input .flag-dropdown {
-  background-color: #f3f4f6 !important;
-  border: 1px solid #e5e7eb !important;
+  background-color: #0A0A0A8C !important;
+  border: 1px solid #D4AF37 !important;
   border-right: none !important;
 }
