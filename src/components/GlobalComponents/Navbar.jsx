@@ -217,7 +217,7 @@ const NavBar = () => {
               className="flex flex-col gap-3 space-y-3"
               onSubmit={handleSubmit}
             >
-              <h2 className="font-alike flex items-center justify-center text-xl font-bold text-[#c6af83]">
+              <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#c6af83]">
                 Enquire Now
               </h2>
               <input
