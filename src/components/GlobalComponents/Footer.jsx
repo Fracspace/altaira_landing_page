@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <section
       id="footer"
-      className="mt-10 flex flex-col justify-between bg-[#c6af83] pt-8 pr-5 pb-8 pl-10 md:flex-row"
+      className="mt-10 flex flex-col justify-between bg-[#0A0A0A] pt-8 pr-5 pb-8 pl-10 md:flex-row"
     >
       <div className="w-[80vw] md:w-[30vw]">
         <h2 className="font-montserrat pb-2 text-2xl font-semibold text-white">

@@ -137,101 +137,98 @@ const Invest = () => {
   };
   return (
     <>
-    <div className="p-10 bg-[#0A0A0A] text-white">
-    <div className="mt-4" id="amenities">
-      <h2 className="font-montserrat text-center text-2xl font-bold md:text-3xl">  Why Altaira is a winning Investment</h2>
-    </div>
-    <div className="pt-10 pl-5 flex flex-col md:flex-row items-center gap-10">
-      <img
-        src={invest1}
-        alt="Why Invest?"
-        className="hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
-      />
-      <div className="p-5">
-        {/* <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">
+      <div className="p-10 mt-10 bg-[#0A0A0A] text-white">
+        <div className="mt-4" id="amenities">
+          <h2 className="font-montserrat text-center text-2xl font-bold md:text-3xl">  Why Altaira is a winning Investment</h2>
+        </div>
+        <div className="pt-10 pl-5 flex flex-col md:flex-row items-center gap-10">
+          <img
+            src={invest1}
+            alt="Why Invest?"
+            className="hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
+          />
+          <div className="p-5">
+            {/* <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">
           Why Altaira is a winning Investment?
         </h2> */}
-        <div className="flex flex-col gap-6 lg:justify-center">
-          <div className="mb-2 pb-2">
-            <div className="flex items-center justify-left gap-3">
-              <img src={HighYield1} className="h-15 w-15" alt="High Yield" />
-           
-            <div className="flex flex-col">
-              <h2 className="font-montserrat mb-1 text-lg font-bold">
-                High-Yield Asset Class:
-              </h2>
-              <h2 className="font-poppins text-base">
-                Resort + villa model designed for stronger ROI.
-              </h2>
-            </div> </div>
-          </div>
-          <div className="mb-2 pb-2">
-            <div className="flex items-center justify-center gap-3">
-              <img
-                src={ CurrencyAdvantage1}
-                className="h-15 w-15"
-                alt="Currency Advantage"
-              />
-           
-            <div className="flex flex-col">
-              <h2 className="font-montserrat mb-1 text-lg font-bold">
-                Currency Advantage:
-              </h2>
-              <h2 className="font-poppins text-base">
-                {" "}
-                INR investments gain added appreciation from LKR value rise.
-              </h2>
-            </div>
-             </div>
-          </div>
-          <div className="mb-2 pb-2">
-            <div className="flex items-center justify-center gap-3">
-              <img
-                src={TourismGrowth1}
-                className="h-15 w-15"
-                alt="Tourism Growth"
-              />
-            
-            <div className="flex flex-col">
-              <h2 className="font-montserrat mb-1 text-lg font-bold">
-                Tourism Growth:
-              </h2>
-              <h2 className="font-poppins text-base">
-                {" "}
-                Sri Lanka aims for 4M+ arrivals by 2025-26, boosting demand.
-              </h2>
-            </div>
-            </div>
-          </div>
-          <div className="mb-2 pb-2">
-            <div className="flex items-center justify-left gap-3">
-              <img src={EarlyEntry1} className="h-15 w-15" alt="Early Entry" />
-           
-            <div className="flex flex-col">
-              <h2 className="font-montserrat mb-1 text-lg font-bold">Early Entry:</h2>
-              <h2 className="font-poppins text-base">
-                {" "}
-                Invest before valuations climb.
-              </h2>
-            </div>
-             </div>
-          </div>
-          <div>
-            <div className="flex items-center justify-left gap-3">
-              <img src={RecurringReturns1} className="h-15 w-15" alt="Returns" />
-           
-            <div className="flex flex-col">
-              <h2 className="font-montserrat mb-1 text-lg font-bold">
-                Recurring Returns:
-              </h2>
-              <h2 className="font-poppins text-base">
-                {" "}
-                Annual payouts, resale flexibility, and lifetime stay benefits.
-              </h2>
-            </div>
-             </div>
-          </div>
-          {/* <div>
+            <div className="flex flex-col gap-6 lg:justify-center">
+              <div className="mb-2 pb-2">
+                <div className="flex items-center justify-left gap-3">
+                  <img src={HighYield1} className="h-15 w-15 hidden md:block" alt="High Yield" />
+
+                  <div className="flex flex-col">
+                    <h2 className="font-montserrat mb-1 text-lg font-bold">
+                      High-Yield Asset Class:
+                    </h2>
+                    <h2 className="font-poppins text-base">
+                      Resort + villa model designed for stronger ROI.
+                    </h2>
+                  </div> </div>
+              </div>
+              <div className="mb-2 pb-2">
+                <div className="flex items-center justify-center gap-3">
+                  <img
+                    src={CurrencyAdvantage1}
+                    className="h-15 w-15 hidden md:block"
+                    alt="Currency Advantage"
+                  />
+                  <div className="flex flex-col">
+                    <h2 className="font-montserrat mb-1 text-lg font-bold">
+                      Currency Advantage:
+                    </h2>
+                    <h2 className="font-poppins text-base">
+                      {" "}
+                      INR investments gain added appreciation from LKR value rise.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-2 pb-2">
+                <div className="flex items-center justify-center gap-3">
+                  <img
+                    src={TourismGrowth1}
+                    className="h-15 w-15 hidden md:block"
+                    alt="Tourism Growth"
+                  />
+                  <div className="flex flex-col">
+                    <h2 className="font-montserrat mb-1 text-lg font-bold">
+                      Tourism Growth:
+                    </h2>
+                    <h2 className="font-poppins text-base">
+                      {" "}
+                      Sri Lanka aims for 4M+ arrivals by 2025-26, boosting demand.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-2 pb-2">
+                <div className="flex items-center justify-left gap-3">
+                  <img src={EarlyEntry1} className="h-15 w-15 hidden md:block" alt="Early Entry" />
+
+                  <div className="flex flex-col">
+                    <h2 className="font-montserrat mb-1 text-lg font-bold">Early Entry:</h2>
+                    <h2 className="font-poppins text-base">
+                      {" "}
+                      Invest before valuations climb.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-left gap-3">
+                  <img src={RecurringReturns1} className="h-15 w-15 hidden md:block" alt="Returns" />
+                  <div className="flex flex-col">
+                    <h2 className="font-montserrat mb-1 text-lg font-bold">
+                      Recurring Returns:
+                    </h2>
+                    <h2 className="font-poppins text-base">
+                      {" "}
+                      Annual payouts, resale flexibility, and lifetime stay benefits.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+              {/* <div>
                         <div className='flex items-center justify-center'>
                             <img src={world_wide_connectivity} className='w-15 h-15' alt="Fast growing economy" />
                         </div>
@@ -239,8 +236,8 @@ const Invest = () => {
                             <h2 className='font-bold text-lg md:text-base'>Worldwide Connectivity</h2>
                         </div>
                     </div> */}
-        </div>
-        {/* <div className="mt-10 flex items-center justify-center">
+            </div>
+            {/* <div className="mt-10 flex items-center justify-center">
           <button
             onClick={handleShowForm}
             className="w-full cursor-pointer rounded-md bg-[#c6af83] px-6 py-2 text-white transition-transform duration-200 hover:scale-105"
@@ -248,32 +245,31 @@ const Invest = () => {
             REGISTER YOUR INTEREST
           </button>
         </div> */}
-      </div>
-      {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="relative w-full bg-white p-6 shadow-lg sm:w-[80%] sm:p-8 md:w-[60%] lg:w-[30vw]">
-            <button
-              onClick={handleCloseForm}
-              className="absolute top-3 right-3 text-4xl font-bold text-gray-500 hover:text-gray-800"
-            >
-              &times;
-            </button>
+          </div>
+          {showForm && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+              <div className="relative w-full bg-white p-6 shadow-lg sm:w-[80%] sm:p-8 md:w-[60%] lg:w-[30vw]">
+                <button
+                  onClick={handleCloseForm}
+                  className="absolute top-3 right-3 text-4xl font-bold text-gray-500 hover:text-gray-800"
+                >
+                  &times;
+                </button>
+                <form
+                  className="flex flex-col gap-3 space-y-3"
+                  onSubmit={handleSubmit}
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Name*"
+                    className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
+                  />
 
-            <form
-              className="flex flex-col gap-3 space-y-3"
-              onSubmit={handleSubmit}
-            >
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Name*"
-                className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
-              />
-
-              {/* <input
+                  {/* <input
                                 type="tel"
                                 name="phoneNumber"
                                 required
@@ -284,38 +280,37 @@ const Invest = () => {
                                 className="w-full border-b border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 text-sm"
                             /> */}
 
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email*"
-                className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
-              />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email*"
+                    className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
+                  />
+                  <PhoneInput
+                    country={"in"}
+                    enableSearch={true}
+                    value={formData.phoneNumber}
+                    onChange={(value, data) => {
+                      const countryCode = `${data.dialCode}`;
+                      const phoneNumber = value.replace(countryCode, "");
+                      setFormData({
+                        ...formData,
+                        phoneNumber: phoneNumber,
+                        countryCode: countryCode,
+                      });
+                    }}
+                    placeholder="Mobile"
+                    inputClass="w-full"
+                    containerClass="w-full"
+                    buttonClass=""
+                    dropdownClass="text-sm"
+                    className="w-full"
+                  />
 
-              <PhoneInput
-                country={"in"}
-                enableSearch={true}
-                value={formData.phoneNumber}
-                onChange={(value, data) => {
-                  const countryCode = `${data.dialCode}`;
-                  const phoneNumber = value.replace(countryCode, "");
-                  setFormData({
-                    ...formData,
-                    phoneNumber: phoneNumber,
-                    countryCode: countryCode,
-                  });
-                }}
-                placeholder="Mobile"
-                inputClass="w-full"
-                containerClass="w-full"
-                buttonClass=""
-                dropdownClass="text-sm"
-                className="w-full"
-              />
-
-              {/* <select
+                  {/* <select
                                 name="preferredInvestmentLocation"
                                 required
                                 value={formData.preferredInvestmentLocation}
@@ -331,53 +326,52 @@ const Invest = () => {
                                     </option>
                                 ))}
                             </select> */}
-              <Select
-                options={options}
-                name="country"
-                id="country"
-                value={formData.country}
-                onChange={changeHandler}
-                className="react-select-container w-full"
-                classNamePrefix="react-select"
-                styles={{
-                  control: (base) => ({
-                    ...base,
-                    backgroundColor: "#f3f4f6",
-                    borderColor: "#e5e7eb",
-                    paddingLeft: "0.5rem",
-                    paddingRight: "0.5rem",
-                    paddingTop: "0.25rem",
-                    paddingBottom: "0.25rem",
-                    fontSize: "0.875rem",
-                    boxShadow: "none",
-                    "&:hover": { borderColor: "#e5e7eb" },
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    zIndex: 9999,
-                  }),
-                }}
-                placeholder="Select Your Country*"
-              />
+                  <Select
+                    options={options}
+                    name="country"
+                    id="country"
+                    value={formData.country}
+                    onChange={changeHandler}
+                    className="react-select-container w-full"
+                    classNamePrefix="react-select"
+                    styles={{
+                      control: (base) => ({
+                        ...base,
+                        backgroundColor: "#f3f4f6",
+                        borderColor: "#e5e7eb",
+                        paddingLeft: "0.5rem",
+                        paddingRight: "0.5rem",
+                        paddingTop: "0.25rem",
+                        paddingBottom: "0.25rem",
+                        fontSize: "0.875rem",
+                        boxShadow: "none",
+                        "&:hover": { borderColor: "#e5e7eb" },
+                      }),
+                      menu: (base) => ({
+                        ...base,
+                        zIndex: 9999,
+                      }),
+                    }}
+                    placeholder="Select Your Country*"
+                  />
+                  <select
+                    name="Budget"
+                    required
+                    value={formData.Budget}
+                    onChange={handleChange}
+                    className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
+                  >
+                    <option value="" disabled>
+                      Investment Budget Range
+                    </option>
+                    {budgetRanges.map((range) => (
+                      <option key={range} value={range}>
+                        {range}
+                      </option>
+                    ))}
+                  </select>
 
-              <select
-                name="Budget"
-                required
-                value={formData.Budget}
-                onChange={handleChange}
-                className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
-              >
-                <option value="" disabled>
-                  Investment Budget Range
-                </option>
-                {budgetRanges.map((range) => (
-                  <option key={range} value={range}>
-                    {range}
-                  </option>
-                ))}
-              </select>
-
-              {/* <select
+                  {/* <select
                                 name="purposeOfInvestment"
                                 required
                                 value={formData.purposeOfInvestment}
@@ -394,21 +388,19 @@ const Invest = () => {
                                 ))}
                             </select> */}
 
-              {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} ref={recaptcha} /> */}
-
-              <button
-                type="submit"
-                className="w-full cursor-pointer rounded bg-[#c6af83] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
+                  {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} ref={recaptcha} /> */}
+                  <button
+                    type="submit"
+                    className="w-full cursor-pointer rounded bg-[#c6af83] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
-        
-      )}
-    </div>
-     </div>
+      </div>
     </>
   );
 };

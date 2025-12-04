@@ -79,7 +79,7 @@ const Hero = () => {
     // }
     try {
       const response = await axios.post(
-        "https://apitest.fracspace.com/api/v1/webApi/enquiryFormRegardingCoownership",
+        "",
         formData,
         {
           headers: {
@@ -99,15 +99,15 @@ const Hero = () => {
       //     body: JSON.stringify(formData)
       //   }
       // );
-      console.log("response", response.data);
+      // console.log("response", response.data);
 
-      console.log("name", formData.name);
-      console.log("email", formData.email);
-      console.log("phone number", formData.phoneNumber);
-      console.log("country", formData.country);
-      console.log("budget", formData.Budget);
+      // console.log("name", formData.name);
+      // console.log("email", formData.email);
+      // console.log("phone number", formData.phoneNumber);
+      // console.log("country", formData.country);
+      // console.log("budget", formData.Budget);
 
-      console.log("form data", formData);
+      // console.log("form data", formData);
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
@@ -118,9 +118,9 @@ const Hero = () => {
         country: "",
         // preferredInvestmentLocation: "",
         Budget: "",
-        Occupation:"",
-        Designation:"",
-        IncomeRange:"",
+        Occupation: "",
+        Designation: "",
+        IncomeRange: "",
         // purposeOfInvestment: ""
       });
 
@@ -137,11 +137,11 @@ const Hero = () => {
   return (
     <div
       id="herosection"
-      className="custom-div relative h-[120vh] w-full overflow-hidden md:h-[120vh]"
+      className="custom-div relative h-[130vh] w-full overflow-hidden md:h-[120vh]"
     >
       <video
         src={AltairaVideo}
-        className="custom-div absolute h-[120vh] w-full object-cover md:h-[120vh]"
+        className="custom-div absolute h-[130vh] w-full object-cover md:h-[120vh]"
         playsInline
         autoPlay
         muted
@@ -149,11 +149,11 @@ const Hero = () => {
       ></video>
       <div className="custom-div absolute inset-0 flex flex-col items-center justify-center gap-10 bg-black/40 px-4 text-center text-white sm:px-10 lg:flex-row lg:justify-between lg:gap-20 lg:px-20">
         <div className="mt-30 w-full space-y-4 text-left md:mt-0 md:w-full lg:max-w-xl lg:space-y-6">
-          <h2 className="font-montserrat font-primary leading-relaxed font-bold text-3xl">
-           Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the Adventure Capital of the Island.
+          <h2 className="font-montserrat leading-relaxed md:font-semibold text-xl md:text-3xl">
+            Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the Adventure Capital of the Island.
           </h2>
-          <h1 className="font-poppins font-primary leading-relaxed font-bold text-2xl">
-           Limited early-stage investment slots with high projected returns driven by booming eco-tourism & post-2025 tourism surge.
+          <h1 className="font-poppins leading-relaxed md:font-medium text-lg md:text-2xl">
+            Limited early-stage investment slots with high projected returns driven by booming eco-tourism & post-2025 tourism surge.
           </h1>
         </div>
         <div className="w-full rounded-lg p-2 text-black md:w-[60vw] lg:h-auto lg:w-auto">
@@ -164,6 +164,7 @@ const Hero = () => {
             <h2 className="font-montserrat text-xl font-bold text-white">
               Enquire Now
             </h2>
+            <div className="overflow-y-auto h-[40vh] space-y-3 scrollbar-hide">
             <input
               type="text"
               id="name"
@@ -296,7 +297,7 @@ const Hero = () => {
               ))}
             </select>
 
-             <input
+            <input
               type="text"
               id="occupation"
               name="occupation"
@@ -307,7 +308,7 @@ const Hero = () => {
               className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
 
-             <input
+            <input
               type="text"
               id="designation"
               name="designation"
@@ -318,7 +319,7 @@ const Hero = () => {
               className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
 
-             <input
+            <input
               type="text"
               id="companyName"
               name="companyName"
@@ -349,6 +350,8 @@ const Hero = () => {
 
             {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} /> */}
 
+            </div>
+            
             <button
               type="submit"
               className="w-full font-montserrat cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
@@ -357,6 +360,7 @@ const Hero = () => {
             </button>
           </form>
         </div>
+        
       </div>
     </div>
   );
