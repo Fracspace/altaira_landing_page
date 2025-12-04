@@ -24,7 +24,7 @@ const budgetRanges = [
   "Above ₹10,000,000",
 ];
 
-const incomeRanges=[
+const incomeRanges = [
   "$100,000 - $250,000",
   "$250,001 - $500,000",
   "$500,001+",
@@ -45,7 +45,7 @@ const Hero = () => {
     setValue(selected);
     setFormData((prev) => ({
       ...prev,
-      country: selected,
+      country: selected?.label||"",
     }));
   };
 
@@ -59,13 +59,14 @@ const Hero = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    countryCode: "",
     phoneNumber: "",
     country: "",
     // preferredInvestmentLocation: "",
     budget: "",
     occupation: "",
     designation: "",
-    companyName:"",
+    companyName: "",
     incomeRange: "",
     // purposeOfInvestment: "",
   });
@@ -87,60 +88,60 @@ const Hero = () => {
     //   alert("Please verify the captcha");
     //   return;
     // }
-    try {
-      const response = await axios.post(
-        "",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "Fracspace@2024",
-          },
-        },
-      );
+    // try {
+    //   const response = await axios.post(
+    //     "",
+    //     formData,
+    //     {
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         "x-api-key": "Fracspace@2024",
+    //       },
+    //     },
+    //   );
 
-      // await fetch("https://script.google.com/macros/s/AKfycbywRlGKyS3uAqkFqARQtuteiU0Vtatiw6dvzY4AUMSRkPNLBS2gjWubpci18YebEWTU/exec",
-      //   {
-      //     method: "POST",
-      //     mode: "no-cors",
-      //     headers: {
-      //       "Content-Type": "application/json"
-      //     },
-      //     body: JSON.stringify(formData)
-      //   }
-      // );
-      // console.log("response", response.data);
+    //   alert("Form submitted successfully");
+    //   // console.log("Form submitted:", formData);
+    //   setFormData({
+    //     name: "",
+    //     email: "",
+    //     phoneNumber: "",
+    //     country: null,
+    //     budget: "",
+    //     occupation: "",
+    //     designation: "",
+    //     companyName:"",
+    //     incomeRange: "",
+    //   });
 
-      // console.log("name", formData.name);
-      // console.log("email", formData.email);
-      // console.log("phone number", formData.phoneNumber);
-      // console.log("country", formData.country);
-      // console.log("budget", formData.Budget);
+    //   //setCaptchaToken("");
 
-      // console.log("form data", formData);
+    //   setTimeout(() => navigate("/thank-you"), 1000);
+    // } catch (error) {
+    //   console.log("error occured while submitting form", error);
+    // }
 
-      alert("Form submitted successfully");
-      // console.log("Form submitted:", formData);
-      setFormData({
-        name: "",
-        email: "",
-        phoneNumber: "",
-        country: "",
-        // preferredInvestmentLocation: "",
-        budget: "",
-        occupation: "",
-        designation: "",
-        companyName:"",
-        incomeRange: "",
-        // purposeOfInvestment: ""
-      });
+    // Log the form data here
+    console.log("FORM DATA:", formData);
 
-      //setCaptchaToken("");
+    alert("Form submitted successfully!");
 
-      setTimeout(() => navigate("/thank-you"), 1000);
-    } catch (error) {
-      console.log("error occured while submitting form", error);
-    }
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      countryCode: "",
+      phoneNumber: "",
+      country: "",
+      budget: "",
+      occupation: "",
+      designation: "",
+      companyName: "",
+      incomeRange: "",
+    });
+
+    // Navigate to thank-you page (optional)
+    setTimeout(() => navigate("/thank-you"), 1000);
 
     // handleCloseForm();
   };
@@ -176,29 +177,29 @@ const Hero = () => {
               Enquire Now
             </h2>
             <div className="overflow-y-auto h-[40vh] space-y-3 scrollbar-hide">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Name*"
-              required
-              className="w-full border text-white placeholder:font-montserrat rounded-md border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
-            />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name*"
+                required
+                className="w-full border text-white placeholder:font-montserrat rounded-md border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+              />
 
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email*"
-              required
-              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
-            />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email*"
+                required
+                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+              />
 
-            {/* <input
+              {/* <input
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
@@ -210,71 +211,73 @@ const Hero = () => {
               className="w-full border border-gray-200 bg-gray-100 outline-none focus:ring-2 focus:ring-[#c6af83] px-3 py-2 text-sm placeholder-gray-500"
             /> */}
 
-            <PhoneInput
-              country={"in"}
-              enableSearch={true}
-              value={formData.phoneNumber}
-              onChange={(value, data) => {
-                const countryCode = `+${data.dialCode}`;
-                const phoneNumber = value.replace(countryCode, "");
-                setFormData({
-                  ...formData,
-                  phoneNumber: phoneNumber,
-                  countryCode: countryCode,
-                });
-              }}
-              placeholder="Mobile"
-              inputClass="w-full"
-              containerClass="w-full rounded-md text-white placeholder:font-montserrat"
-              buttonClass=""
-              dropdownClass="text-sm"
-              required
-              className="w-full"
-            />
+              <PhoneInput
+                country={"in"}
+                enableSearch={true}
+                value={`${formData.countryCode || "+91"}${formData.phoneNumber}`}
+                onChange={(value, data) => {
+                  const dial = data?.dialCode || "91";
+                  const digitsOnly = value.replace(/\D/g, ""); // remove all non-digits
+                  const numberOnly = digitsOnly.startsWith(dial) ? digitsOnly.slice(dial.length) : digitsOnly;
+                  setFormData({
+                    ...formData,
+                    phoneNumber: numberOnly,
+                    countryCode: `${dial}`,
+                  });
+                }}
+                placeholder="Mobile"
+                inputClass="w-full"
+                containerClass="w-full rounded-md text-white placeholder:font-montserrat"
+                buttonClass=""
+                dropdownClass="text-sm"
+                required
+                className="w-full"
+              />
 
-            <Select
-              options={options}
-              name="country"
-              id="country"
-              value={formData.country}
-              required
-              onChange={changeHandler}
-              className="react-select-container w-full"
-              classNamePrefix="react-select"
-              styles={{
-                control: (base) => ({
-                  ...base,
-                  backgroundColor: "#0A0A0A8C",
-                  borderColor: "#D4AF37",
-                  paddingLeft: "0.5rem",
-                  paddingRight: "0.5rem",
-                  paddingTop: "0.25rem",
-                  paddingBottom: "0.25rem",
-                  fontSize: "0.875rem",
-                  boxShadow: "none",
-                  "&:hover": { borderColor: "#e5e7eb" },
-                }),
-                placeholder: (base) => ({
-                  ...base,
-                  textAlign: "left",
-                  marginLeft: "0px",
-                  color: "white",
-                  fontFamily: "Montserrat, sans-serif",
-                }),
-                singleValue: (base) => ({
-                  ...base,
-                  color: "white",
-                  fontFamily: "Montserrat, sans-serif",
-                }),
-                menu: (base) => ({
-                  ...base,
-                  zIndex: 9999,
-                }),
-              }}
-              placeholder="Select Your Country*"
-            />
+              <Select
+                options={options}
+                name="country"
+                id="country"
+                value={value}
+                required
+                isSearchable={true}
+                onChange={changeHandler}
+                className="react-select-container w-full"
+                classNamePrefix="react-select"
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    backgroundColor: "#0A0A0A8C",
+                    borderColor: "#D4AF37",
+                    paddingLeft: "0.5rem",
+                    paddingRight: "0.5rem",
+                    paddingTop: "0.25rem",
+                    paddingBottom: "0.25rem",
+                    fontSize: "0.875rem",
+                    boxShadow: "none",
+                    "&:hover": { borderColor: "#e5e7eb" },
+                  }),
+                  placeholder: (base) => ({
+                    ...base,
+                    textAlign: "left",
+                    marginLeft: "0px",
+                    color: "white",
+                    fontFamily: "Montserrat, sans-serif",
+                  }),
+                  singleValue: (base) => ({
+                    ...base,
+                    color: "white",
+                    fontFamily: "Montserrat, sans-serif",
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    zIndex: 9999,
+                  }),
+                }}
+                placeholder="Select Your Country*"
+              />
 
-            {/* <select
+              {/* <select
               id="preferredInvestmentLocation"
               name="preferredInvestmentLocation"
               value={formData.preferredInvestmentLocation}
@@ -292,76 +295,76 @@ const Hero = () => {
               ))}
             </select> */}
 
-            <select
-              id="budget"
-              name="budget"
-              value={formData.budget}
-              onChange={handleChange}
-              required
-              className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
-            >
-              <option value="" disabled className="bg-[#D4AF37]">
-                Investment Budget Range*
-              </option>
-              {budgetRanges.map((budgetRange) => (
-                <option key={budgetRange} value={budgetRange} className="bg-[#D4AF37]">
-                  {budgetRange}
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+                required
+                className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
+              >
+                <option value="" disabled className="bg-[#D4AF37]">
+                  Investment Budget Range*
                 </option>
-              ))}
-            </select>
+                {budgetRanges.map((budgetRange) => (
+                  <option key={budgetRange} value={budgetRange} className="bg-[#D4AF37]">
+                    {budgetRange}
+                  </option>
+                ))}
+              </select>
 
-            <input
-              type="text"
-              id="occupation"
-              name="occupation"
-              value={formData.occupation}
-              onChange={handleChange}
-              placeholder="Occupation*"
-              required
-              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
-            />
+              <input
+                type="text"
+                id="occupation"
+                name="occupation"
+                value={formData.occupation}
+                onChange={handleChange}
+                placeholder="Occupation*"
+                required
+                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+              />
 
-            <input
-              type="text"
-              id="designation"
-              name="designation"
-              value={formData.designation}
-              onChange={handleChange}
-              placeholder="Designation*"
-              required
-              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
-            />
+              <input
+                type="text"
+                id="designation"
+                name="designation"
+                value={formData.designation}
+                onChange={handleChange}
+                placeholder="Designation*"
+                required
+                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+              />
 
-            <input
-              type="text"
-              id="companyName"
-              name="companyName"
-              value={formData.companyName}
-              onChange={handleChange}
-              placeholder="Company Name*"
-              required
-              className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
-            />
+              <input
+                type="text"
+                id="companyName"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
+                placeholder="Company Name*"
+                required
+                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+              />
 
-             <select
-              id="incomeRange"
-              name="incomeRange"
-              value={formData.incomeRange}
-              onChange={handleChange}
-              required
-              className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
-            >
-              <option value="" disabled className="bg-[#D4AF37]">
-                Income Range*
-              </option>
-              {incomeRanges.map((range) => (
-                <option key={range} value={range} className="bg-[#D4AF37]">
-                  {range}
+              <select
+                id="incomeRange"
+                name="incomeRange"
+                value={formData.incomeRange}
+                onChange={handleChange}
+                required
+                className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
+              >
+                <option value="" disabled className="bg-[#D4AF37]">
+                  Income Range*
                 </option>
-              ))}
-            </select>
+                {incomeRanges.map((range) => (
+                  <option key={range} value={range} className="bg-[#D4AF37]">
+                    {range}
+                  </option>
+                ))}
+              </select>
 
-            {/* <select
+              {/* <select
               id="purposeOfInvestment"
               name="purposeOfInvestment"
               value={formData.purposeOfInvestment}
@@ -379,10 +382,10 @@ const Hero = () => {
               ))}
             </select> */}
 
-            {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} /> */}
+              {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} /> */}
 
             </div>
-            
+
             <button
               type="submit"
               className="w-full font-montserrat cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
@@ -391,7 +394,7 @@ const Hero = () => {
             </button>
           </form>
         </div>
-        
+
       </div>
     </div>
   );
