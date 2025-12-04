@@ -8,6 +8,9 @@ import NearByLocations from "./components/NearByLocations/NearByLocations";
 import Footer from "./components/GlobalComponents/Footer";
 import ThankYou from "./pages/ThankYou";
 import { Routes, Route } from "react-router-dom";
+import Experiences from "./components/AltairaExperiences/Experiences";
+import AltairaProject from "./components/AltairaProject/AltairaProject";
+import MapComponent from "./components/MapComponent/MapComponent";
 
 const App = () => {
   return (
@@ -19,9 +22,12 @@ const App = () => {
             <Navbar />
             <Hero />
             <Invest />
-            <About />
-            <ImageGallery />
-            <NearByLocations />
+            <AltairaProject />
+            <Experiences />
+            <MapComponent />
+            {/* <About />
+            <ImageGallery /> */}
+            {/* <NearByLocations /> */}
             <Footer />
           </div>
         }
