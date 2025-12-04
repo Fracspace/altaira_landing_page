@@ -293,8 +293,8 @@ const Hero = () => {
             </select> */}
 
             <select
-              id="Budget"
-              name="Budget"
+              id="budget"
+              name="budget"
               value={formData.budget}
               onChange={handleChange}
               required
@@ -303,9 +303,9 @@ const Hero = () => {
               <option value="" disabled className="bg-[#D4AF37]">
                 Investment Budget Range*
               </option>
-              {budgetRanges.map((range) => (
-                <option key={range} value={range} className="bg-[#D4AF37]">
-                  {range}
+              {budgetRanges.map((budgetRange) => (
+                <option key={budgetRange} value={budgetRange} className="bg-[#D4AF37]">
+                  {budgetRange}
                 </option>
               ))}
             </select>
