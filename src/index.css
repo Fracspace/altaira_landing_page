@@ -17,12 +17,20 @@
 
 @media (max-width: 380px) {
   .custom-div {
-    height: 150vh;
+    height: 130vh;
   }
 }
 
 select option {
   font-family: 'Montserrat', sans-serif !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
+.scrollbar-hide{
+  scrollbar-width: none;
 }
 
 .react-tel-input .form-control {

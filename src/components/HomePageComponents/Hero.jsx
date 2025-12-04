@@ -24,6 +24,12 @@ const budgetRanges = [
   "Above ₹10,000,000",
 ];
 
+const incomeRanges=[
+  "$100,000 - $250,000",
+  "$250,001 - $500,000",
+  "$500,001+",
+]
+
 // const purposeOfInvestment = [
 //   "Passive Income",
 //   "Vacation Home",
@@ -56,7 +62,11 @@ const Hero = () => {
     phoneNumber: "",
     country: "",
     // preferredInvestmentLocation: "",
-    Budget: "",
+    budget: "",
+    occupation: "",
+    designation: "",
+    companyName:"",
+    incomeRange: "",
     // purposeOfInvestment: "",
   });
 
@@ -79,7 +89,7 @@ const Hero = () => {
     // }
     try {
       const response = await axios.post(
-        "https://apitest.fracspace.com/api/v1/webApi/enquiryFormRegardingCoownership",
+        "",
         formData,
         {
           headers: {
@@ -99,15 +109,15 @@ const Hero = () => {
       //     body: JSON.stringify(formData)
       //   }
       // );
-      console.log("response", response.data);
+      // console.log("response", response.data);
 
-      console.log("name", formData.name);
-      console.log("email", formData.email);
-      console.log("phone number", formData.phoneNumber);
-      console.log("country", formData.country);
-      console.log("budget", formData.Budget);
+      // console.log("name", formData.name);
+      // console.log("email", formData.email);
+      // console.log("phone number", formData.phoneNumber);
+      // console.log("country", formData.country);
+      // console.log("budget", formData.Budget);
 
-      console.log("form data", formData);
+      // console.log("form data", formData);
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
@@ -117,14 +127,15 @@ const Hero = () => {
         phoneNumber: "",
         country: "",
         // preferredInvestmentLocation: "",
-        Budget: "",
-        Occupation:"",
-        Designation:"",
-        IncomeRange:"",
+        budget: "",
+        occupation: "",
+        designation: "",
+        companyName:"",
+        incomeRange: "",
         // purposeOfInvestment: ""
       });
 
-      setCaptchaToken("");
+      //setCaptchaToken("");
 
       setTimeout(() => navigate("/thank-you"), 1000);
     } catch (error) {
@@ -149,11 +160,11 @@ const Hero = () => {
       ></video>
       <div className="custom-div absolute inset-0 flex flex-col items-center justify-center gap-10 bg-black/40 px-4 text-center text-white sm:px-10 lg:flex-row lg:justify-between lg:gap-20 lg:px-20">
         <div className="mt-30 w-full space-y-4 text-left md:mt-0 md:w-full lg:max-w-xl lg:space-y-6">
-          <h2 className="font-montserrat font-primary leading-relaxed font-bold text-3xl">
-           Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the Adventure Capital of the Island.
+          <h2 className="font-montserrat leading-relaxed md:font-semibold text-xl md:text-3xl">
+            Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the Adventure Capital of the Island.
           </h2>
-          <h1 className="font-poppins font-primary leading-relaxed font-bold text-2xl">
-           Limited early-stage investment slots with high projected returns driven by booming eco-tourism & post-2025 tourism surge.
+          <h1 className="font-poppins leading-relaxed md:font-medium text-lg md:text-2xl">
+            Limited early-stage investment slots with high projected returns driven by booming eco-tourism & post-2025 tourism surge.
           </h1>
         </div>
         <div className="w-full rounded-lg p-2 text-black md:w-[60vw] lg:h-auto lg:w-auto">
@@ -164,6 +175,7 @@ const Hero = () => {
             <h2 className="font-montserrat text-xl font-bold text-white">
               Enquire Now
             </h2>
+            <div className="overflow-y-auto h-[40vh] space-y-3 scrollbar-hide">
             <input
               type="text"
               id="name"
@@ -216,6 +228,7 @@ const Hero = () => {
               containerClass="w-full rounded-md text-white placeholder:font-montserrat"
               buttonClass=""
               dropdownClass="text-sm"
+              required
               className="w-full"
             />
 
@@ -224,6 +237,7 @@ const Hero = () => {
               name="country"
               id="country"
               value={formData.country}
+              required
               onChange={changeHandler}
               className="react-select-container w-full"
               classNamePrefix="react-select"
@@ -279,9 +293,9 @@ const Hero = () => {
             </select> */}
 
             <select
-              id="Budget"
-              name="Budget"
-              value={formData.Budget}
+              id="budget"
+              name="budget"
+              value={formData.budget}
               onChange={handleChange}
               required
               className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
@@ -289,14 +303,14 @@ const Hero = () => {
               <option value="" disabled className="bg-[#D4AF37]">
                 Investment Budget Range*
               </option>
-              {budgetRanges.map((range) => (
-                <option key={range} value={range} className="bg-[#D4AF37]">
-                  {range}
+              {budgetRanges.map((budgetRange) => (
+                <option key={budgetRange} value={budgetRange} className="bg-[#D4AF37]">
+                  {budgetRange}
                 </option>
               ))}
             </select>
 
-             <input
+            <input
               type="text"
               id="occupation"
               name="occupation"
@@ -307,7 +321,7 @@ const Hero = () => {
               className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
 
-             <input
+            <input
               type="text"
               id="designation"
               name="designation"
@@ -318,7 +332,7 @@ const Hero = () => {
               className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
 
-             <input
+            <input
               type="text"
               id="companyName"
               name="companyName"
@@ -328,6 +342,24 @@ const Hero = () => {
               required
               className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
+
+             <select
+              id="incomeRange"
+              name="incomeRange"
+              value={formData.incomeRange}
+              onChange={handleChange}
+              required
+              className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
+            >
+              <option value="" disabled className="bg-[#D4AF37]">
+                Income Range*
+              </option>
+              {incomeRanges.map((range) => (
+                <option key={range} value={range} className="bg-[#D4AF37]">
+                  {range}
+                </option>
+              ))}
+            </select>
 
             {/* <select
               id="purposeOfInvestment"
@@ -349,6 +381,8 @@ const Hero = () => {
 
             {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} /> */}
 
+            </div>
+            
             <button
               type="submit"
               className="w-full font-montserrat cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
@@ -357,6 +391,7 @@ const Hero = () => {
             </button>
           </form>
         </div>
+        
       </div>
     </div>
   );
