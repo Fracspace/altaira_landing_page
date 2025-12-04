@@ -57,6 +57,9 @@ const Hero = () => {
     country: "",
     // preferredInvestmentLocation: "",
     Budget: "",
+    Occupation: "",
+    Designation: "",
+    IncomeRange: "",
     // purposeOfInvestment: "",
   });
 
@@ -124,7 +127,7 @@ const Hero = () => {
         // purposeOfInvestment: ""
       });
 
-      setCaptchaToken("");
+      //setCaptchaToken("");
 
       setTimeout(() => navigate("/thank-you"), 1000);
     } catch (error) {
