@@ -24,6 +24,12 @@ const budgetRanges = [
   "Above ₹10,000,000",
 ];
 
+const incomeRanges=[
+  "$100,000 - $250,000",
+  "$250,001 - $500,000",
+  "$500,001+",
+]
+
 // const purposeOfInvestment = [
 //   "Passive Income",
 //   "Vacation Home",
@@ -56,10 +62,11 @@ const Hero = () => {
     phoneNumber: "",
     country: "",
     // preferredInvestmentLocation: "",
-    Budget: "",
-    Occupation: "",
-    Designation: "",
-    IncomeRange: "",
+    budget: "",
+    occupation: "",
+    designation: "",
+    companyName:"",
+    incomeRange: "",
     // purposeOfInvestment: "",
   });
 
@@ -120,10 +127,11 @@ const Hero = () => {
         phoneNumber: "",
         country: "",
         // preferredInvestmentLocation: "",
-        Budget: "",
-        Occupation: "",
-        Designation: "",
-        IncomeRange: "",
+        budget: "",
+        occupation: "",
+        designation: "",
+        companyName:"",
+        incomeRange: "",
         // purposeOfInvestment: ""
       });
 
@@ -140,11 +148,11 @@ const Hero = () => {
   return (
     <div
       id="herosection"
-      className="custom-div relative h-[130vh] w-full overflow-hidden md:h-[120vh]"
+      className="custom-div relative h-[120vh] w-full overflow-hidden md:h-[120vh]"
     >
       <video
         src={AltairaVideo}
-        className="custom-div absolute h-[130vh] w-full object-cover md:h-[120vh]"
+        className="custom-div absolute h-[120vh] w-full object-cover md:h-[120vh]"
         playsInline
         autoPlay
         muted
@@ -287,7 +295,7 @@ const Hero = () => {
             <select
               id="Budget"
               name="Budget"
-              value={formData.Budget}
+              value={formData.budget}
               onChange={handleChange}
               required
               className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
@@ -334,6 +342,24 @@ const Hero = () => {
               required
               className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
             />
+
+             <select
+              id="incomeRange"
+              name="incomeRange"
+              value={formData.incomeRange}
+              onChange={handleChange}
+              required
+              className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
+            >
+              <option value="" disabled className="bg-[#D4AF37]">
+                Income Range*
+              </option>
+              {incomeRanges.map((range) => (
+                <option key={range} value={range} className="bg-[#D4AF37]">
+                  {range}
+                </option>
+              ))}
+            </select>
 
             {/* <select
               id="purposeOfInvestment"
