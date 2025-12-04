@@ -217,6 +217,7 @@ const Hero = () => {
               containerClass="w-full rounded-md text-white placeholder:font-montserrat"
               buttonClass=""
               dropdownClass="text-sm"
+              required
               className="w-full"
             />
 
@@ -225,6 +226,7 @@ const Hero = () => {
               name="country"
               id="country"
               value={formData.country}
+              required
               onChange={changeHandler}
               className="react-select-container w-full"
               classNamePrefix="react-select"
