@@ -185,7 +185,7 @@ function AltairaProject() {
                 </ul>
                 <button
                   onClick={handleShowForm}
-                  className="font-montserrat mt-4 flex cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white"
+                  className="font-montserrat mt-4 flex scale-100 cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white transition hover:scale-105 hover:bg-[#9c835a]"
                 >
                   Register Now <ArrowRight />
                 </button>
@@ -375,6 +375,14 @@ function AltairaProject() {
                           ...base,
                           textAlign: "left",
                           marginLeft: "0px",
+                          fontFamily: "Montserrat, sans-serif",
+                        }),
+                        input: (base) => ({
+                          ...base,
+                          fontFamily: "Montserrat, sans-serif",
+                        }),
+                        menuList: (base) => ({
+                          ...base,
                           fontFamily: "Montserrat, sans-serif",
                         }),
                         menu: (base) => ({

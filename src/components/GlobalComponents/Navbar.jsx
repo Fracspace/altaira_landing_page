@@ -363,6 +363,14 @@ const NavBar = () => {
                       marginLeft: "0px",
                       fontFamily: "Montserrat, sans-serif",
                     }),
+                    input: (base) => ({
+                      ...base,
+                      fontFamily: "Montserrat, sans-serif",
+                    }),
+                    menuList: (base) => ({
+                      ...base,
+                      fontFamily: "Montserrat, sans-serif",
+                    }),
                     menu: (base) => ({
                       ...base,
                       zIndex: 9999,

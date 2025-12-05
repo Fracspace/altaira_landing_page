@@ -261,6 +261,15 @@ const Hero = () => {
                     boxShadow: "none",
                     "&:hover": { borderColor: "#e5e7eb" },
                   }),
+                  input: (base) => ({
+                    ...base,
+                    color: "white",
+                    fontFamily: "Montserrat, sans-serif",
+                  }),
+                  menuList: (base) => ({
+                    ...base,
+                    fontFamily: "Montserrat, sans-serif",
+                  }),
                   placeholder: (base) => ({
                     ...base,
                     textAlign: "left",
