@@ -31,11 +31,11 @@ function AltairaProject() {
   //   setOpenMenu(!openMenu);
   // };
 
-  const budgetRanges = [
-    "$30,000 - $60,000",
-    "$60,000 - $120,000",
-    "Above $120,000",
-  ];
+  // const budgetRanges = [
+  //   "$30,000 - $60,000",
+  //   "$60,000 - $120,000",
+  //   "Above $120,000",
+  // ];
 
   const incomeRanges = [
     "$100,000 - $250,000",
@@ -49,7 +49,7 @@ function AltairaProject() {
     countryCode: "",
     phoneNumber: "",
     country: "",
-    budget: "",
+    // budget: "",
     occupation: "",
     designation: "",
     companyName: "",
@@ -249,7 +249,7 @@ function AltairaProject() {
                   <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
                     Enquire Now
                   </h2>
-                  <div className="scrollbar-hide h-[40vh] space-y-3 overflow-y-auto">
+                  <div className="scrollbar-hide lg:h-[75vh] h-auto space-y-3 overflow-y-auto">
                     <input
                       type="text"
                       id="name"
@@ -393,7 +393,7 @@ function AltairaProject() {
                       placeholder="Select Your Country*"
                     />
 
-                    <select
+                    {/* <select
                       name="budget"
                       id="budget"
                       value={formData.budget}
@@ -409,7 +409,7 @@ function AltairaProject() {
                           {range}
                         </option>
                       ))}
-                    </select>
+                    </select> */}
 
                     <input
                       type="text"

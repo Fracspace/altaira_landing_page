@@ -18,11 +18,11 @@ import "react-phone-input-2/lib/style.css";
 //   // "Varanasi",
 // ];
 
-const budgetRanges = [
-  "$30,000 - $60,000",
-  "$60,000 - $120,000",
-  "Above $120,000",
-];
+// const budgetRanges = [
+//   "$30,000 - $60,000",
+//   "$60,000 - $120,000",
+//   "Above $120,000",
+// ];
 
 const incomeRanges = [
   "$100,000 - $250,000",
@@ -62,7 +62,7 @@ const Hero = () => {
     countryCode: "",
     phoneNumber: "",
     country: "",
-    budget: "",
+   // budget: "",
     occupation: "",
     designation: "",
     companyName: "",
@@ -107,7 +107,7 @@ const Hero = () => {
         countryCode: "",
         phoneNumber: "",
         country: "",
-        budget: "",
+      //  budget: "",
         occupation: "",
         designation: "",
         companyName: "",
@@ -308,7 +308,7 @@ const Hero = () => {
               ))}
             </select> */}
 
-              <select
+              {/* <select
                 id="budget"
                 name="budget"
                 value={formData.budget}
@@ -328,7 +328,7 @@ const Hero = () => {
                     {budgetRange}
                   </option>
                 ))}
-              </select>
+              </select> */}
 
               <input
                 type="text"

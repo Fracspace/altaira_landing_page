@@ -66,16 +66,16 @@ const Footer = () => {
             {" "}
             <Phone className="mr-2" />
             <span
-              onClick={() => (window.location.href = "tel:+91-9880626111")}
-              className="cursor-pointer pr-2"
-            >
-              +91-98806 26111 {", "}
-            </span>{" "}
-            <span
               onClick={() => (window.location.href = "tel:+94760312345")}
               className="cursor-pointer pr-2"
             >
-              +94 76 031 2345
+              +94 76 031 2345{", "}
+            </span>
+            <span
+              onClick={() => (window.location.href = "tel:+91-9880626111")}
+              className="cursor-pointer pr-2"
+            >
+              +91-98806 26111
             </span>
           </li>
           <li className="font-poppins mt-3 flex text-white">
