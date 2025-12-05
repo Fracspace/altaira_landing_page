@@ -101,7 +101,7 @@ function AltairaProject() {
         countryCode: "",
         phoneNumber: "",
         country: "",
-        budget: "",
+        // budget: "",
         occupation: "",
         designation: "",
         companyName: "",
