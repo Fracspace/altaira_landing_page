@@ -137,7 +137,7 @@ const Invest = () => {
   };
   return (
     <>
-      <div className="bg-[#0a0a0a] ipadProPadding p-10 text-white">
+      <div className="ipadProPadding bg-[#0a0a0a] p-10 text-white">
         <div className="mt-4" id="amenities">
           <h2 className="font-montserrat text-center text-2xl font-semibold md:text-3xl">
             {" "}
@@ -148,7 +148,7 @@ const Invest = () => {
           <img
             src={invest1}
             alt="Why Invest?"
-            className="hidden h-[50vh] ipadProInvestImg w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
+            className="ipadProInvestImg hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
           />
           <div className="p-5">
             {/* <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">

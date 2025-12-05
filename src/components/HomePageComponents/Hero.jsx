@@ -372,7 +372,10 @@ const Hero = () => {
                 ))}
               </select>
 
-              <label htmlFor="checkboxField" className="flex items-start gap-1 text-white">
+              <label
+                htmlFor="checkboxField"
+                className="flex items-start gap-1 text-white"
+              >
                 <input
                   id="checkboxField"
                   type="checkbox"
@@ -380,7 +383,8 @@ const Hero = () => {
                   className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
                 />
                 <span className="font-montserrat text-sm">
-                  I consent to the Altaira team contacting me using the details I have provided.
+                  I consent to the Altaira team contacting me using the details
+                  I have provided.
                 </span>
               </label>
 

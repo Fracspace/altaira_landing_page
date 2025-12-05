@@ -63,7 +63,7 @@ function Experiences() {
 
   return (
     <div>
-      <div className="xl:min-h-screen ipadProPadding bg-black p-4 sm:p-8">
+      <div className="ipadProPadding bg-black p-4 sm:p-8 xl:min-h-screen">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
             <h1 className="font-montserrat mb-4 text-2xl font-semibold text-white sm:text-3xl">

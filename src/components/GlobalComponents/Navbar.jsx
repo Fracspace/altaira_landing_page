@@ -39,10 +39,10 @@ const NavBar = () => {
   // ];
 
   const budgetRanges = [
-  "$30,000 - $60,000",
-  "$60,000 - $120,000",
-  "Above $120,000",
-];
+    "$30,000 - $60,000",
+    "$60,000 - $120,000",
+    "Above $120,000",
+  ];
 
   const incomeRanges = [
     "$100,000 - $250,000",
@@ -174,7 +174,7 @@ const NavBar = () => {
 
       {isMobile && openMenu && (
         <div>
-          <ul className="font-montserrat w-full border-t border-white bg-black text-[#D4AF37] pb-4">
+          <ul className="font-montserrat w-full border-t border-white bg-black pb-4 text-[#D4AF37]">
             <li className="cursor-pointer pt-2 pb-2 text-center">
               <Link
                 onClick={() => setOpenMenu(false)}
@@ -440,7 +440,10 @@ const NavBar = () => {
                   ))}
                 </select>
 
-                <label htmlFor="checkboxField" className="flex items-start gap-1">
+                <label
+                  htmlFor="checkboxField"
+                  className="flex items-start gap-1"
+                >
                   <input
                     id="checkboxField"
                     type="checkbox"
@@ -448,7 +451,8 @@ const NavBar = () => {
                     className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
                   />
                   <span className="font-montserrat text-sm">
-                    I consent to the Altaira team contacting me using the details I have provided.
+                    I consent to the Altaira team contacting me using the
+                    details I have provided.
                   </span>
                 </label>
 

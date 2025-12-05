@@ -3,7 +3,7 @@ import altairaImg from "../../assets/altaira.webp";
 import villaImg from "../../assets/Villa2.webp";
 import restaurantImg from "../../assets/restaurant.webp";
 import altairaResortImg from "../../assets/resort2.jpg";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 import axios from "axios";
 
 import Select from "react-select";
@@ -31,11 +31,11 @@ function AltairaProject() {
   //   setOpenMenu(!openMenu);
   // };
 
-const budgetRanges = [
-  "$30,000 - $60,000",
-  "$60,000 - $120,000",
-  "Above $120,000",
-];
+  const budgetRanges = [
+    "$30,000 - $60,000",
+    "$60,000 - $120,000",
+    "Above $120,000",
+  ];
 
   const incomeRanges = [
     "$100,000 - $250,000",
@@ -117,7 +117,10 @@ const budgetRanges = [
 
   return (
     <div>
-      <div id="aboutAltairaProject" className="xl:min-h-screen pb-15 ipadProPadding altairaProjectHeight largeScreensAltairaProjectSectionHeight md:h-[110vh] bg-black px-4 py-13 sm:px-6 lg:px-8">
+      <div
+        id="aboutAltairaProject"
+        className="ipadProPadding altairaProjectHeight largeScreensAltairaProjectSectionHeight bg-black px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
+      >
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <h1 className="font-montserrat mb-16 text-center text-2xl font-semibold text-white md:text-3xl">
@@ -128,7 +131,7 @@ const budgetRanges = [
             {/* Left Column - Text Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="font-montserrat text-[#D4AF37] font-semibold mb-6 text-xl md:text-2xl">
+                <h2 className="font-montserrat mb-6 text-xl font-semibold text-[#D4AF37] md:text-2xl">
                   26 Acres of Elevated Living - Key Highlights:
                 </h2>
 
@@ -180,7 +183,12 @@ const budgetRanges = [
                     </span>
                   </li>
                 </ul>
-                <button onClick={handleShowForm} className="text-white flex items-center gap-1 rounded-md px-5 py-2 bg-[#D4AF37] mt-4 font-montserrat cursor-pointer">Register Now <ArrowRight /></button>
+                <button
+                  onClick={handleShowForm}
+                  className="font-montserrat mt-4 flex cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white"
+                >
+                  Register Now <ArrowRight />
+                </button>
               </div>
             </div>
 
@@ -440,13 +448,20 @@ const budgetRanges = [
                         Income Range*
                       </option>
                       {incomeRanges.map((range) => (
-                        <option key={range} value={range} className="bg-[#D4AF37]">
+                        <option
+                          key={range}
+                          value={range}
+                          className="bg-[#D4AF37]"
+                        >
                           {range}
                         </option>
                       ))}
                     </select>
 
-                    <label htmlFor="checkboxField" className="flex items-start gap-1">
+                    <label
+                      htmlFor="checkboxField"
+                      className="flex items-start gap-1"
+                    >
                       <input
                         id="checkboxField"
                         type="checkbox"
@@ -454,7 +469,8 @@ const budgetRanges = [
                         className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
                       />
                       <span className="font-montserrat text-sm">
-                        I consent to the Altaira team contacting me using the details I have provided.
+                        I consent to the Altaira team contacting me using the
+                        details I have provided.
                       </span>
                     </label>
 

@@ -3,7 +3,7 @@ import React from "react";
 function MapComponent() {
   return (
     <div>
-      <div className="bg-gradient-to-b from-gray-900 ipadProPadding to-gray-800 p-8 xl:min-h-screen">
+      <div className="ipadProPadding bg-gradient-to-b from-gray-900 to-gray-800 p-8 xl:min-h-screen">
         <div className="max-w-8xl mx-auto">
           <div className="mb-8 text-center">
             <h1 className="font-montserrat mb-2 text-2xl font-semibold text-white md:text-3xl">

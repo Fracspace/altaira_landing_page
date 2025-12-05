@@ -103,8 +103,7 @@ select option {
   color: black !important;
 }
 
-
-@media (min-width:1000px) and (max-width:1024px) and (min-height:1300px) {
+@media (min-width: 1000px) and (max-width: 1024px) and (min-height: 1300px) {
   .ipadProStyles {
     width: 50vw !important;
     height: 40vh !important;
@@ -118,7 +117,7 @@ select option {
     height: 40vh !important;
   }
 
-  .altairaProjectHeight{
+  .altairaProjectHeight {
     height: 60vh !important;
   }
   .ipadProHeroSectionHeight {
@@ -131,12 +130,11 @@ select option {
   }
 }
 
-
-@media (min-width:1680px) and (max-width:1920px){
-  .largeScreensHeroSectionHeight{
+@media (min-width: 1680px) and (max-width: 1920px) {
+  .largeScreensHeroSectionHeight {
     height: 85vh !important;
   }
-  .largeScreensAltairaProjectSectionHeight{
+  .largeScreensAltairaProjectSectionHeight {
     height: 40vh !important;
   }
 }
