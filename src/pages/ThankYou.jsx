@@ -77,17 +77,17 @@ export default function ThankYou() {
       </div>
 
       <div className="mt-20 flex w-full max-w-lg flex-col items-center justify-center rounded-2xl bg-white/10 p-8 shadow-xl backdrop-blur-sm">
-        <h1 className="mb-3 font-montserrat text-3xl font-bold text-white md:text-4xl">
+        <h1 className="font-montserrat mb-3 text-3xl font-bold text-white md:text-4xl">
           🎉 Thank You!
         </h1>
-        <p className="mb-8 font-poppins text-base text-gray-200 md:text-lg">
+        <p className="font-poppins mb-8 text-base text-gray-200 md:text-lg">
           Your submission has been received successfully. <br />
           Our team will reach out to you shortly.
         </p>
 
         <Link
           to="/"
-          className="rounded-lg font-montserrat bg-white px-6 py-3 font-semibold text-[#021265] shadow-md transition-all duration-300 hover:bg-gray-100"
+          className="font-montserrat rounded-lg bg-white px-6 py-3 font-semibold text-[#021265] shadow-md transition-all duration-300 hover:bg-gray-100"
         >
           Go Back to Home
         </Link>

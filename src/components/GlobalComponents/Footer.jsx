@@ -1,8 +1,8 @@
 import React from "react";
 import { Mail, Phone, MapPinCheck } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
-import { Globe } from 'lucide-react';
-import {Link as NavigationLink} from 'react-router-dom';
+import { Globe } from "lucide-react";
+import { Link as NavigationLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -30,14 +30,14 @@ const Footer = () => {
                 Home
               </ScrollLink>
             </li>
-            <li className="font-poppins cursor-pointer text-white">
-              <ScrollLink to="about" smooth={true} duration={500}>
-                About Us
+             <li className="font-poppins cursor-pointer text-white">
+              <ScrollLink to="amenities" smooth={true} duration={500}>
+                Highlights
               </ScrollLink>
             </li>
             <li className="font-poppins cursor-pointer text-white">
-              <ScrollLink to="amenities" smooth={true} duration={500}>
-                Amenities
+              <ScrollLink to="aboutAltairaProject" smooth={true} duration={500}>
+                About Us
               </ScrollLink>
             </li>
             <li className="font-poppins cursor-pointer text-white">
@@ -55,18 +55,32 @@ const Footer = () => {
         <ul className="space-y-1">
           <li className="font-poppins flex text-white">
             <Mail className="mr-2 text-white" />
-            altaira.lk@fracspace.com
+           <span className="cursor-pointer" onClick={()=>(window.open("mailto:altaira.lk@fracspace.com"))}>altaira.lk@fracspace.com</span> 
           </li>
           <li className="font-poppins mt-3 flex text-white">
             {" "}
             <Phone className="mr-2" />
-            <span className="pr-2">+91-98806 26111</span>
+            <span onClick={()=>(window.location.href="tel:+91-9880626111")} className="pr-2 cursor-pointer">+91-98806 26111 {", "}</span> <span onClick={()=>(window.location.href="tel:+94760312345")} className="pr-2 cursor-pointer">+94 76 031 2345</span>
           </li>
           <li className="font-poppins mt-3 flex text-white">
-            <MapPinCheck className="mr-2" /> Bulathkohupitiya, Sri Lanka
+            <MapPinCheck className="mr-2" /> Bulathkohupitiya{",  "} Sri Lanka
           </li>
-           <li className="font-poppins mt-3 flex text-white">
-            <Globe className="mr-2" /> <NavigationLink to="https://altaira.in" target="_blank" className="cursor-pointer mr-2">altaira.in ,</NavigationLink> <NavigationLink className="cursor-pointer" target="_blank" to="https://altaira.lk">altaira.lk</NavigationLink>
+          <li className="font-poppins mt-3 flex text-white">
+            <Globe className="mr-2" />{" "}
+            <NavigationLink
+              to="https://altaira.in"
+              target="_blank"
+              className="mr-2 cursor-pointer"
+            >
+              altaira.in ,
+            </NavigationLink>{" "}
+            <NavigationLink
+              className="cursor-pointer"
+              target="_blank"
+              to="https://altaira.lk"
+            >
+              altaira.lk
+            </NavigationLink>
           </li>
         </ul>
       </div>

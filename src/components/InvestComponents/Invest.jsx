@@ -137,15 +137,18 @@ const Invest = () => {
   };
   return (
     <>
-      <div className="p-10 mt-10 bg-[#0A0A0A] text-white">
+      <div className="bg-[#0a0a0a] ipadProPadding p-10 text-white">
         <div className="mt-4" id="amenities">
-          <h2 className="font-montserrat text-center text-2xl font-bold md:text-3xl">  Why Altaira is a winning Investment</h2>
+          <h2 className="font-montserrat text-center text-2xl font-semibold md:text-3xl">
+            {" "}
+            What the top 1% will be fighting over in 2026
+          </h2>
         </div>
-        <div className="pt-10 pl-5 flex flex-col md:flex-row items-center gap-10">
+        <div className="flex flex-col items-center gap-10 pt-10 pl-5 md:flex-row">
           <img
             src={invest1}
             alt="Why Invest?"
-            className="hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
+            className="hidden h-[50vh] ipadProInvestImg w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
           />
           <div className="p-5">
             {/* <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">
@@ -153,9 +156,12 @@ const Invest = () => {
         </h2> */}
             <div className="flex flex-col gap-6 lg:justify-center">
               <div className="mb-2 pb-2">
-                <div className="flex items-center justify-left gap-3">
-                  <img src={HighYield1} className="h-15 w-15 hidden md:block" alt="High Yield" />
-
+                <div className="justify-left flex items-center gap-3">
+                  <img
+                    src={HighYield1}
+                    className="h-10 w-10 md:h-15 md:w-15"
+                    alt="High Yield"
+                  />
                   <div className="flex flex-col">
                     <h2 className="font-montserrat mb-1 text-lg font-bold">
                       High-Yield Asset Class:
@@ -163,13 +169,14 @@ const Invest = () => {
                     <h2 className="font-poppins text-base">
                       Resort + villa model designed for stronger ROI.
                     </h2>
-                  </div> </div>
+                  </div>{" "}
+                </div>
               </div>
               <div className="mb-2 pb-2">
                 <div className="flex items-center justify-center gap-3">
                   <img
                     src={CurrencyAdvantage1}
-                    className="h-15 w-15 hidden md:block"
+                    className="h-10 w-10 md:h-15 md:w-15"
                     alt="Currency Advantage"
                   />
                   <div className="flex flex-col">
@@ -178,7 +185,8 @@ const Invest = () => {
                     </h2>
                     <h2 className="font-poppins text-base">
                       {" "}
-                      INR investments gain added appreciation from LKR value rise.
+                      INR investments gain added appreciation from LKR value
+                      rise.
                     </h2>
                   </div>
                 </div>
@@ -187,7 +195,7 @@ const Invest = () => {
                 <div className="flex items-center justify-center gap-3">
                   <img
                     src={TourismGrowth1}
-                    className="h-15 w-15 hidden md:block"
+                    className="h-10 w-10 md:h-15 md:w-15"
                     alt="Tourism Growth"
                   />
                   <div className="flex flex-col">
@@ -196,17 +204,23 @@ const Invest = () => {
                     </h2>
                     <h2 className="font-poppins text-base">
                       {" "}
-                      Sri Lanka aims for 4M+ arrivals by 2025-26, boosting demand.
+                      Sri Lanka aims for 4M+ arrivals by 2025-26, boosting
+                      demand.
                     </h2>
                   </div>
                 </div>
               </div>
               <div className="mb-2 pb-2">
-                <div className="flex items-center justify-left gap-3">
-                  <img src={EarlyEntry1} className="h-15 w-15 hidden md:block" alt="Early Entry" />
-
+                <div className="justify-left flex items-center gap-3">
+                  <img
+                    src={EarlyEntry1}
+                    className="h-10 w-10 md:h-15 md:w-15"
+                    alt="Early Entry"
+                  />
                   <div className="flex flex-col">
-                    <h2 className="font-montserrat mb-1 text-lg font-bold">Early Entry:</h2>
+                    <h2 className="font-montserrat mb-1 text-lg font-bold">
+                      Early Entry:
+                    </h2>
                     <h2 className="font-poppins text-base">
                       {" "}
                       Invest before valuations climb.
@@ -215,15 +229,20 @@ const Invest = () => {
                 </div>
               </div>
               <div>
-                <div className="flex items-center justify-left gap-3">
-                  <img src={RecurringReturns1} className="h-15 w-15 hidden md:block" alt="Returns" />
+                <div className="justify-left flex items-center gap-3">
+                  <img
+                    src={RecurringReturns1}
+                    className="h-10 w-10 md:h-15 md:w-15"
+                    alt="Returns"
+                  />
                   <div className="flex flex-col">
                     <h2 className="font-montserrat mb-1 text-lg font-bold">
                       Recurring Returns:
                     </h2>
                     <h2 className="font-poppins text-base">
                       {" "}
-                      Annual payouts, resale flexibility, and lifetime stay benefits.
+                      Annual payouts, resale flexibility, and lifetime stay
+                      benefits.
                     </h2>
                   </div>
                 </div>

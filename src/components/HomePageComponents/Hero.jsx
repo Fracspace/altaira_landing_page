@@ -19,16 +19,16 @@ import "react-phone-input-2/lib/style.css";
 // ];
 
 const budgetRanges = [
-  "₹25,00,000 - ₹50,00,000",
-  "₹50,00,000 - ₹10,000,000",
-  "Above ₹10,000,000",
+  "$30,000 - $60,000",
+  "$60,000 - $120,000",
+  "Above $120,000",
 ];
 
 const incomeRanges = [
   "$100,000 - $250,000",
   "$250,001 - $500,000",
   "$500,001+",
-]
+];
 
 // const purposeOfInvestment = [
 //   "Passive Income",
@@ -45,7 +45,7 @@ const Hero = () => {
     setValue(selected);
     setFormData((prev) => ({
       ...prev,
-      country: selected?.label||"",
+      country: selected?.label || "",
     }));
   };
 
@@ -62,13 +62,11 @@ const Hero = () => {
     countryCode: "",
     phoneNumber: "",
     country: "",
-    // preferredInvestmentLocation: "",
     budget: "",
     occupation: "",
     designation: "",
     companyName: "",
     incomeRange: "",
-    // purposeOfInvestment: "",
   });
 
   const handleChange = (e) => {
@@ -88,57 +86,59 @@ const Hero = () => {
     //   alert("Please verify the captcha");
     //   return;
     // }
-    // try {
-    //   const response = await axios.post(
-    //     "",
-    //     formData,
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         "x-api-key": "Fracspace@2024",
-    //       },
-    //     },
-    //   );
+    try {
+      const response = await axios.post(
+        "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "Fracspace@2024",
+          },
+        },
+      );
 
-    //   alert("Form submitted successfully");
-    //   // console.log("Form submitted:", formData);
-    //   setFormData({
-    //     name: "",
-    //     email: "",
-    //     phoneNumber: "",
-    //     country: null,
-    //     budget: "",
-    //     occupation: "",
-    //     designation: "",
-    //     companyName:"",
-    //     incomeRange: "",
-    //   });
+      alert("Form submitted successfully");
+      // console.log("Form submitted:", formData);
+      // console.log("Response:", response.data);
+      setFormData({
+        name: "",
+        email: "",
+        countryCode: "",
+        phoneNumber: "",
+        country: "",
+        budget: "",
+        occupation: "",
+        designation: "",
+        companyName: "",
+        incomeRange: "",
+      });
 
-    //   //setCaptchaToken("");
+      //setCaptchaToken("");
 
-    //   setTimeout(() => navigate("/thank-you"), 1000);
-    // } catch (error) {
-    //   console.log("error occured while submitting form", error);
-    // }
+      setTimeout(() => navigate("/thank-you"), 1000);
+    } catch (error) {
+      console.log("error occured while submitting form", error);
+    }
 
-    // Log the form data here
-    console.log("FORM DATA:", formData);
+    // // Log the form data here
+    // console.log("FORM DATA:", formData);
 
-    alert("Form submitted successfully!");
+    // alert("Form submitted successfully!");
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      countryCode: "",
-      phoneNumber: "",
-      country: "",
-      budget: "",
-      occupation: "",
-      designation: "",
-      companyName: "",
-      incomeRange: "",
-    });
+    // // Reset form
+    // setFormData({
+    //   name: "",
+    //   email: "",
+    //   countryCode: "",
+    //   phoneNumber: "",
+    //   country: "",
+    //   budget: "",
+    //   occupation: "",
+    //   designation: "",
+    //   companyName: "",
+    //   incomeRange: "",
+    // });
 
     // Navigate to thank-you page (optional)
     setTimeout(() => navigate("/thank-you"), 1000);
@@ -149,7 +149,7 @@ const Hero = () => {
   return (
     <div
       id="herosection"
-      className="custom-div relative h-[120vh] w-full overflow-hidden md:h-[120vh]"
+      className="custom-div ipadProHeroSectionHeight largeScreensHeroSectionHeight relative h-[120vh] w-full overflow-hidden md:h-[120vh]"
     >
       <video
         src={AltairaVideo}
@@ -161,22 +161,24 @@ const Hero = () => {
       ></video>
       <div className="custom-div absolute inset-0 flex flex-col items-center justify-center gap-10 bg-black/40 px-4 text-center text-white sm:px-10 lg:flex-row lg:justify-between lg:gap-20 lg:px-20">
         <div className="mt-30 w-full space-y-4 text-left md:mt-0 md:w-full lg:max-w-xl lg:space-y-6">
-          <h2 className="font-montserrat leading-relaxed md:font-semibold text-xl md:text-3xl">
-            Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the Adventure Capital of the Island.
+          <h2 className="font-montserrat ipadProText text-xl leading-relaxed md:text-3xl md:font-bold">
+            Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the
+            Adventure Capital of the Island.
           </h2>
-          <h1 className="font-poppins leading-relaxed md:font-medium text-lg md:text-2xl">
-            Limited early-stage investment slots with high projected returns driven by booming eco-tourism & post-2025 tourism surge.
+          <h1 className="font-poppins ipadProText text-lg leading-relaxed md:text-2xl md:font-normal">
+            Limited early-stage investment slots with high projected returns
+            driven by booming eco-tourism & post-2025 tourism surge.
           </h1>
         </div>
         <div className="w-full rounded-lg p-2 text-black md:w-[60vw] lg:h-auto lg:w-auto">
           <form
             onSubmit={handleSubmit}
-            className="flex h-auto flex-col gap-3 space-y-3 bg-[#0A0A0A8C] rounded-md p-4 text-black shadow-lg lg:w-[25vw]"
+            className="altara-mainForm ipadProStyles flex h-auto flex-col gap-3 space-y-3 rounded-md bg-[#0A0A0A8C] p-4 text-black shadow-lg lg:w-[25vw]"
           >
             <h2 className="font-montserrat text-xl font-bold text-white">
               Enquire Now
             </h2>
-            <div className="overflow-y-auto h-[40vh] space-y-3 scrollbar-hide">
+            <div className="scrollbar-hide h-[40vh] space-y-3 overflow-y-auto">
               <input
                 type="text"
                 id="name"
@@ -185,7 +187,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Name*"
                 required
-                className="w-full border text-white placeholder:font-montserrat rounded-md border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <input
@@ -196,7 +198,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Email*"
                 required
-                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               {/* <input
@@ -218,7 +220,9 @@ const Hero = () => {
                 onChange={(value, data) => {
                   const dial = data?.dialCode || "91";
                   const digitsOnly = value.replace(/\D/g, ""); // remove all non-digits
-                  const numberOnly = digitsOnly.startsWith(dial) ? digitsOnly.slice(dial.length) : digitsOnly;
+                  const numberOnly = digitsOnly.startsWith(dial)
+                    ? digitsOnly.slice(dial.length)
+                    : digitsOnly;
                   setFormData({
                     ...formData,
                     phoneNumber: numberOnly,
@@ -301,13 +305,17 @@ const Hero = () => {
                 value={formData.budget}
                 onChange={handleChange}
                 required
-                className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
+                className="font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               >
                 <option value="" disabled className="bg-[#D4AF37]">
                   Investment Budget Range*
                 </option>
                 {budgetRanges.map((budgetRange) => (
-                  <option key={budgetRange} value={budgetRange} className="bg-[#D4AF37]">
+                  <option
+                    key={budgetRange}
+                    value={budgetRange}
+                    className="bg-[#D4AF37]"
+                  >
                     {budgetRange}
                   </option>
                 ))}
@@ -321,7 +329,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Occupation*"
                 required
-                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <input
@@ -332,7 +340,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Designation*"
                 required
-                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <input
@@ -343,7 +351,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Company Name*"
                 required
-                className="w-full placeholder:font-montserrat text-white rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <select
@@ -352,7 +360,7 @@ const Hero = () => {
                 value={formData.incomeRange}
                 onChange={handleChange}
                 required
-                className="w-full font-montserrat bg-[#0A0A0A8C] rounded-md border text-white border-[#D4AF37] px-3 py-2 text-sm outline-none focus:ring-2 text-white focus:ring-[#c6af83]"
+                className="font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               >
                 <option value="" disabled className="bg-[#D4AF37]">
                   Income Range*
@@ -363,6 +371,18 @@ const Hero = () => {
                   </option>
                 ))}
               </select>
+
+              <label htmlFor="checkboxField" className="flex items-start gap-1 text-white">
+                <input
+                  id="checkboxField"
+                  type="checkbox"
+                  required
+                  className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
+                />
+                <span className="font-montserrat text-sm">
+                  I consent to the Altaira team contacting me using the details I have provided.
+                </span>
+              </label>
 
               {/* <select
               id="purposeOfInvestment"
@@ -383,18 +403,16 @@ const Hero = () => {
             </select> */}
 
               {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} /> */}
-
             </div>
 
             <button
               type="submit"
-              className="w-full font-montserrat cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+              className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
             >
               Submit
             </button>
           </form>
         </div>
-
       </div>
     </div>
   );

@@ -63,13 +63,17 @@ function Experiences() {
 
   return (
     <div>
-      <div className="min-h-screen bg-black p-4 sm:p-8">
+      <div className="xl:min-h-screen ipadProPadding bg-black p-4 sm:p-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <h1 className="mb-4 text-4xl font-bold text-white sm:text-5xl">
-              Altaira Experiences
+            <h1 className="font-montserrat mb-4 text-2xl font-semibold text-white sm:text-3xl">
+              See What You’re Investing In
             </h1>
-            <p className="text-lg text-gray-300"></p>
+            <p className="text-lg text-gray-300">
+              <em className="text-[#D4AF37]">
+                Sky villas, Exclusive wellness Resort
+              </em>
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -102,11 +106,11 @@ function Experiences() {
                         : "translate-y-8 opacity-0"
                     }`}
                   >
-                    <h3 className="mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
+                    <h3 className="font-montserrat mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
                       {item.title}
                     </h3>
 
-                    <p className="text-center text-sm text-white/90 sm:text-base">
+                    <p className="font-poppins text-center text-sm text-white/90 sm:text-base">
                       {item.description}
                     </p>
 
@@ -127,7 +131,7 @@ function Experiences() {
                       isHovered ? "opacity-0" : "opacity-100"
                     }`}
                   >
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="font-montserrat text-lg font-semibold text-white">
                       {item.title}
                     </h3>
                   </div>

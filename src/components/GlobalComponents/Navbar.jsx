@@ -5,7 +5,6 @@ import { useMediaQuery } from "@react-hook/media-query";
 import { Link } from "react-scroll";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import logo2 from "../../assets/Logo/logo2.png";
 
 import Select from "react-select";
 import countryList from "react-select-country-list";
@@ -40,9 +39,15 @@ const NavBar = () => {
   // ];
 
   const budgetRanges = [
-    "₹5,00,000 - ₹10,00,000",
-    "₹10,00,000 - ₹25,00,000",
-    "Above ₹25,00,000",
+  "$30,000 - $60,000",
+  "$60,000 - $120,000",
+  "Above $120,000",
+];
+
+  const incomeRanges = [
+    "$100,000 - $250,000",
+    "$250,001 - $500,000",
+    "$500,001+",
   ];
 
   // const purposeOfInvestment = [
@@ -55,26 +60,32 @@ const NavBar = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    countryCode: "",
     phoneNumber: "",
     country: "",
-    // preferredInvestmentLocation: "",
-    Budget: "",
-    // purposeOfInvestment: "",
+    budget: "",
+    occupation: "",
+    designation: "",
+    companyName: "",
+    incomeRange: "",
   });
 
   const handleShowForm = () => setShowForm(true);
   const handleCloseForm = () => setShowForm(false);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://apitest.fracspace.com/api/v1/webApi/enquiryFormRegardingCoownership",
+        "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
         formData,
         {
           headers: {
@@ -101,10 +112,14 @@ const NavBar = () => {
       setFormData({
         name: "",
         email: "",
+        countryCode: "",
         phoneNumber: "",
-        //  preferredInvestmentLocation: "",
-        Budget: "",
-        //  purposeOfInvestment: "",
+        country: "",
+        budget: "",
+        occupation: "",
+        designation: "",
+        companyName: "",
+        incomeRange: "",
       });
 
       setTimeout(() => navigate("/thank-you"), 1000);
@@ -116,35 +131,35 @@ const NavBar = () => {
 
   return (
     <nav className="fixed z-20 h-[15vh] w-full">
-      <div className="flex h-[13vh] items-center justify-between bg-black/50 px-3">
-        <div className="font-primary flex items-center justify-center">
+      <div className="flex h-[17vh] items-center justify-between bg-black/50 px-3 md:h-[13vh]">
+        <div className="flex items-center justify-center">
           <Link to="herosection" smooth={true} duration={500}>
             <img
               alt="Altaira logo"
-              className="h-[20vh] w-[30vw] cursor-pointer object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
+              className="h-[12vh] w-[30vw] cursor-pointer object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
               src={AltairaLogo}
             />
           </Link>
         </div>
 
         {!isMobile && (
-          <ul className="flex md:mt-4">
-            <li className="font-poppins cursor-pointer pr-8 text-white">
+          <ul className="font-montserrat flex md:mt-4">
+            <li className="cursor-pointer pr-8 text-white">
               <Link to="herosection" smooth={true} duration={500}>
                 Home
               </Link>
             </li>
-            <li className="font-poppins cursor-pointer pr-8 text-white">
-              <Link to="about" smooth={true} duration={500}>
+            <li className="cursor-pointer pr-8 text-white">
+              <Link to="amenities" smooth={true} duration={500}>
+                Highlights
+              </Link>
+            </li>
+            <li className="cursor-pointer pr-8 text-white">
+              <Link to="aboutAltairaProject" smooth={true} duration={500}>
                 About Us
               </Link>
             </li>
-            <li className="font-poppins cursor-pointer pr-8 text-white">
-              <Link to="amenities" smooth={true} duration={500}>
-                Amenities
-              </Link>
-            </li>
-            <li className="font-poppins cursor-pointer pr-8 text-white">
+            <li className="cursor-pointer pr-8 text-white">
               <span onClick={handleShowForm}>Enquire Now</span>
             </li>
           </ul>
@@ -159,8 +174,8 @@ const NavBar = () => {
 
       {isMobile && openMenu && (
         <div>
-          <ul className="w-full border-t border-white bg-[#c6af83] pb-4">
-            <li className="font-poppins cursor-pointer pt-2 pb-2 text-center text-white">
+          <ul className="font-montserrat w-full border-t border-white bg-black text-[#D4AF37] pb-4">
+            <li className="cursor-pointer pt-2 pb-2 text-center">
               <Link
                 onClick={() => setOpenMenu(false)}
                 to="herosection"
@@ -170,28 +185,28 @@ const NavBar = () => {
                 Home
               </Link>
             </li>
-            <li className="font-poppins cursor-pointer pb-2 text-center text-white">
-              <Link
-                onClick={() => setOpenMenu(false)}
-                to="about"
-                smooth
-                duration={500}
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="font-poppins cursor-pointer pb-2 text-center text-white">
+            <li className="cursor-pointer pb-2 text-center">
               <Link
                 onClick={() => setOpenMenu(false)}
                 to="amenities"
                 smooth
                 duration={500}
               >
-                Amenities
+                Highlights
+              </Link>
+            </li>
+            <li className="cursor-pointer pb-2 text-center">
+              <Link
+                onClick={() => setOpenMenu(false)}
+                to="aboutAltairaProject"
+                smooth
+                duration={500}
+              >
+                About Us
               </Link>
             </li>
             <li
-              className="font-poppins cursor-pointer pb-2 text-center text-white"
+              className="cursor-pointer pb-2 text-center"
               onClick={() => {
                 setOpenMenu(false);
                 handleShowForm();
@@ -217,21 +232,24 @@ const NavBar = () => {
               className="flex flex-col gap-3 space-y-3"
               onSubmit={handleSubmit}
             >
-              <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#c6af83]">
+              <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
                 Enquire Now
               </h2>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Name*"
-                required
-                className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
-              />
+              <div className="scrollbar-hide h-[40vh] space-y-3 overflow-y-auto">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Name*"
+                  required
+                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                />
 
-              {/* <input
+                {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
+
+                {/* <input
                 type="tel"
                 name="phoneNumber"
                 value={formData.phoneNumber}
@@ -242,17 +260,19 @@ const NavBar = () => {
                 className="w-full border-b border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 text-sm"
               /> */}
 
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email*"
-                required
-                className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
-              />
-              {/* 
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email*"
+                  required
+                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                />
+
+                {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
+                {/* 
               <select
                 name="preferredInvestmentLocation"
                 value={formData.preferredInvestmentLocation}
@@ -270,7 +290,7 @@ const NavBar = () => {
                 ))}
               </select> */}
 
-              <PhoneInput
+                {/* <PhoneInput
                 country={"in"}
                 enableSearch={true}
                 value={formData.phoneNumber}
@@ -289,60 +309,150 @@ const NavBar = () => {
                 buttonClass=""
                 dropdownClass="text-sm"
                 className="w-full"
-              />
+              /> */}
 
-              <Select
-                options={options}
-                name="country"
-                id="country"
-                value={formData.country}
-                onChange={changeHandler}
-                className="react-select-container w-full"
-                classNamePrefix="react-select"
-                styles={{
-                  control: (base) => ({
-                    ...base,
-                    backgroundColor: "#f3f4f6",
-                    borderColor: "#e5e7eb",
-                    paddingLeft: "0.5rem",
-                    paddingRight: "0.5rem",
-                    paddingTop: "0.25rem",
-                    paddingBottom: "0.25rem",
-                    fontSize: "0.875rem",
-                    boxShadow: "none",
-                    "&:hover": { borderColor: "#e5e7eb" },
-                  }),
-                  placeholder: (base) => ({
-                    ...base,
-                    textAlign: "left",
-                    marginLeft: "0px",
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    zIndex: 9999,
-                  }),
-                }}
-                placeholder="Select Your Country*"
-              />
+                <PhoneInput
+                  country={"in"}
+                  enableSearch={true}
+                  value={`${formData.countryCode || "+91"}${formData.phoneNumber}`}
+                  onChange={(value, data) => {
+                    const dial = data?.dialCode || "91";
+                    const digitsOnly = value.replace(/\D/g, ""); // remove all non-digits
+                    const numberOnly = digitsOnly.startsWith(dial)
+                      ? digitsOnly.slice(dial.length)
+                      : digitsOnly;
+                    setFormData({
+                      ...formData,
+                      phoneNumber: numberOnly,
+                      countryCode: `${dial}`,
+                    });
+                  }}
+                  placeholder="Mobile"
+                  inputClass="w-full"
+                  containerClass="w-full rounded-md text-white placeholder:font-montserrat"
+                  buttonClass=""
+                  dropdownClass="text-sm"
+                  required
+                  className="w-full"
+                />
 
-              <select
-                name="Budget"
-                value={formData.Budget}
-                onChange={handleChange}
-                required
-                className="w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500 outline-none focus:ring-2 focus:ring-[#c6af83]"
-              >
-                <option value="" disabled>
-                  Investment Budget Range
-                </option>
-                {budgetRanges.map((range) => (
-                  <option key={range} value={range}>
-                    {range}
+                <Select
+                  options={options}
+                  name="country"
+                  id="country"
+                  value={value}
+                  onChange={changeHandler}
+                  className="react-select-container w-full"
+                  classNamePrefix="react-select"
+                  styles={{
+                    control: (base) => ({
+                      ...base,
+                      backgroundColor: "#f3f4f6",
+                      borderColor: "#e5e7eb",
+                      paddingLeft: "0.5rem",
+                      paddingRight: "0.5rem",
+                      paddingTop: "0.25rem",
+                      paddingBottom: "0.25rem",
+                      fontSize: "0.875rem",
+                      boxShadow: "none",
+                      "&:hover": { borderColor: "#e5e7eb" },
+                    }),
+                    placeholder: (base) => ({
+                      ...base,
+                      textAlign: "left",
+                      marginLeft: "0px",
+                      fontFamily: "Montserrat, sans-serif",
+                    }),
+                    menu: (base) => ({
+                      ...base,
+                      zIndex: 9999,
+                    }),
+                  }}
+                  placeholder="Select Your Country*"
+                />
+
+                <select
+                  name="budget"
+                  id="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  required
+                  className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.budget === "" ? "text-gray-500" : "text-black"}`}
+                >
+                  <option value="" disabled>
+                    Investment Budget Range*
                   </option>
-                ))}
-              </select>
+                  {budgetRanges.map((range) => (
+                    <option key={range} value={range}>
+                      {range}
+                    </option>
+                  ))}
+                </select>
 
-              {/* <select
+                <input
+                  type="text"
+                  id="occupation"
+                  name="occupation"
+                  value={formData.occupation}
+                  onChange={handleChange}
+                  placeholder="Occupation*"
+                  required
+                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                />
+
+                <input
+                  type="text"
+                  id="designation"
+                  name="designation"
+                  value={formData.designation}
+                  onChange={handleChange}
+                  placeholder="Designation*"
+                  required
+                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                />
+
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  value={formData.companyName}
+                  onChange={handleChange}
+                  placeholder="Company Name*"
+                  required
+                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                />
+
+                <select
+                  id="incomeRange"
+                  name="incomeRange"
+                  value={formData.incomeRange}
+                  onChange={handleChange}
+                  required
+                  className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.incomeRange === "" ? "text-gray-500" : "text-black"}`}
+                >
+                  <option value="" disabled className="bg-[#D4AF37]">
+                    Income Range*
+                  </option>
+                  {incomeRanges.map((range) => (
+                    <option key={range} value={range} className="bg-[#D4AF37]">
+                      {range}
+                    </option>
+                  ))}
+                </select>
+
+                <label htmlFor="checkboxField" className="flex items-start gap-1">
+                  <input
+                    id="checkboxField"
+                    type="checkbox"
+                    required
+                    className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
+                  />
+                  <span className="font-montserrat text-sm">
+                    I consent to the Altaira team contacting me using the details I have provided.
+                  </span>
+                </label>
+
+                {/* <select
                 name="purposeOfInvestment"
                 value={formData.purposeOfInvestment}
                 onChange={handleChange}
@@ -359,12 +469,13 @@ const NavBar = () => {
                 ))}
               </select> */}
 
-              <button
-                type="submit"
-                className="w-full cursor-pointer rounded bg-[#c6af83] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
-              >
-                Submit
-              </button>
+                <button
+                  type="submit"
+                  className="w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+                >
+                  Submit
+                </button>
+              </div>
             </form>
           </div>
         </div>
