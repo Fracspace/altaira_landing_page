@@ -300,10 +300,6 @@ const Hero = () => {
                     color: "white",
                     fontFamily: "Montserrat, sans-serif",
                   }),
-                  menu: (base) => ({
-                    ...base,
-                    zIndex: 9999,
-                  }),
                 }}
                 placeholder="Select Your Country*"
               />
