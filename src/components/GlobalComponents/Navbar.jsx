@@ -12,6 +12,8 @@ import countryList from "react-select-country-list";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 const NavBar = () => {
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
@@ -24,13 +26,22 @@ const NavBar = () => {
     setValue(selected);
     setFormData((prev) => ({
       ...prev,
-      country: selected,
+      country: selected?.label || "",
     }));
   };
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
+    const [captchaToken, setCaptchaToken] = useState("");
+    const handleCaptcha = (value) => {
+      setCaptchaToken(value);
+      setFormData((prev)=>({
+        ...prev,
+        token:value,
+      }))
+    }
 
   // const investmentLocations = [
   //   "Hyderabad",
@@ -63,11 +74,12 @@ const NavBar = () => {
     countryCode: "",
     phoneNumber: "",
     country: "",
-    // budget: "",
+    budget: "",
     occupation: "",
     designation: "",
     companyName: "",
     incomeRange: "",
+    token:"",
   });
 
   const handleShowForm = () => setShowForm(true);
@@ -83,6 +95,11 @@ const NavBar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+     if (!captchaToken) {
+      alert("Please verify the captcha");
+      return;
+    }
+    //console.log("form data",formData);
     try {
       await axios.post(
         "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
@@ -115,14 +132,17 @@ const NavBar = () => {
         countryCode: "",
         phoneNumber: "",
         country: "",
-        // budget: "",
+        budget: "",
         occupation: "",
         designation: "",
         companyName: "",
         incomeRange: "",
+        token:"",
       });
 
-      setTimeout(() => navigate("/thank-you"), 1000);
+      setCaptchaToken("");
+
+     // setTimeout(() => navigate("/thank-you"), 1000);
       handleCloseForm();
     } catch (error) {
       console.log("error occurred while submitting form", error);
@@ -235,7 +255,7 @@ const NavBar = () => {
               <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
                 Enquire Now
               </h2>
-              <div className="scrollbar-hide lg:h-[75vh] h-auto space-y-3 overflow-y-auto">
+              <div className="scrollbar-hide mobileScreenResponsive lg:h-[75vh] h-auto space-y-3 overflow-y-auto">
                 <input
                   type="text"
                   id="name"
@@ -244,7 +264,7 @@ const NavBar = () => {
                   onChange={handleChange}
                   placeholder="Name*"
                   required
-                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                  className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                 />
 
                 {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
@@ -268,7 +288,7 @@ const NavBar = () => {
                   onChange={handleChange}
                   placeholder="Email*"
                   required
-                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                  className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                 />
 
                 {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
@@ -329,7 +349,7 @@ const NavBar = () => {
                   }}
                   placeholder="Mobile"
                   inputClass="w-full"
-                  containerClass="w-full rounded-md text-white placeholder:font-montserrat"
+                  containerClass="w-full rounded-md text-white font-montserrat placeholder:font-montserrat"
                   buttonClass=""
                   dropdownClass="text-sm"
                   required
@@ -405,7 +425,7 @@ const NavBar = () => {
                   onChange={handleChange}
                   placeholder="Occupation*"
                   required
-                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                  className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                 />
 
                 <input
@@ -416,7 +436,7 @@ const NavBar = () => {
                   onChange={handleChange}
                   placeholder="Designation*"
                   required
-                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                  className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                 />
 
                 <input
@@ -427,7 +447,7 @@ const NavBar = () => {
                   onChange={handleChange}
                   placeholder="Company Name*"
                   required
-                  className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                  className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                 />
 
                 <select
@@ -459,8 +479,9 @@ const NavBar = () => {
                     className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
                   />
                   <span className="font-montserrat text-sm">
-                    I consent to the Altaira team contacting me using the
-                    details I have provided.
+                    {/* I consent to the Altaira team contacting me using the
+                    details I have provided. */}
+                      I agree to <span className="cursor-pointer underline text-blue-950" onClick={()=>window.open("https://altaira.lk/terms-and-conditions/")}>Terms</span> and <span className="cursor-pointer underline text-blue-950" onClick={()=>window.open("https://altaira.lk/privacypolicy/")}>Privacy Policy</span>.
                   </span>
                 </label>
 
@@ -481,9 +502,11 @@ const NavBar = () => {
                 ))}
               </select> */}
 
+               <ReCAPTCHA sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5" onChange={handleCaptcha} />
+
                 <button
                   type="submit"
-                  className="w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+                  className="w-full cursor-pointer font-montserrat rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
                 >
                   Submit
                 </button>

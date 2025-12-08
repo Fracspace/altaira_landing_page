@@ -45,6 +45,21 @@ const Footer = () => {
                 Enquire Now
               </ScrollLink>
             </li>
+             <li className="font-poppins cursor-pointer text-white">
+              <NavigationLink to="https://altaira.lk/terms-and-conditions/" target="_blank">
+                Terms of Service
+              </NavigationLink>
+            </li>
+             <li className="font-poppins cursor-pointer text-white">
+              <NavigationLink to="https://altaira.lk/privacypolicy/" target="_blank">
+                Privacy Policy
+              </NavigationLink>
+            </li>
+             <li className="font-poppins cursor-pointer text-white">
+              <NavigationLink to="https://altaira.lk/refunds/" target="_blank">
+                Refunds & Cancellations
+              </NavigationLink>
+            </li>
           </ul>
         </div>
       </div>
@@ -65,6 +80,7 @@ const Footer = () => {
           <li className="font-poppins mt-3 flex text-white">
             {" "}
             <Phone className="mr-2" />
+            <div className="contactDiv">
             <span
               onClick={() => (window.location.href = "tel:+94760312345")}
               className="cursor-pointer pr-2"
@@ -77,6 +93,7 @@ const Footer = () => {
             >
               +91-98806 26111
             </span>
+            </div>
           </li>
           <li className="font-poppins mt-3 flex text-white">
             <MapPinCheck className="mr-2" /> Bulathkohupitiya{",  "} Sri Lanka

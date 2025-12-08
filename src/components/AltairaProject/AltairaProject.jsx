@@ -2,7 +2,6 @@ import React, { useState, useMemo } from "react";
 import altairaImg from "../../assets/altaira.webp";
 import villaImg from "../../assets/Villa2.webp";
 import restaurantImg from "../../assets/restaurant.webp";
-import altairaResortImg from "../../assets/resort2.jpg";
 import { ArrowRight } from "lucide-react";
 import axios from "axios";
 
@@ -12,20 +11,33 @@ import countryList from "react-select-country-list";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
+import ReCAPTCHA from "react-google-recaptcha";
+import { useNavigate } from "react-router-dom";
+
 function AltairaProject() {
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
   // const isMobile = useMediaQuery("(max-width:820px)");
-  const [openMenu, setOpenMenu] = useState(false);
+  //const [openMenu, setOpenMenu] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
   const changeHandler = (selected) => {
     setValue(selected);
     setFormData((prev) => ({
       ...prev,
-      country: selected,
+      country: selected?.label || "",
     }));
   };
+
+  const navigate = useNavigate();
+  const [captchaToken, setCaptchaToken] = useState("");
+  const handleCaptcha = (value) => {
+    setCaptchaToken(value);
+    setFormData((prev)=>({
+      ...prev,
+      token:value,
+    }))
+  }
 
   // const toggleMenu = () => {
   //   setOpenMenu(!openMenu);
@@ -49,11 +61,12 @@ function AltairaProject() {
     countryCode: "",
     phoneNumber: "",
     country: "",
-    // budget: "",
+    budget: "",
     occupation: "",
     designation: "",
     companyName: "",
     incomeRange: "",
+    token:"",
   });
 
   const handleShowForm = () => setShowForm(true);
@@ -69,8 +82,14 @@ function AltairaProject() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!captchaToken) {
+      alert("Please verify the captcha");
+      return;
+    }
+
+   // console.log("form data",formData);
     try {
-      await axios.post(
+      const response = await axios.post(
         "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
         formData,
         {
@@ -95,20 +114,25 @@ function AltairaProject() {
 
       alert("Form data submitted successfully");
 
+     // console.log("response", response.data);
+
       setFormData({
         name: "",
         email: "",
         countryCode: "",
         phoneNumber: "",
         country: "",
-        // budget: "",
+        budget: "",
         occupation: "",
         designation: "",
         companyName: "",
         incomeRange: "",
+        token:"",
       });
 
-      setTimeout(() => navigate("/thank-you"), 1000);
+      setCaptchaToken("");
+
+     // setTimeout(() => navigate("/thank-you"), 1000);
       handleCloseForm();
     } catch (error) {
       console.log("error occurred while submitting form", error);
@@ -243,7 +267,7 @@ function AltairaProject() {
                 </button>
 
                 <form
-                  className="flex flex-col gap-3 space-y-3"
+                  className="flex flex-col iphoneSEHeight gap-3 space-y-3"
                   onSubmit={handleSubmit}
                 >
                   <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
@@ -258,7 +282,7 @@ function AltairaProject() {
                       onChange={handleChange}
                       placeholder="Name*"
                       required
-                      className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                     />
 
                     {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
@@ -282,7 +306,7 @@ function AltairaProject() {
                       onChange={handleChange}
                       placeholder="Email*"
                       required
-                      className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                     />
 
                     {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
@@ -419,7 +443,7 @@ function AltairaProject() {
                       onChange={handleChange}
                       placeholder="Occupation*"
                       required
-                      className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                     />
 
                     <input
@@ -430,7 +454,7 @@ function AltairaProject() {
                       onChange={handleChange}
                       placeholder="Designation*"
                       required
-                      className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                     />
 
                     <input
@@ -441,7 +465,7 @@ function AltairaProject() {
                       onChange={handleChange}
                       placeholder="Company Name*"
                       required
-                      className="placeholder:font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
                     />
 
                     <select
@@ -477,31 +501,17 @@ function AltairaProject() {
                         className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
                       />
                       <span className="font-montserrat text-sm">
-                        I consent to the Altaira team contacting me using the
-                        details I have provided.
+                        {/* I consent to the Altaira team contacting me using the
+                        details I have provided. */}
+                        I agree to <span className="cursor-pointer underline text-blue-950" onClick={()=>window.open("https://altaira.lk/terms-and-conditions/")}>Terms</span> and <span className="cursor-pointer underline text-blue-950" onClick={()=>window.open("https://altaira.lk/privacypolicy/")}>Privacy Policy</span>.
                       </span>
                     </label>
 
-                    {/* <select
-                name="purposeOfInvestment"
-                value={formData.purposeOfInvestment}
-                onChange={handleChange}
-                required
-                className="w-full border-b border-gray-300 px-3 py-2 text-sm"
-              >
-                <option value="" disabled>
-                  Purpose of Investment
-                </option>
-                {purposeOfInvestment.map((reason) => (
-                  <option key={reason} value={reason}>
-                    {reason}
-                  </option>
-                ))}
-              </select> */}
+                    <ReCAPTCHA sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5" onChange={handleCaptcha} />
 
                     <button
                       type="submit"
-                      className="w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+                      className="w-full cursor-pointer font-montserrat rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
                     >
                       Submit
                     </button>

@@ -1,17 +1,11 @@
-import React, { useMemo, useState, useRef } from "react";
+import React, { useMemo, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import HighYield from "../../assets/Invest/HighYield.png";
 import HighYield1 from "../../assets/Invest/HighYield1.png";
-import invest from "../../assets/Invest/invest.jpeg";
 import invest1 from "../../assets/Invest/invest1.png";
-import EarlyEntry from "../../assets/Invest/EarlyEntry.png";
 import EarlyEntry1 from "../../assets/Invest/EarlyEntry1.png";
-import TourismGrowth from "../../assets/Invest/TourismGrowth.png";
 import CurrencyAdvantage1 from "../../assets/Invest/CurrencyAdvantage1.png";
 import TourismGrowth1 from "../../assets/Invest/TourismGrowth1.png";
-import Currency from "../../assets/Invest/Currency.png";
-import Returns from "../../assets/Invest/Returns.png";
 import RecurringReturns1 from "../../assets/Invest/RecurringReturns1.png";
 
 import PhoneInput from "react-phone-input-2";
@@ -19,8 +13,6 @@ import "react-phone-input-2/lib/style.css";
 
 import Select from "react-select";
 import countryList from "react-select-country-list";
-
-//import ReCAPTCHA from "react-google-recaptcha";
 
 const Invest = () => {
   const [value, setValue] = useState("");
@@ -122,9 +114,7 @@ const Invest = () => {
         email: "",
         phoneNumber: "",
         country: "",
-        // preferredInvestmentLocation: "",
         Budget: "",
-        // purposeOfInvestment: "",
       });
 
       // setCaptchaToken("");
@@ -151,9 +141,6 @@ const Invest = () => {
             className="ipadProInvestImg hidden h-[50vh] w-[100vw] rounded-md object-cover md:h-[70vh] md:w-[40vw] lg:block"
           />
           <div className="p-5">
-            {/* <h2 className="font-montserrat mb-6 pb-5 text-center text-2xl font-bold md:text-3xl">
-          Why Altaira is a winning Investment?
-        </h2> */}
             <div className="flex flex-col gap-6 lg:justify-center">
               <div className="mb-2 pb-2">
                 <div className="justify-left flex items-center gap-3">

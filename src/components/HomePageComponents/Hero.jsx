@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from "react";
+import React, { useMemo, useState } from "react";
 import AltairaVideo from "../../videos/AltairaVideo.mp4";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ import countryList from "react-select-country-list";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-// import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 
 // const investmentLocations = [
 //   "Hyderabad",
@@ -49,24 +49,29 @@ const Hero = () => {
     }));
   };
 
-  // const recaptcha =useRef(null);
+  //  const recaptcha =useRef(null);
 
   const navigate = useNavigate();
-  // const [captchaToken, setCaptchaToken] = useState("");
-  // const handleCaptcha = (value) => {
-  //   setCaptchaToken(value)
-  // }
+  const [captchaToken, setCaptchaToken] = useState("");
+  const handleCaptcha = (value) => {
+    setCaptchaToken(value);
+    setFormData((prev)=>({
+      ...prev,
+      token:value,
+    }))
+  }
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     countryCode: "",
     phoneNumber: "",
     country: "",
-   // budget: "",
+    budget: "",
     occupation: "",
     designation: "",
     companyName: "",
     incomeRange: "",
+    token:"",
   });
 
   const handleChange = (e) => {
@@ -82,10 +87,12 @@ const Hero = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); //prevent default form submission
 
-    // if (!captchaToken) {
-    //   alert("Please verify the captcha");
-    //   return;
-    // }
+    if (!captchaToken) {
+      alert("Please verify the captcha");
+      return;
+    }
+    // console.log("formdata:",formData);
+    // console.log("consoling formadata")
     try {
       const response = await axios.post(
         "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
@@ -100,23 +107,24 @@ const Hero = () => {
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
-      // console.log("Response:", response.data);
+     // console.log("Response:", response.data);
       setFormData({
         name: "",
         email: "",
         countryCode: "",
         phoneNumber: "",
         country: "",
-      //  budget: "",
+        budget: "",
         occupation: "",
         designation: "",
         companyName: "",
         incomeRange: "",
+        token:"",
       });
 
-      //setCaptchaToken("");
+      setCaptchaToken("");
 
-      setTimeout(() => navigate("/thank-you"), 1000);
+      // setTimeout(() => navigate("/thank-you"), 1000);
     } catch (error) {
       console.log("error occured while submitting form", error);
     }
@@ -140,10 +148,10 @@ const Hero = () => {
     //   incomeRange: "",
     // });
 
-    // Navigate to thank-you page (optional)
-    setTimeout(() => navigate("/thank-you"), 1000);
+    // // Navigate to thank-you page (optional)
+    // setTimeout(() => navigate("/thank-you"), 1000);
 
-    // handleCloseForm();
+    // // handleCloseForm();
   };
 
   return (
@@ -187,7 +195,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Name*"
                 required
-                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <input
@@ -198,7 +206,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Email*"
                 required
-                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               {/* <input
@@ -231,7 +239,7 @@ const Hero = () => {
                 }}
                 placeholder="Mobile"
                 inputClass="w-full"
-                containerClass="w-full rounded-md text-white placeholder:font-montserrat"
+                containerClass="w-full rounded-md text-white font-montserrat placeholder:font-montserrat"
                 buttonClass=""
                 dropdownClass="text-sm"
                 required
@@ -338,7 +346,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Occupation*"
                 required
-                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <input
@@ -349,7 +357,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Designation*"
                 required
-                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <input
@@ -360,7 +368,7 @@ const Hero = () => {
                 onChange={handleChange}
                 placeholder="Company Name*"
                 required
-                className="placeholder:font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+                className="placeholder:font-montserrat font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white placeholder-white outline-none focus:ring-2 focus:ring-[#c6af83]"
               />
 
               <select
@@ -392,30 +400,13 @@ const Hero = () => {
                   className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
                 />
                 <span className="font-montserrat text-sm">
-                  I consent to the Altaira team contacting me using the details
-                  I have provided.
+                  {/* I consent to the Altaira team contacting me using the details
+                  I have provided. */}
+                     I agree to <span className="cursor-pointer underline" onClick={()=>window.open("https://altaira.lk/terms-and-conditions/")}>Terms</span> and <span className="cursor-pointer underline" onClick={()=>window.open("https://altaira.lk/privacypolicy/")}>Privacy Policy</span>.
                 </span>
               </label>
 
-              {/* <select
-              id="purposeOfInvestment"
-              name="purposeOfInvestment"
-              value={formData.purposeOfInvestment}
-              onChange={handleChange}
-              required
-              className="w-full text-sm border-b-1 border-gray-300 bg-transparent focus:outline-none focus:border-blue-500 px-3 py-2 placeholder:text-[#021265] placeholder-gray-200"
-            >
-              <option value="" disabled>
-                Purpose of Investment
-              </option>
-              {purposeOfInvestment.map((reason) => (
-                <option key={reason} value={reason}>
-                  {reason}
-                </option>
-              ))}
-            </select> */}
-
-              {/* <ReCAPTCHA sitekey={import.meta.env.VITE_SITE_KEY} onChange={handleCaptcha} /> */}
+              <ReCAPTCHA sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5" onChange={handleCaptcha} />
             </div>
 
             <button
