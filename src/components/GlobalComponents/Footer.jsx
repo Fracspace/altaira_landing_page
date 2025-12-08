@@ -45,17 +45,23 @@ const Footer = () => {
                 Enquire Now
               </ScrollLink>
             </li>
-             <li className="font-poppins cursor-pointer text-white">
-              <NavigationLink to="https://altaira.lk/terms-and-conditions/" target="_blank">
+            <li className="font-poppins cursor-pointer text-white">
+              <NavigationLink
+                to="https://altaira.lk/terms-and-conditions/"
+                target="_blank"
+              >
                 Terms of Service
               </NavigationLink>
             </li>
-             <li className="font-poppins cursor-pointer text-white">
-              <NavigationLink to="https://altaira.lk/privacypolicy/" target="_blank">
+            <li className="font-poppins cursor-pointer text-white">
+              <NavigationLink
+                to="https://altaira.lk/privacypolicy/"
+                target="_blank"
+              >
                 Privacy Policy
               </NavigationLink>
             </li>
-             <li className="font-poppins cursor-pointer text-white">
+            <li className="font-poppins cursor-pointer text-white">
               <NavigationLink to="https://altaira.lk/refunds/" target="_blank">
                 Refunds & Cancellations
               </NavigationLink>
@@ -81,18 +87,18 @@ const Footer = () => {
             {" "}
             <Phone className="mr-2" />
             <div className="contactDiv">
-            <span
-              onClick={() => (window.location.href = "tel:+94760312345")}
-              className="cursor-pointer pr-2"
-            >
-              +94 76 031 2345{", "}
-            </span>
-            <span
-              onClick={() => (window.location.href = "tel:+91-9880626111")}
-              className="cursor-pointer pr-2"
-            >
-              +91-98806 26111
-            </span>
+              <span
+                onClick={() => (window.location.href = "tel:+94760312345")}
+                className="cursor-pointer pr-2"
+              >
+                +94 76 031 2345{", "}
+              </span>
+              <span
+                onClick={() => (window.location.href = "tel:+91-9880626111")}
+                className="cursor-pointer pr-2"
+              >
+                +91-98806 26111
+              </span>
             </div>
           </li>
           <li className="font-poppins mt-3 flex text-white">

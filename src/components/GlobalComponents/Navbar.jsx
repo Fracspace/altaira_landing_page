@@ -34,14 +34,14 @@ const NavBar = () => {
     setOpenMenu(!openMenu);
   };
 
-    const [captchaToken, setCaptchaToken] = useState("");
-    const handleCaptcha = (value) => {
-      setCaptchaToken(value);
-      setFormData((prev)=>({
-        ...prev,
-        token:value,
-      }))
-    }
+  const [captchaToken, setCaptchaToken] = useState("");
+  const handleCaptcha = (value) => {
+    setCaptchaToken(value);
+    setFormData((prev) => ({
+      ...prev,
+      token: value,
+    }));
+  };
 
   // const investmentLocations = [
   //   "Hyderabad",
@@ -79,7 +79,7 @@ const NavBar = () => {
     designation: "",
     companyName: "",
     incomeRange: "",
-    token:"",
+    token: "",
   });
 
   const handleShowForm = () => setShowForm(true);
@@ -95,7 +95,7 @@ const NavBar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-     if (!captchaToken) {
+    if (!captchaToken) {
       alert("Please verify the captcha");
       return;
     }
@@ -137,12 +137,12 @@ const NavBar = () => {
         designation: "",
         companyName: "",
         incomeRange: "",
-        token:"",
+        token: "",
       });
 
       setCaptchaToken("");
 
-     // setTimeout(() => navigate("/thank-you"), 1000);
+      // setTimeout(() => navigate("/thank-you"), 1000);
       handleCloseForm();
     } catch (error) {
       console.log("error occurred while submitting form", error);
@@ -255,7 +255,7 @@ const NavBar = () => {
               <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
                 Enquire Now
               </h2>
-              <div className="scrollbar-hide mobileScreenResponsive lg:h-[75vh] h-auto space-y-3 overflow-y-auto">
+              <div className="scrollbar-hide mobileScreenResponsive h-auto space-y-3 overflow-y-auto lg:h-[75vh]">
                 <input
                   type="text"
                   id="name"
@@ -481,7 +481,25 @@ const NavBar = () => {
                   <span className="font-montserrat text-sm">
                     {/* I consent to the Altaira team contacting me using the
                     details I have provided. */}
-                      I agree to <span className="cursor-pointer underline text-blue-950" onClick={()=>window.open("https://altaira.lk/terms-and-conditions/")}>Terms</span> and <span className="cursor-pointer underline text-blue-950" onClick={()=>window.open("https://altaira.lk/privacypolicy/")}>Privacy Policy</span>.
+                    I agree to{" "}
+                    <span
+                      className="cursor-pointer text-blue-950 underline"
+                      onClick={() =>
+                        window.open("https://altaira.lk/terms-and-conditions/")
+                      }
+                    >
+                      Terms
+                    </span>{" "}
+                    and{" "}
+                    <span
+                      className="cursor-pointer text-blue-950 underline"
+                      onClick={() =>
+                        window.open("https://altaira.lk/privacypolicy/")
+                      }
+                    >
+                      Privacy Policy
+                    </span>
+                    .
                   </span>
                 </label>
 
@@ -502,11 +520,14 @@ const NavBar = () => {
                 ))}
               </select> */}
 
-               <ReCAPTCHA sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5" onChange={handleCaptcha} />
+                <ReCAPTCHA
+                  sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5"
+                  onChange={handleCaptcha}
+                />
 
                 <button
                   type="submit"
-                  className="w-full cursor-pointer font-montserrat rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+                  className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
                 >
                   Submit
                 </button>

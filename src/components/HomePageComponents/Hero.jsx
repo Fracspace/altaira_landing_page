@@ -55,11 +55,11 @@ const Hero = () => {
   const [captchaToken, setCaptchaToken] = useState("");
   const handleCaptcha = (value) => {
     setCaptchaToken(value);
-    setFormData((prev)=>({
+    setFormData((prev) => ({
       ...prev,
-      token:value,
-    }))
-  }
+      token: value,
+    }));
+  };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -71,7 +71,7 @@ const Hero = () => {
     designation: "",
     companyName: "",
     incomeRange: "",
-    token:"",
+    token: "",
   });
 
   const handleChange = (e) => {
@@ -107,7 +107,7 @@ const Hero = () => {
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
-     // console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       setFormData({
         name: "",
         email: "",
@@ -119,7 +119,7 @@ const Hero = () => {
         designation: "",
         companyName: "",
         incomeRange: "",
-        token:"",
+        token: "",
       });
 
       setCaptchaToken("");
@@ -256,6 +256,10 @@ const Hero = () => {
                 onChange={changeHandler}
                 className="react-select-container w-full"
                 classNamePrefix="react-select"
+                menuPortalTarget={
+                  typeof document !== "undefined" ? document.body : null
+                }
+                menuPosition="fixed"
                 styles={{
                   control: (base) => ({
                     ...base,
@@ -269,14 +273,20 @@ const Hero = () => {
                     boxShadow: "none",
                     "&:hover": { borderColor: "#e5e7eb" },
                   }),
+
                   input: (base) => ({
                     ...base,
                     color: "white",
                     fontFamily: "Montserrat, sans-serif",
                   }),
+                  menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+                  menu: (base) => ({ ...base, zIndex: 9999 }),
                   menuList: (base) => ({
                     ...base,
                     fontFamily: "Montserrat, sans-serif",
+                    maxHeight: "150px",
+                    height: "auto",
+                    overflowY: "auto",
                   }),
                   placeholder: (base) => ({
                     ...base,
@@ -402,11 +412,32 @@ const Hero = () => {
                 <span className="font-montserrat text-sm">
                   {/* I consent to the Altaira team contacting me using the details
                   I have provided. */}
-                     I agree to <span className="cursor-pointer underline" onClick={()=>window.open("https://altaira.lk/terms-and-conditions/")}>Terms</span> and <span className="cursor-pointer underline" onClick={()=>window.open("https://altaira.lk/privacypolicy/")}>Privacy Policy</span>.
+                  I agree to{" "}
+                  <span
+                    className="cursor-pointer underline"
+                    onClick={() =>
+                      window.open("https://altaira.lk/terms-and-conditions/")
+                    }
+                  >
+                    Terms
+                  </span>{" "}
+                  and{" "}
+                  <span
+                    className="cursor-pointer underline"
+                    onClick={() =>
+                      window.open("https://altaira.lk/privacypolicy/")
+                    }
+                  >
+                    Privacy Policy
+                  </span>
+                  .
                 </span>
               </label>
 
-              <ReCAPTCHA sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5" onChange={handleCaptcha} />
+              <ReCAPTCHA
+                sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5"
+                onChange={handleCaptcha}
+              />
             </div>
 
             <button
