@@ -29,7 +29,7 @@ function MapComponent() {
 
           <div className="mt-6 text-center">
             <p className="font-poppins text-lg text-gray-300">
-              📍 Ataira, Bulathkohupitiya, Srilanka
+              📍 Altaira, Bulathkohupitiya, Srilanka
             </p>
           </div>
         </div>
