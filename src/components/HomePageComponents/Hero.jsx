@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
-import AltairaVideo from "../../videos/AltairaVideo.mp4";
+import React, { useMemo, useState, useRef, useEffect } from "react";
+import Hls from "hls.js";
+// import AltairaVideo from "../../videos/AltairaVideo.mp4";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -30,7 +31,7 @@ const incomeRanges = [
   "$500,001+",
 ];
 
-const investmentType=[
+const investmentType = [
   "Buy a Villa",
   "Invest in Resort"
 ]
@@ -43,8 +44,41 @@ const investmentType=[
 // ];
 
 const Hero = () => {
+  const videoRef = useRef(null);
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
+
+ useEffect(() => {
+  const video = videoRef.current;
+
+  if (!video) return;
+
+  const videoSrc =
+    "https://duixj37yn5405.cloudfront.net/hls-videos/1fcd2fe3-d98c-4ebc-87e9-a2967046b0b2/1080p/index.m3u8";
+
+  if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    // Safari / iOS
+    video.src = videoSrc;
+    video.play();
+  } else if (Hls.isSupported()) {
+    // Chrome / Edge / Android
+    const hls = new Hls({
+      startLevel: -1,  //chooses best quality based on network conditions
+      enableWorker: true,  //web workers for background processing
+    });
+
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+
+    hls.on(Hls.Events.MANIFEST_PARSED, () => {
+      video.play();
+    });
+
+    hls.on(Hls.Events.ERROR, (event, data) => {
+      console.log("HLS ERROR:", data);
+    });
+  }
+}, []);
 
   const changeHandler = (selected) => {
     setValue(selected);
@@ -76,7 +110,7 @@ const Hero = () => {
     designation: "",
     companyName: "",
     incomeRange: "",
-    investmentType:"",
+    investmentType: "",
     token: "",
   });
 
@@ -111,7 +145,7 @@ const Hero = () => {
       //   },
       // );
 
-      console.log("response",formData);
+      console.log("response", formData);
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
@@ -127,7 +161,7 @@ const Hero = () => {
         designation: "",
         companyName: "",
         incomeRange: "",
-        investmentType:"",
+        investmentType: "",
         token: "",
       });
 
@@ -169,12 +203,14 @@ const Hero = () => {
       className="custom-div ipadProHeroSectionHeight largeScreensHeroSectionHeight relative h-[120vh] w-full overflow-hidden md:h-[120vh]"
     >
       <video
-        src={AltairaVideo}
+        ref={videoRef}
         className="custom-div absolute h-[120vh] w-full object-cover md:h-[120vh]"
         playsInline
         autoPlay
         muted
         loop
+        controls
+        preload="auto"
       ></video>
       <div className="custom-div absolute inset-0 flex flex-col items-center justify-center gap-10 bg-black/40 px-4 text-center text-white sm:px-10 lg:flex-row lg:justify-between lg:gap-20 lg:px-20">
         <div className="mt-30 w-full space-y-4 text-left md:mt-0 md:w-full lg:max-w-xl lg:space-y-6">
