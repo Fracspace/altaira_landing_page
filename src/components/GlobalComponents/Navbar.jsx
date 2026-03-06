@@ -61,6 +61,13 @@ const NavBar = () => {
     "$500,001+",
   ];
 
+
+  const investmentType = [
+    "Buy a Villa",
+    "Invest in Resort"
+  ];
+
+
   // const purposeOfInvestment = [
   //   "Passive Income",
   //   "Vacation Home",
@@ -79,6 +86,7 @@ const NavBar = () => {
     designation: "",
     companyName: "",
     incomeRange: "",
+    investmentType:"",
     token: "",
   });
 
@@ -137,6 +145,7 @@ const NavBar = () => {
         designation: "",
         companyName: "",
         incomeRange: "",
+        investmentType: "",
         token: "",
       });
 
@@ -156,7 +165,7 @@ const NavBar = () => {
           <Link to="herosection" smooth={true} duration={500}>
             <img
               alt="Altaira logo"
-              className="h-[12vh] w-[30vw] cursor-pointer object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
+              className="h-[10vh] w-[30vw] cursor-pointer object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
               src={AltairaLogo}
             />
           </Link>
@@ -464,6 +473,24 @@ const NavBar = () => {
                   {incomeRanges.map((range) => (
                     <option key={range} value={range} className="bg-[#D4AF37]">
                       {range}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  id="investmentType"
+                  name="investmentType"
+                  value={formData.investmentType}
+                  onChange={handleChange}
+                  required
+                  className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.investmentType === "" ? "text-gray-500" : "text-black"}`}
+                >
+                  <option value="" disabled className="bg-[#D4AF37]">
+                    Investment Type*
+                  </option>
+                  {investmentType.map((type) => (
+                    <option key={type} value={type} className="bg-[#D4AF37]">
+                      {type}
                     </option>
                   ))}
                 </select>

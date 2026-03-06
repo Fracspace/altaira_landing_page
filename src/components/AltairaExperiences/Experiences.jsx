@@ -1,12 +1,17 @@
 import React from "react";
 import { useState } from "react";
 
-import adventurePark from "../../assets/adv.webp";
-import cloudWalkway from "../../assets/cloud.jpg";
-import infinityPool from "../../assets/pool.webp";
+// import adventurePark from "../../assets/adv.webp";
+import adventureZone from "../../assets/Experiences/adventureZone.webp";
+// import cloudWalkway from "../../assets/cloud.jpg";
+import cloudWalkwaysImage from "../../assets/Experiences/cloudWalkwaysImage.webp"
+// import infinityPool from "../../assets/pool.webp";
+import infinityPoolImage from "../../assets/Experiences/infinityPoolImage.webp";
 import restaurantImg from "../../assets/restaurant.webp";
-import spaImg from "../../assets/spa.webp";
-import villaImg from "../../assets/villa.webp";
+import rainforestImage from "../../assets/Experiences/rainforestImage.webp";
+// import spaImg from "../../assets/spa.webp";
+// import villaImg from "../../assets/villa.webp";
+import residencesImage from "../../assets/Experiences/residencesImage.webp"
 
 function Experiences() {
   const [count, setCount] = useState(0);
@@ -15,14 +20,14 @@ function Experiences() {
   const galleryItems = [
     {
       id: 1,
-      image: infinityPool,
+      image: infinityPoolImage,
       title: "Infinity Pool",
       description: "Float above the forest in a pool that meets the horizon",
       gradient: "from-blue-500 to-purple-600",
     },
     {
       id: 2,
-      image: adventurePark,
+      image: adventureZone,
       title: "Adventure Park",
       description:
         "Glide above the canopy on thrilling ziplines, conquer the trails on ATVs, or trek through mist-laced mountain paths that lead to breathtaking valley views",
@@ -30,7 +35,7 @@ function Experiences() {
     },
     {
       id: 3,
-      image: villaImg,
+      image: residencesImage,
       title: "Residences",
       description:
         "At Altaira, your villa isn’t just a stay — it’s a private sanctuary suspended above the valley",
@@ -38,7 +43,7 @@ function Experiences() {
     },
     {
       id: 4,
-      image: cloudWalkway,
+      image: cloudWalkwaysImage,
       title: "Cloudwalkway",
       description:
         "The Cloud Walkways — elevated paths that weave through misty ridges — let you literally walk among the clouds",
@@ -53,7 +58,7 @@ function Experiences() {
     },
     {
       id: 6,
-      image: spaImg,
+      image: rainforestImage,
       title: "RainForest Spa",
       description:
         "At the heart of Altaira lies the Rainforest Spa, a sanctuary where mist, mineral water, and mountain air come together to revive your senses",

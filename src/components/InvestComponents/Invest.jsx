@@ -146,7 +146,7 @@ const Invest = () => {
                 <div className="justify-left flex items-center gap-3">
                   <img
                     src={HighYield1}
-                    className="h-10 w-10 md:h-15 md:w-15"
+                    className="h-10 w-10 md:h-10 md:w-10"
                     alt="High Yield"
                   />
                   <div className="flex flex-col">
@@ -182,7 +182,7 @@ const Invest = () => {
                 <div className="flex items-center justify-center gap-3">
                   <img
                     src={TourismGrowth1}
-                    className="h-10 w-10 md:h-15 md:w-15"
+                    className="h-10 w-10 md:h-10 md:w-10"
                     alt="Tourism Growth"
                   />
                   <div className="flex flex-col">
@@ -201,7 +201,7 @@ const Invest = () => {
                 <div className="justify-left flex items-center gap-3">
                   <img
                     src={EarlyEntry1}
-                    className="h-10 w-10 md:h-15 md:w-15"
+                    className="h-10 w-10 md:h-10 md:w-10"
                     alt="Early Entry"
                   />
                   <div className="flex flex-col">
@@ -219,7 +219,7 @@ const Invest = () => {
                 <div className="justify-left flex items-center gap-3">
                   <img
                     src={RecurringReturns1}
-                    className="h-10 w-10 md:h-15 md:w-15"
+                    className="h-10 w-10 md:h-10 md:w-10"
                     alt="Returns"
                   />
                   <div className="flex flex-col">

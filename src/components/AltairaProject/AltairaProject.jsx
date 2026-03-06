@@ -1,7 +1,11 @@
 import React, { useState, useMemo } from "react";
 import altairaImg from "../../assets/altaira.webp";
-import villaImg from "../../assets/Villa2.webp";
+// import villaImg from "../../assets/Villa2.webp";
+import villaImage from "../../assets/villaImage.webp"
+import villaImg from "../../assets/resortHeroImage.webp";
+import villaDetails from "../../assets/villaDetails.webp";
 import restaurantImg from "../../assets/restaurant.webp";
+import ridgeSuites1 from "../../assets/ridgeSuites1.webp";
 import { ArrowRight } from "lucide-react";
 import axios from "axios";
 
@@ -55,6 +59,11 @@ function AltairaProject() {
     "$500,001+",
   ];
 
+  const investmentType = [
+    "Buy a Villa",
+    "Invest in Resort"
+  ]
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -66,6 +75,7 @@ function AltairaProject() {
     designation: "",
     companyName: "",
     incomeRange: "",
+    investmentType: "",
     token: "",
   });
 
@@ -127,6 +137,7 @@ function AltairaProject() {
         designation: "",
         companyName: "",
         incomeRange: "",
+        investmentType: "",
         token: "",
       });
 
@@ -221,7 +232,7 @@ function AltairaProject() {
               {/* Top Left Circle */}
               <div className="absolute top-0 left-0 h-56 w-56 overflow-hidden rounded-full shadow-2xl">
                 <img
-                  src={villaImg}
+                  src={villaImage}
                   alt="Altaira Resort"
                   className="hidden h-full w-full object-cover lg:block"
                 />
@@ -230,7 +241,7 @@ function AltairaProject() {
               {/* Middle Left Circle */}
               <div className="absolute top-70 left-0 hidden h-52 w-52 overflow-hidden rounded-b-full shadow-2xl lg:block">
                 <img
-                  src={altairaImg}
+                  src={villaImg}
                   alt="Altaira Restaurant"
                   className="h-full w-full object-cover"
                 />
@@ -248,7 +259,7 @@ function AltairaProject() {
               {/* Right Large Oval */}
               <div className="absolute top-12 right-0 h-[450px] w-72 overflow-hidden rounded-full shadow-2xl">
                 <img
-                  src={restaurantImg}
+                  src={ridgeSuites1}
                   alt="Altaira Resort aerial view"
                   className="hidden h-full w-full object-cover lg:block"
                 />
@@ -486,6 +497,25 @@ function AltairaProject() {
                           className="bg-[#D4AF37]"
                         >
                           {range}
+                        </option>
+                      ))}
+                    </select>
+
+
+                    <select
+                      id="investmentType"
+                      name="investmentType"
+                      value={formData.investmentType}
+                      onChange={handleChange}
+                      required
+                             className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.investmentType === "" ? "text-gray-500" : "text-black"}`}
+                    >
+                      <option value="" disabled className="bg-[#D4AF37]">
+                        Investment Type*
+                      </option>
+                      {investmentType.map((type) => (
+                        <option key={type} value={type} className="bg-[#D4AF37]">
+                          {type}
                         </option>
                       ))}
                     </select>

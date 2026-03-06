@@ -30,6 +30,11 @@ const incomeRanges = [
   "$500,001+",
 ];
 
+const investmentType=[
+  "Buy a Villa",
+  "Invest in Resort"
+]
+
 // const purposeOfInvestment = [
 //   "Passive Income",
 //   "Vacation Home",
@@ -71,6 +76,7 @@ const Hero = () => {
     designation: "",
     companyName: "",
     incomeRange: "",
+    investmentType:"",
     token: "",
   });
 
@@ -94,20 +100,22 @@ const Hero = () => {
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
     try {
-      const response = await axios.post(
-        "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "Fracspace@2024",
-          },
-        },
-      );
+      // const response = await axios.post(
+      //   "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
+      //   formData,
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       "x-api-key": "Fracspace@2024",
+      //     },
+      //   },
+      // );
+
+      console.log("response",formData);
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
-      // console.log("Response:", response.data);
+      //console.log("Response:", response.data);
       setFormData({
         name: "",
         email: "",
@@ -119,6 +127,7 @@ const Hero = () => {
         designation: "",
         companyName: "",
         incomeRange: "",
+        investmentType:"",
         token: "",
       });
 
@@ -391,6 +400,25 @@ const Hero = () => {
                 {incomeRanges.map((range) => (
                   <option key={range} value={range} className="bg-[#D4AF37]">
                     {range}
+                  </option>
+                ))}
+              </select>
+
+
+              <select
+                id="investmentType"
+                name="investmentType"
+                value={formData.investmentType}
+                onChange={handleChange}
+                required
+                className="font-montserrat w-full rounded-md border border-[#D4AF37] bg-[#0A0A0A8C] px-3 py-2 text-sm text-white outline-none focus:ring-2 focus:ring-[#c6af83]"
+              >
+                <option value="" disabled className="bg-[#D4AF37]">
+                  Investment Type*
+                </option>
+                {investmentType.map((type) => (
+                  <option key={type} value={type} className="bg-[#D4AF37]">
+                    {type}
                   </option>
                 ))}
               </select>
