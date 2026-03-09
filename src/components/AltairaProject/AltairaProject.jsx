@@ -151,154 +151,160 @@ function AltairaProject() {
   };
 
   return (
-    <div>
-      <div
-        id="aboutAltairaProject"
-        className="ipadProPadding altairaProjectHeight largeScreensAltairaProjectSectionHeight bg-black px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
-      >
-        <div className="mx-auto max-w-7xl">
-          {/* Header */}
-          <h1 className="font-montserrat mb-16 text-center text-2xl font-semibold text-white md:text-3xl">
-            The Altaira Project
-          </h1>
+    <div className='py-10 bg-black'>
+      <div className="ml-10 mr-10">
+        <div className="max-w-7xl mx-auto">
+          <div
+            id="aboutAltairaProject"
+            // className=" px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
+          >
+            <div>
+              {/* Header */}
+              <h1 className="font-montserrat mb-8 text-center text-2xl font-semibold text-white md:text-3xl">
+                The Altaira Project
+              </h1>
+              <div className="grid grid-cols-1 gap-5 xl:gap-12 xl:grid-cols-2">
+                <div className="space-y-8">
+                  <div >
+                    <h2 className="font-montserrat mb-6 text-xl font-semibold text-[#D4AF37] md:text-2xl">
+                      26 Acres of Elevated Living - Key Highlights:
+                    </h2>
 
-          <div className="grid items-start gap-12 lg:grid-cols-2">
-            {/* Left Column - Text Content */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="font-montserrat mb-6 text-xl font-semibold text-[#D4AF37] md:text-2xl">
-                  26 Acres of Elevated Living - Key Highlights:
-                </h2>
+                    <ul className="font-poppins space-y-8 font-normal">
+                      <li className="flex items-start">
+                        <span className="mt-1 mr-3 text-xl text-white">•</span>
+                        <span className="text-lg text-white">
+                          <strong>26-acre luxury highland escape</strong> surrounded
+                          by mist and nature.
+                        </span>
+                      </li>
 
-                <ul className="font-poppins space-y-10 font-normal">
-                  <li className="flex items-start">
-                    <span className="mt-1 mr-3 text-xl text-white">•</span>
-                    <span className="text-lg text-white">
-                      <strong>26-acre luxury highland escape</strong> surrounded
-                      by mist and nature.
-                    </span>
-                  </li>
+                      <li className="flex items-start text-white">
+                        <span className="mt-1 mr-3">•</span>
+                        <span className="text-lg">
+                          <strong>40 private residences</strong> with boutique resort
+                          amenities.
+                        </span>
+                      </li>
 
-                  <li className="flex items-start text-white">
-                    <span className="mt-1 mr-3">•</span>
-                    <span className="text-lg">
-                      <strong>40 private villas</strong> with boutique resort
-                      amenities.
-                    </span>
-                  </li>
+                      <li className="flex items-start text-white">
+                        <span className="mt-1 mr-3">•</span>
+                        <span className="text-lg">
+                          <strong>Rainforest spa</strong>, waterfalls & cloud
+                          walkways within the property.
+                        </span>
+                      </li>
 
-                  <li className="flex items-start text-white">
-                    <span className="mt-1 mr-3">•</span>
-                    <span className="text-lg">
-                      <strong>Rainforest spa</strong>, waterfalls & cloud
-                      walkways within the property.
-                    </span>
-                  </li>
+                      <li className="flex items-start text-white">
+                        <span className="mt-1 mr-3">•</span>
+                        <span className="text-lg">
+                          <strong>Tea-estate trails</strong> and curated nature
+                          experiences.
+                        </span>
+                      </li>
 
-                  <li className="flex items-start text-white">
-                    <span className="mt-1 mr-3">•</span>
-                    <span className="text-lg">
-                      <strong>Tea-estate trails</strong> and curated nature
-                      experiences.
-                    </span>
-                  </li>
+                      <li className="flex items-start text-white">
+                        <span className="mt-1 mr-3">•</span>
+                        <span className="text-lg">
+                          A blend of serenity, sophistication and elevated
+                          hospitality.
+                        </span>
+                      </li>
 
-                  <li className="flex items-start text-white">
-                    <span className="mt-1 mr-3">•</span>
-                    <span className="text-lg">
-                      A blend of serenity, sophistication and elevated
-                      hospitality.
-                    </span>
-                  </li>
-
-                  <li className="flex items-start text-white">
-                    {/* <span className="mr-3 text-lg">•</span> */}
-                    <span className="text-lg text-[#D4AF37]">
-                      Access by application only. Limited to 200 invitations.
-                    </span>
-                  </li>
-                </ul>
-                <button
-                  onClick={handleShowForm}
-                  className="font-montserrat mt-4 flex scale-100 cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white transition hover:scale-105 hover:bg-[#9c835a]"
-                >
-                  Register Now <ArrowRight />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Column - Circular Images */}
-            <div className="relative h-[300px] md:h-[600px]">
-              {/* Top Left Circle */}
-              <div className="absolute top-0 left-0 h-56 w-56 overflow-hidden rounded-full shadow-2xl">
-                <img
-                  src={villaImage}
-                  alt="Altaira Resort"
-                  className="hidden h-full w-full object-cover lg:block"
-                />
-              </div>
-
-              {/* Middle Left Circle */}
-              <div className="absolute top-70 left-0 hidden h-52 w-52 overflow-hidden rounded-b-full shadow-2xl lg:block">
-                <img
-                  src={villaImg}
-                  alt="Altaira Restaurant"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-
-              {/* Small screen image */}
-              <div className="absolute block overflow-hidden shadow-2xl lg:hidden">
-                <img
-                  src={altairaImg}
-                  alt="Altaira Restaurant"
-                  className="h-[40vh] w-full rounded-md object-cover"
-                />
-              </div>
-
-              {/* Right Large Oval */}
-              <div className="absolute top-12 right-0 h-[450px] w-72 overflow-hidden rounded-full shadow-2xl">
-                <img
-                  src={ridgeSuites1}
-                  alt="Altaira Resort aerial view"
-                  className="hidden h-full w-full object-cover lg:block"
-                />
-              </div>
-            </div>
-          </div>
-
-          {showForm && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-              <div className="relative w-full rounded bg-white p-6 shadow-lg sm:w-[80%] sm:p-8 md:w-[60%] lg:w-[30vw]">
-                <button
-                  onClick={handleCloseForm}
-                  className="absolute top-3 right-3 text-4xl font-bold text-gray-500 hover:text-gray-800"
-                >
-                  &times;
-                </button>
-
-                <form
-                  className="iphoneSEHeight flex flex-col gap-3 space-y-3"
-                  onSubmit={handleSubmit}
-                >
-                  <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
-                    Enquire Now
-                  </h2>
-                  <div className="scrollbar-hide h-auto space-y-3 overflow-y-auto lg:h-[75vh]">
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Name*"
-                      required
-                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                      {/* <li className="flex items-start text-white">
+                        
+                        <span className="text-lg text-[#D4AF37]">
+                          Access by application only. Limited to 200 invitations.
+                        </span>
+                      </li> */}
+                    </ul>
+                    <button
+                      onClick={handleShowForm}
+                      className="font-montserrat mt-10 flex scale-100 cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white transition hover:scale-105 hover:bg-[#9c835a]"
+                    >
+                      Register Now <ArrowRight />
+                    </button>
+                  </div>
+                  <div className="block h-[40vh] md:h-auto overflow-hidden shadow-2xl xl:hidden">
+                    <img
+                      src={altairaImg}
+                      alt="Altaira Restaurant"
+                      className="h-full w-full rounded-md object-cover"
                     />
+                  </div>
+                </div>
+                
+                <div className="relative">
+                  {/* Top Left Circle */}
+                  <div className="absolute hidden xl:block top-0 left-0 h-56 w-56 overflow-hidden rounded-full shadow-2xl">
+                    <img
+                      src={villaImage}
+                      alt="Altaira Resort"
+                      className=" h-full w-full object-cover"
+                    />
+                  </div>
 
-                    {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
+                  {/* Middle Left Circle */}
+                  <div className="absolute top-70 left-0 hidden h-52 w-52 overflow-hidden rounded-b-full shadow-2xl xl:block">
+                    <img
+                      src={villaImg}
+                      alt="Altaira Restaurant"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
 
-                    {/* <input
+                  {/* Small screen image */}
+                  <div className="absolute hidden border border-red-200 overflow-hidden shadow-2xl">
+                    <img
+                      src={altairaImg}
+                      alt="Altaira Restaurant"
+                      className="h-full w-full rounded-md object-cover"
+                    />
+                  </div>
+
+                  {/* Right Large Oval */}
+                  <div className="hidden xl:block absolute top-12 right-0 h-[450px] w-72 overflow-hidden rounded-full shadow-2xl">
+                    <img
+                      src={ridgeSuites1}
+                      alt="Altaira Resort aerial view"
+                      className=" h-full w-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {showForm && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+                  <div className="relative w-full rounded bg-white p-6 shadow-lg sm:w-[80%] sm:p-8 md:w-[60%] lg:w-[30vw]">
+                    <button
+                      onClick={handleCloseForm}
+                      className="absolute top-3 right-3 text-4xl font-bold text-gray-500 hover:text-gray-800"
+                    >
+                      &times;
+                    </button>
+
+                    <form
+                      className="iphoneSEHeight flex flex-col gap-3 space-y-3"
+                      onSubmit={handleSubmit}
+                    >
+                      <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
+                        Enquire Now
+                      </h2>
+                      <div className="scrollbar-hide h-auto space-y-3 overflow-y-auto lg:h-[75vh]">
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Name*"
+                          required
+                          className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                        />
+
+                        {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
+
+                        {/* <input
                 type="tel"
                 name="phoneNumber"
                 value={formData.phoneNumber}
@@ -309,19 +315,19 @@ function AltairaProject() {
                 className="w-full border-b border-gray-300 px-3 py-2 focus:outline-none focus:border-blue-500 text-sm"
               /> */}
 
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Email*"
-                      required
-                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
-                    />
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Email*"
+                          required
+                          className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                        />
 
-                    {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
-                    {/* 
+                        {/* outline-none focus:ring-2 focus:ring-[#c6af83] */}
+                        {/* 
               <select
                 name="preferredInvestmentLocation"
                 value={formData.preferredInvestmentLocation}
@@ -339,7 +345,7 @@ function AltairaProject() {
                 ))}
               </select> */}
 
-                    {/* <PhoneInput
+                        {/* <PhoneInput
                 country={"in"}
                 enableSearch={true}
                 value={formData.phoneNumber}
@@ -360,75 +366,75 @@ function AltairaProject() {
                 className="w-full"
               /> */}
 
-                    <PhoneInput
-                      country={"in"}
-                      enableSearch={true}
-                      value={`${formData.countryCode || "+91"}${formData.phoneNumber}`}
-                      onChange={(value, data) => {
-                        const dial = data?.dialCode || "91";
-                        const digitsOnly = value.replace(/\D/g, ""); // remove all non-digits
-                        const numberOnly = digitsOnly.startsWith(dial)
-                          ? digitsOnly.slice(dial.length)
-                          : digitsOnly;
-                        setFormData({
-                          ...formData,
-                          phoneNumber: numberOnly,
-                          countryCode: `${dial}`,
-                        });
-                      }}
-                      placeholder="Mobile"
-                      inputClass="w-full"
-                      containerClass="w-full rounded-md text-white placeholder:font-montserrat"
-                      buttonClass=""
-                      dropdownClass="text-sm"
-                      required
-                      className="w-full"
-                    />
+                        <PhoneInput
+                          country={"in"}
+                          enableSearch={true}
+                          value={`${formData.countryCode || "+91"}${formData.phoneNumber}`}
+                          onChange={(value, data) => {
+                            const dial = data?.dialCode || "91";
+                            const digitsOnly = value.replace(/\D/g, ""); // remove all non-digits
+                            const numberOnly = digitsOnly.startsWith(dial)
+                              ? digitsOnly.slice(dial.length)
+                              : digitsOnly;
+                            setFormData({
+                              ...formData,
+                              phoneNumber: numberOnly,
+                              countryCode: `${dial}`,
+                            });
+                          }}
+                          placeholder="Mobile"
+                          inputClass="w-full"
+                          containerClass="w-full rounded-md text-white placeholder:font-montserrat"
+                          buttonClass=""
+                          dropdownClass="text-sm"
+                          required
+                          className="w-full"
+                        />
 
-                    <Select
-                      options={options}
-                      name="country"
-                      id="country"
-                      value={value}
-                      onChange={changeHandler}
-                      className="react-select-container w-full"
-                      classNamePrefix="react-select"
-                      styles={{
-                        control: (base) => ({
-                          ...base,
-                          backgroundColor: "#f3f4f6",
-                          borderColor: "#e5e7eb",
-                          paddingLeft: "0.5rem",
-                          paddingRight: "0.5rem",
-                          paddingTop: "0.25rem",
-                          paddingBottom: "0.25rem",
-                          fontSize: "0.875rem",
-                          boxShadow: "none",
-                          "&:hover": { borderColor: "#e5e7eb" },
-                        }),
-                        placeholder: (base) => ({
-                          ...base,
-                          textAlign: "left",
-                          marginLeft: "0px",
-                          fontFamily: "Montserrat, sans-serif",
-                        }),
-                        input: (base) => ({
-                          ...base,
-                          fontFamily: "Montserrat, sans-serif",
-                        }),
-                        menuList: (base) => ({
-                          ...base,
-                          fontFamily: "Montserrat, sans-serif",
-                        }),
-                        menu: (base) => ({
-                          ...base,
-                          zIndex: 9999,
-                        }),
-                      }}
-                      placeholder="Select Your Country*"
-                    />
+                        <Select
+                          options={options}
+                          name="country"
+                          id="country"
+                          value={value}
+                          onChange={changeHandler}
+                          className="react-select-container w-full"
+                          classNamePrefix="react-select"
+                          styles={{
+                            control: (base) => ({
+                              ...base,
+                              backgroundColor: "#f3f4f6",
+                              borderColor: "#e5e7eb",
+                              paddingLeft: "0.5rem",
+                              paddingRight: "0.5rem",
+                              paddingTop: "0.25rem",
+                              paddingBottom: "0.25rem",
+                              fontSize: "0.875rem",
+                              boxShadow: "none",
+                              "&:hover": { borderColor: "#e5e7eb" },
+                            }),
+                            placeholder: (base) => ({
+                              ...base,
+                              textAlign: "left",
+                              marginLeft: "0px",
+                              fontFamily: "Montserrat, sans-serif",
+                            }),
+                            input: (base) => ({
+                              ...base,
+                              fontFamily: "Montserrat, sans-serif",
+                            }),
+                            menuList: (base) => ({
+                              ...base,
+                              fontFamily: "Montserrat, sans-serif",
+                            }),
+                            menu: (base) => ({
+                              ...base,
+                              zIndex: 9999,
+                            }),
+                          }}
+                          placeholder="Select Your Country*"
+                        />
 
-                    {/* <select
+                        {/* <select
                       name="budget"
                       id="budget"
                       value={formData.budget}
@@ -446,133 +452,135 @@ function AltairaProject() {
                       ))}
                     </select> */}
 
-                    <input
-                      type="text"
-                      id="occupation"
-                      name="occupation"
-                      value={formData.occupation}
-                      onChange={handleChange}
-                      placeholder="Occupation*"
-                      required
-                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
-                    />
+                        <input
+                          type="text"
+                          id="occupation"
+                          name="occupation"
+                          value={formData.occupation}
+                          onChange={handleChange}
+                          placeholder="Occupation*"
+                          required
+                          className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                        />
 
-                    <input
-                      type="text"
-                      id="designation"
-                      name="designation"
-                      value={formData.designation}
-                      onChange={handleChange}
-                      placeholder="Designation*"
-                      required
-                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
-                    />
+                        <input
+                          type="text"
+                          id="designation"
+                          name="designation"
+                          value={formData.designation}
+                          onChange={handleChange}
+                          placeholder="Designation*"
+                          required
+                          className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                        />
 
-                    <input
-                      type="text"
-                      id="companyName"
-                      name="companyName"
-                      value={formData.companyName}
-                      onChange={handleChange}
-                      placeholder="Company Name*"
-                      required
-                      className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
-                    />
+                        <input
+                          type="text"
+                          id="companyName"
+                          name="companyName"
+                          value={formData.companyName}
+                          onChange={handleChange}
+                          placeholder="Company Name*"
+                          required
+                          className="placeholder:font-montserrat font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm placeholder-gray-500"
+                        />
 
-                    <select
-                      id="incomeRange"
-                      name="incomeRange"
-                      value={formData.incomeRange}
-                      onChange={handleChange}
-                      required
-                      className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.incomeRange === "" ? "text-gray-500" : "text-black"}`}
-                    >
-                      <option value="" disabled className="bg-[#D4AF37]">
-                        Income Range*
-                      </option>
-                      {incomeRanges.map((range) => (
-                        <option
-                          key={range}
-                          value={range}
-                          className="bg-[#D4AF37]"
+                        <select
+                          id="incomeRange"
+                          name="incomeRange"
+                          value={formData.incomeRange}
+                          onChange={handleChange}
+                          required
+                          className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.incomeRange === "" ? "text-gray-500" : "text-black"}`}
                         >
-                          {range}
-                        </option>
-                      ))}
-                    </select>
+                          <option value="" disabled className="bg-[#D4AF37]">
+                            Income Range*
+                          </option>
+                          {incomeRanges.map((range) => (
+                            <option
+                              key={range}
+                              value={range}
+                              className="bg-[#D4AF37]"
+                            >
+                              {range}
+                            </option>
+                          ))}
+                        </select>
 
 
-                    <select
-                      id="investmentType"
-                      name="investmentType"
-                      value={formData.investmentType}
-                      onChange={handleChange}
-                      required
-                             className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.investmentType === "" ? "text-gray-500" : "text-black"}`}
-                    >
-                      <option value="" disabled className="bg-[#D4AF37]">
-                        Investment Type*
-                      </option>
-                      {investmentType.map((type) => (
-                        <option key={type} value={type} className="bg-[#D4AF37]">
-                          {type}
-                        </option>
-                      ))}
-                    </select>
+                        <select
+                          id="investmentType"
+                          name="investmentType"
+                          value={formData.investmentType}
+                          onChange={handleChange}
+                          required
+                          className={`font-montserrat w-full border border-gray-200 bg-gray-100 px-3 py-2 text-sm ${formData.investmentType === "" ? "text-gray-500" : "text-black"}`}
+                        >
+                          <option value="" disabled className="bg-[#D4AF37]">
+                            Investment Type*
+                          </option>
+                          {investmentType.map((type) => (
+                            <option key={type} value={type} className="bg-[#D4AF37]">
+                              {type}
+                            </option>
+                          ))}
+                        </select>
 
-                    <label
-                      htmlFor="checkboxField"
-                      className="flex items-start gap-1"
-                    >
-                      <input
-                        id="checkboxField"
-                        type="checkbox"
-                        required
-                        className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
-                      />
-                      <span className="font-montserrat text-sm">
-                        {/* I consent to the Altaira team contacting me using the
+                        <label
+                          htmlFor="checkboxField"
+                          className="flex items-start gap-1"
+                        >
+                          <input
+                            id="checkboxField"
+                            type="checkbox"
+                            required
+                            className="mt-1 h-4 w-4 rounded border border-[#D4AF37] bg-[#0A0A0A8C]"
+                          />
+                          <span className="font-montserrat text-sm">
+                            {/* I consent to the Altaira team contacting me using the
                         details I have provided. */}
-                        I agree to{" "}
-                        <span
-                          className="cursor-pointer text-blue-950 underline"
-                          onClick={() =>
-                            window.open(
-                              "https://altaira.lk/terms-and-conditions/",
-                            )
-                          }
-                        >
-                          Terms
-                        </span>{" "}
-                        and{" "}
-                        <span
-                          className="cursor-pointer text-blue-950 underline"
-                          onClick={() =>
-                            window.open("https://altaira.lk/privacypolicy/")
-                          }
-                        >
-                          Privacy Policy
-                        </span>
-                        .
-                      </span>
-                    </label>
+                            I agree to{" "}
+                            <span
+                              className="cursor-pointer text-blue-950 underline"
+                              onClick={() =>
+                                window.open(
+                                  "https://altaira.lk/terms-and-conditions/",
+                                )
+                              }
+                            >
+                              Terms
+                            </span>{" "}
+                            and{" "}
+                            <span
+                              className="cursor-pointer text-blue-950 underline"
+                              onClick={() =>
+                                window.open("https://altaira.lk/privacypolicy/")
+                              }
+                            >
+                              Privacy Policy
+                            </span>
+                            .
+                          </span>
+                        </label>
 
-                    <ReCAPTCHA
-                      sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5"
-                      onChange={handleCaptcha}
-                    />
+                        <ReCAPTCHA
+                          sitekey="6LeMzSIsAAAAAIpdKV2sEZN1VgnCFcpbCNu3ROl5"
+                          onChange={handleCaptcha}
+                        />
 
-                    <button
-                      type="submit"
-                      className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
-                    >
-                      Submit
-                    </button>
+                        <button
+                          type="submit"
+                          className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </form>
                   </div>
-                </form>
-              </div>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

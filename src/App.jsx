@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import Experiences from "./components/AltairaExperiences/Experiences";
 import AltairaProject from "./components/AltairaProject/AltairaProject";
 import MapComponent from "./components/MapComponent/MapComponent";
+import PrivateResidences from "./components/PrivateResidences/PrivateResidences";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <div>
             <Navbar />
             <Hero />
+            <PrivateResidences />
             <Invest />
             <AltairaProject />
             <Experiences />

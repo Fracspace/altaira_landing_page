@@ -114,6 +114,8 @@ const Hero = () => {
     token: "",
   });
 
+  const payload ={...formData, option:formData.investmentType}
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -134,18 +136,18 @@ const Hero = () => {
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
     try {
-      // const response = await axios.post(
-      //   "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
-      //   formData,
-      //   {
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       "x-api-key": "Fracspace@2024",
-      //     },
-      //   },
-      // );
+      const response = await axios.post(
+        "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions",
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "Fracspace@2024",
+          },
+        },
+      );
 
-      console.log("response", formData);
+      //console.log("response", formData);
 
       alert("Form submitted successfully");
       // console.log("Form submitted:", formData);
@@ -209,21 +211,23 @@ const Hero = () => {
         autoPlay
         muted
         loop
-        controls
+        // controls
         preload="auto"
       ></video>
       <div className="custom-div absolute inset-0 flex flex-col items-center justify-center gap-10 bg-black/40 px-4 text-center text-white sm:px-10 lg:flex-row lg:justify-between lg:gap-20 lg:px-20">
         <div className="mt-30 w-full space-y-4 text-left md:mt-0 md:w-full lg:max-w-xl lg:space-y-6">
-          <h2 className="font-montserrat ipadProText text-xl leading-relaxed md:text-3xl md:font-bold">
+          <h2 className="font-montserrat ipadProText text-lg leading-relaxed md:text-3xl md:font-semibold">
             Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the
             Adventure Capital of the Island.
           </h2>
-          <h1 className="font-poppins ipadProText text-lg leading-relaxed md:text-2xl md:font-normal">
-            Limited early-stage investment slots with high projected returns
-            driven by booming eco-tourism & post-2025 tourism surge.
-          </h1>
+          <h2 className="font-poppins italic ipadProText text-base leading-relaxed md:text-xl">
+            Be part of the Altaira vision by investing in the resort development or owning a private residence within the resort community.
+          </h2>
+          <button onClick={()=>{
+            document.getElementById("residences")?.scrollIntoView({behavior:"smooth"});
+          }} className="bg-[rgba(255,255,255,0.08)] transition-transform hover:scale-105 duration-300 font-poppins cursor-pointer p-3 text-base md:text-lg backdrop-blur-lg border border-white/20 rounded-xl">Explore Oppurtunities</button>
         </div>
-        <div className="w-full rounded-lg p-2 text-black md:w-[60vw] lg:h-auto lg:w-auto">
+        <div className="w-full rounded-lg p-2 text-black md:w-[80vw] lg:h-auto lg:w-auto">
           <form
             onSubmit={handleSubmit}
             className="altara-mainForm ipadProStyles flex h-auto flex-col gap-3 space-y-3 rounded-md bg-[#0A0A0A8C] p-4 text-black shadow-lg lg:w-[25vw]"
@@ -439,7 +443,6 @@ const Hero = () => {
                   </option>
                 ))}
               </select>
-
 
               <select
                 id="investmentType"
