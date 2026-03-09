@@ -16,8 +16,9 @@ const PrivateResidences = () => {
                         <p className='text-center font-poppins text-lg md:text-xl'>Selected investors may have the opportunity to own private villas or residences within the Altaira resort community.</p>
                         <hr className="border-[#D4AF37]/60 border-1 w-full max-w-md" />
                     </div>
-                    <div className="grid grid-cols-1 space-y-10 mt-10 md:grid-cols-2">
-                        <div className="flex flex-col gap-2">
+                    <div className='flex flex-col items-center'>
+                    <div className="grid grid-cols-1 space-y-10 mt-15 md:grid-cols-2">
+                        <div className="flex flex-col max-w-xl gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={luxuryResortResidences} alt="Luxury Resort Residences" className="w-9 h-9" />
                                 <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Luxury Resort Residences</h2>
@@ -26,7 +27,7 @@ const PrivateResidences = () => {
                                 <p className="font-poppins text-base">Own a thoughtfully designed villa or residence within the Altaira resort environment.</p>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col max-w-xl gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={optionalRental} alt="Optional Rental" className="w-9 h-9" />
                                 <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Optional Rental Potential</h2>
@@ -36,7 +37,7 @@ const PrivateResidences = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col max-w-xl gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={lifeStyleOwnership} alt="Life Style Ownership" className="w-9 h-9" />
                                 <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Lifestyle Ownership</h2>
@@ -46,7 +47,7 @@ const PrivateResidences = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-2">
+                        <div className="flex flex-col max-w-xl gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={privateTourismLocation} alt="Private Tourism Location" className="w-9 h-9" />
                                 <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Private Tourism Location</h2>
@@ -56,7 +57,7 @@ const PrivateResidences = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='mt-10 md:mt-5'>
+                    <div className='mt-10 md:mt-10'>
                         <div className='relative'>
                             <img src={residence} alt="Residence" className='object-cover h-[40vh] md:h-[40vh] lg:h-auto w-full' />
                             <div className="absolute inset-0 flex flex-col gap-10 items-center justify-center text-center p-4">
@@ -65,6 +66,7 @@ const PrivateResidences = () => {
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
                 </div>
             </div>
