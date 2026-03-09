@@ -17,40 +17,40 @@ const PrivateResidences = () => {
                         <hr className="border-[#D4AF37]/60 border-1 w-full max-w-md" />
                     </div>
                     <div className='flex flex-col items-center'>
-                    <div className="grid grid-cols-1 space-y-10 mt-15 md:grid-cols-2">
-                        <div className="flex flex-col max-w-xl gap-2">
+                    <div className="grid grid-cols-1 mx-auto gap-5 max-w-5xl space-y-10 mt-15 md:grid-cols-2">
+                        <div className="flex max-w-md flex-col gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={luxuryResortResidences} alt="Luxury Resort Residences" className="w-9 h-9" />
-                                <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Luxury Resort Residences</h2>
+                                <h2 className="font-semibold text-xl font-poppins text-[#D4AF37]">Luxury Resort Residences</h2>
                             </div>
                             <div>
                                 <p className="font-poppins text-base">Own a thoughtfully designed villa or residence within the Altaira resort environment.</p>
                             </div>
                         </div>
-                        <div className="flex flex-col max-w-xl gap-2">
+                        <div className="flex max-w-md flex-col gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={optionalRental} alt="Optional Rental" className="w-9 h-9" />
-                                <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Optional Rental Potential</h2>
+                                <h2 className="font-semibold text-xl font-poppins text-[#D4AF37]">Optional Rental Potential</h2>
                             </div>
                             <div>
                                 <p className="font-poppins text-base">Owners may offer their residence for guest stays through resort management.</p>
                             </div>
                         </div>
 
-                        <div className="flex flex-col max-w-xl gap-2">
+                        <div className="flex max-w-md flex-col gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={lifeStyleOwnership} alt="Life Style Ownership" className="w-9 h-9" />
-                                <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Lifestyle Ownership</h2>
+                                <h2 className="font-semibold text-xl font-poppins text-[#D4AF37]">Lifestyle Ownership</h2>
                             </div>
                             <div>
                                 <p className="font-poppins text-base">Enjoy a luxury resort lifestyle while owning a premium property.</p>
                             </div>
                         </div>
 
-                        <div className="flex flex-col max-w-xl gap-2">
+                        <div className="flex max-w-md flex-col gap-2">
                             <div className="flex flex-row items-center gap-4">
                                 <img src={privateTourismLocation} alt="Private Tourism Location" className="w-9 h-9" />
-                                <h2 className="font-bold text-xl font-poppins text-[#D4AF37]">Private Tourism Location</h2>
+                                <h2 className="font-semibold text-xl font-poppins text-[#D4AF37]">Private Tourism Location</h2>
                             </div>
                             <div>
                                 <p className="font-poppins text-base">Located in one of Sri Lanka’s emerging tourism destinations.</p>
