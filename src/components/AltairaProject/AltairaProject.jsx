@@ -220,7 +220,7 @@ function AltairaProject() {
                     </ul>
                     <button
                       onClick={handleShowForm}
-                      className="font-montserrat mt-10 flex scale-100 cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white transition hover:scale-105 hover:bg-[#9c835a]"
+                      className="font-montserrat mt-10 flex scale-100 cursor-pointer items-center gap-1 rounded-md bg-[#D4AF37] px-5 py-2 text-white transition hover:scale-105"
                     >
                       Register Now <ArrowRight />
                     </button>

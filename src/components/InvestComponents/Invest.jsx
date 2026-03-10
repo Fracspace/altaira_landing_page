@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import HighYield1 from "../../assets/Invest/HighYield1.png";
 import invest1 from "../../assets/Invest/investImg.png";
 import EarlyEntry1 from "../../assets/Invest/EarlyEntry1.png";
-import CurrencyAdvantage1 from "../../assets/Invest/CurrencyAdvantage1.png";
+import CurrencyAdvantage2 from "../../assets/Invest/currencyAdvantage2.png";
 import TourismGrowth1 from "../../assets/Invest/TourismGrowth1.png";
 import RecurringReturns1 from "../../assets/Invest/RecurringReturns1.png";
 
@@ -149,7 +149,7 @@ const Invest = () => {
                       <div className="justify-left flex items-center gap-3">
                         <img
                           src={HighYield1}
-                          className="h-10 w-10 md:h-10 md:w-10"
+                          className="h-10 w-10"
                           alt="High Yield"
                         />
                         <div className="flex flex-col">
@@ -163,10 +163,10 @@ const Invest = () => {
                       </div>
                     </div>
                     <div className="mb-2 pb-2">
-                      <div className="flex items-center justify-center gap-3">
+                      <div className="flex items-center justify-left gap-3">
                         <img
-                          src={CurrencyAdvantage1}
-                          className="h-10 w-10 md:h-15 md:w-15"
+                          src={CurrencyAdvantage2}
+                          className="h-10 w-10"
                           alt="Currency Advantage"
                         />
                         <div className="flex flex-col">
@@ -182,10 +182,10 @@ const Invest = () => {
                       </div>
                     </div>
                     <div className="mb-2 pb-2">
-                      <div className="flex items-center justify-center gap-3">
+                      <div className="flex items-center justify-left gap-3">
                         <img
                           src={TourismGrowth1}
-                          className="h-10 w-10 md:h-10 md:w-10"
+                          className="h-10 w-10"
                           alt="Tourism Growth"
                         />
                         <div className="flex flex-col">
@@ -204,7 +204,7 @@ const Invest = () => {
                       <div className="justify-left flex items-center gap-3">
                         <img
                           src={EarlyEntry1}
-                          className="h-10 w-10 md:h-10 md:w-10"
+                          className="h-10 w-10"
                           alt="Early Entry"
                         />
                         <div className="flex flex-col">
@@ -222,7 +222,7 @@ const Invest = () => {
                       <div className="justify-left flex items-center gap-3">
                         <img
                           src={RecurringReturns1}
-                          className="h-10 w-10 md:h-10 md:w-10"
+                          className="h-10 w-10"
                           alt="Returns"
                         />
                         <div className="flex flex-col">
