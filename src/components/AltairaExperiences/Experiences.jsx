@@ -38,7 +38,7 @@ function Experiences() {
       image: residencesImage,
       title: "Residences",
       description:
-        "At Altaira, your villa isn’t just a stay — it’s a private sanctuary suspended above the valley",
+        "At Altaira, your villa isn’t just a stay - it’s a private sanctuary suspended above the valley",
       gradient: "from-green-500 to-teal-600",
     },
     {
@@ -46,14 +46,14 @@ function Experiences() {
       image: cloudWalkwaysImage,
       title: "Cloudwalkway",
       description:
-        "The Cloud Walkways — elevated paths that weave through misty ridges — let you literally walk among the clouds",
+        "The Cloud Walkways - elevated paths that weave through misty ridges - let you literally walk among the clouds",
       gradient: "from-orange-500 to-red-600",
     },
     {
       id: 5,
       image: restaurantImg,
       title: "Restaurant",
-      description: "The Hilltop Restaurant — Dining Above the Clouds",
+      description: "The Hilltop Restaurant - Dining Above the Clouds",
       gradient: "from-violet-500 to-purple-600",
     },
     {
@@ -83,13 +83,13 @@ function Experiences() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {galleryItems.map((item, index) => {
-                const isHovered = hoveredIndex === index;
+              {galleryItems.map((item) => {
+                const isHovered = hoveredIndex === item.id;
                 return (
                   <div
                     key={item.id}
                     className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105"
-                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseEnter={() => setHoveredIndex(item.id)}
                     onMouseLeave={() => setHoveredIndex(null)}
                     style={{ aspectRatio: "4/3" }}
                   >
