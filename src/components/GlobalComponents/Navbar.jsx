@@ -31,7 +31,7 @@ const NavBar = () => {
   };
 
   const toggleMenu = () => {
-    setOpenMenu(!openMenu);
+    setOpenMenu(prevIsOpen=>!prevIsOpen);
   };
 
   const [captchaToken, setCaptchaToken] = useState("");
@@ -171,7 +171,7 @@ const NavBar = () => {
           </Link>
         </div>
 
-        {!isMobile && (
+        {!isMobile ? (
           <ul className="font-montserrat flex md:mt-4">
             <li className="cursor-pointer pr-8 text-white">
               <Link to="herosection" smooth={true} duration={500}>
@@ -192,9 +192,7 @@ const NavBar = () => {
               <span onClick={handleShowForm}>Enquire Now</span>
             </li>
           </ul>
-        )}
-
-        {isMobile && (
+        ):(
           <button onClick={toggleMenu} className="text-white lg:hidden">
             {openMenu ? <X size={32} /> : <Menu size={32} />}
           </button>
