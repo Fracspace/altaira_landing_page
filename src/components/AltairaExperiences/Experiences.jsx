@@ -59,7 +59,7 @@ function Experiences() {
     {
       id: 6,
       image: rainforestImage,
-      title: "RainForest Spa",
+      title: "Rainforest Spa",
       description:
         "At the heart of Altaira lies the Rainforest Spa, a sanctuary where mist, mineral water, and mountain air come together to revive your senses",
       gradient: "from-indigo-500 to-pink-600",
@@ -82,12 +82,13 @@ function Experiences() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div role="list" aria-label="Altaira Resort Experiences" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {galleryItems.map((item) => {
                 const isHovered = hoveredIndex === item.id;
                 return (
                   <div
                     key={item.id}
+                    role="listitem"
                     className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105"
                     onMouseEnter={() => setHoveredIndex(item.id)}
                     onMouseLeave={() => setHoveredIndex(null)}

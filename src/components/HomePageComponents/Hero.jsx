@@ -225,7 +225,7 @@ const Hero = () => {
           </h2>
           <button onClick={()=>{
             document.getElementById("residences")?.scrollIntoView({behavior:"smooth"});
-          }} className="bg-[rgba(255,255,255,0.08)] transition-transform hover:scale-105 hover:bg-[#D4AF37] duration-300 font-poppins cursor-pointer p-3 text-base md:text-lg backdrop-blur-lg border border-white/20 rounded-xl">Explore Oppurtunities</button>
+          }} className="bg-[rgba(255,255,255,0.08)] transition-transform hover:scale-105 hover:bg-[#D4AF37] duration-300 font-poppins cursor-pointer p-3 text-base md:text-lg backdrop-blur-lg border border-white/20 rounded-xl">Explore Opportunities</button>
         </div>
         <div className="w-full rounded-lg p-2 text-black md:w-[80vw] lg:h-auto lg:w-auto">
           <form
