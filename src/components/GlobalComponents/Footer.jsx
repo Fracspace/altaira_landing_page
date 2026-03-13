@@ -22,7 +22,7 @@ const Footer = () => {
                 Sri Lanka.
               </p>
             </div>
-            <div className="mt-4 w-[80vw] md:mt-0 md:w-[20vw]">
+            <div className="mt-4 md:mt-0">
               <h2 className="font-montserrat pb-2 text-2xl font-semibold text-white">
                 Quick Links
               </h2>
@@ -72,7 +72,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="mt-4 md:mt-0">
               <h2 className="font-montserrat pb-2 text-2xl font-semibold text-white">
                 Contact Us
               </h2>
