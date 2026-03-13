@@ -75,7 +75,7 @@ function Experiences() {
               <h1 className="font-montserrat mb-4 text-2xl font-semibold text-white sm:text-3xl">
                 See What You’re Investing In
               </h1>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg">
                 <em className="text-[#D4AF37]">
                   Sky villas, Exclusive wellness Resort
                 </em>
