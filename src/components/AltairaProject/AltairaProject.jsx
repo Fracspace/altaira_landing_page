@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import altairaImg from "../../assets/altaira.webp";
 // import villaImg from "../../assets/Villa2.webp";
-import villaImage from "../../assets/villaImage.webp"
+import villaImage from "../../assets/villaImage.webp";
 import villaImg from "../../assets/resortHeroImage.webp";
 import villaDetails from "../../assets/villaDetails.webp";
 import restaurantImg from "../../assets/restaurant.webp";
@@ -59,10 +59,7 @@ function AltairaProject() {
     "$500,001+",
   ];
 
-  const investmentType = [
-    "Buy a Villa",
-    "Invest in Resort"
-  ]
+  const investmentType = ["Buy a Villa", "Invest in Resort"];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -151,9 +148,9 @@ function AltairaProject() {
   };
 
   return (
-    <div className='py-10 bg-black'>
-      <div className="ml-10 mr-10">
-        <div className="max-w-7xl mx-auto">
+    <div className="bg-black py-10">
+      <div className="mr-10 ml-10">
+        <div className="mx-auto max-w-7xl">
           <div
             id="aboutAltairaProject"
             // className=" px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
@@ -163,9 +160,9 @@ function AltairaProject() {
               <h1 className="font-montserrat mb-8 text-center text-2xl font-semibold text-white md:text-3xl">
                 The Altaira Project
               </h1>
-              <div className="grid grid-cols-1 gap-5 xl:gap-12 xl:grid-cols-2">
+              <div className="grid grid-cols-1 gap-5 xl:grid-cols-2 xl:gap-12">
                 <div className="space-y-8">
-                  <div >
+                  <div>
                     <h2 className="font-montserrat mb-6 text-xl font-semibold text-[#D4AF37] md:text-2xl">
                       26 Acres of Elevated Living - Key Highlights:
                     </h2>
@@ -174,16 +171,16 @@ function AltairaProject() {
                       <li className="flex items-start">
                         <span className="mt-1 mr-3 text-xl text-white">•</span>
                         <span className="text-lg text-white">
-                          <strong>26-acre luxury highland escape</strong> surrounded
-                          by mist and nature.
+                          <strong>26-acre luxury highland escape</strong>{" "}
+                          surrounded by mist and nature.
                         </span>
                       </li>
 
                       <li className="flex items-start text-white">
                         <span className="mt-1 mr-3">•</span>
                         <span className="text-lg">
-                          <strong>40 private residences</strong> with boutique resort
-                          amenities.
+                          <strong>40 private residences</strong> with boutique
+                          resort amenities.
                         </span>
                       </li>
 
@@ -225,7 +222,7 @@ function AltairaProject() {
                       Register Now <ArrowRight />
                     </button>
                   </div>
-                  <div className="block h-[40vh] md:h-auto overflow-hidden shadow-2xl xl:hidden">
+                  <div className="block h-[40vh] overflow-hidden shadow-2xl md:h-auto xl:hidden">
                     <img
                       src={altairaImg}
                       alt="Altaira Restaurant"
@@ -233,14 +230,14 @@ function AltairaProject() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="relative">
                   {/* Top Left Circle */}
-                  <div className="absolute hidden xl:block top-0 left-0 h-56 w-56 overflow-hidden rounded-full shadow-2xl">
+                  <div className="absolute top-0 left-0 hidden h-56 w-56 overflow-hidden rounded-full shadow-2xl xl:block">
                     <img
                       src={villaImage}
                       alt="Altaira Resort"
-                      className=" h-full w-full object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </div>
 
@@ -254,7 +251,7 @@ function AltairaProject() {
                   </div>
 
                   {/* Small screen image */}
-                  <div className="absolute hidden border border-red-200 overflow-hidden shadow-2xl">
+                  <div className="absolute hidden overflow-hidden border border-red-200 shadow-2xl">
                     <img
                       src={altairaImg}
                       alt="Altaira Restaurant"
@@ -263,11 +260,11 @@ function AltairaProject() {
                   </div>
 
                   {/* Right Large Oval */}
-                  <div className="hidden xl:block absolute top-12 right-0 h-[450px] w-72 overflow-hidden rounded-full shadow-2xl">
+                  <div className="absolute top-12 right-0 hidden h-[450px] w-72 overflow-hidden rounded-full shadow-2xl xl:block">
                     <img
                       src={ridgeSuites1}
                       alt="Altaira Resort aerial view"
-                      className=" h-full w-full object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 </div>
@@ -507,7 +504,6 @@ function AltairaProject() {
                           ))}
                         </select>
 
-
                         <select
                           id="investmentType"
                           name="investmentType"
@@ -520,7 +516,11 @@ function AltairaProject() {
                             Investment Type*
                           </option>
                           {investmentType.map((type) => (
-                            <option key={type} value={type} className="bg-[#D4AF37]">
+                            <option
+                              key={type}
+                              value={type}
+                              className="bg-[#D4AF37]"
+                            >
                               {type}
                             </option>
                           ))}

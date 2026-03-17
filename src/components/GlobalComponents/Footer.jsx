@@ -7,19 +7,19 @@ import { Link as NavigationLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="py-10">
-      <div className="ml-10 mr-10">
-        <div className="max-w-7xl mx-auto">
+      <div className="mr-10 ml-10">
+        <div className="mx-auto max-w-7xl">
           <section
             id="footer"
             className="flex flex-col justify-between bg-[#0A0A0A] md:flex-row"
           >
-            <div >
+            <div>
               <h2 className="font-montserrat pb-2 text-2xl font-semibold text-white">
                 Altaira
               </h2>
-              <p className="font-poppins font-primary text-white">
-                Where luxury villas and resort living come together in the heart of
-                Sri Lanka.
+              <p className="font-poppins text-white">
+                Where luxury villas and resort living come together in the heart
+                of Sri Lanka.
               </p>
             </div>
             <div className="mt-4 md:mt-0">
@@ -39,7 +39,11 @@ const Footer = () => {
                     </ScrollLink>
                   </li>
                   <li className="font-poppins cursor-pointer text-white">
-                    <ScrollLink to="aboutAltairaProject" smooth={true} duration={500}>
+                    <ScrollLink
+                      to="aboutAltairaProject"
+                      smooth={true}
+                      duration={500}
+                    >
                       About Us
                     </ScrollLink>
                   </li>
@@ -65,7 +69,10 @@ const Footer = () => {
                     </NavigationLink>
                   </li>
                   <li className="font-poppins cursor-pointer text-white">
-                    <NavigationLink to="https://altaira.lk/refunds/" target="_blank">
+                    <NavigationLink
+                      to="https://altaira.lk/refunds/"
+                      target="_blank"
+                    >
                       Refunds & Cancellations
                     </NavigationLink>
                   </li>
@@ -81,7 +88,9 @@ const Footer = () => {
                   <Mail className="mr-2 text-white" />
                   <span
                     className="cursor-pointer"
-                    onClick={() => window.open("mailto:altaira.lk@fracspace.com")}
+                    onClick={() =>
+                      window.open("mailto:altaira.lk@fracspace.com")
+                    }
                   >
                     altaira.lk@fracspace.com
                   </span>
@@ -91,13 +100,17 @@ const Footer = () => {
                   <Phone className="mr-2" />
                   <div className="contactDiv">
                     <span
-                      onClick={() => (window.location.href = "tel:+94760312345")}
+                      onClick={() =>
+                        (window.location.href = "tel:+94760312345")
+                      }
                       className="cursor-pointer pr-2"
                     >
                       +94 76 031 2345{", "}
                     </span>
                     <span
-                      onClick={() => (window.location.href = "tel:+91-9880626111")}
+                      onClick={() =>
+                        (window.location.href = "tel:+91-9880626111")
+                      }
                       className="cursor-pointer pr-2"
                     >
                       +91-98806 26111
@@ -105,7 +118,8 @@ const Footer = () => {
                   </div>
                 </li>
                 <li className="font-poppins mt-3 flex text-white">
-                  <MapPinCheck className="mr-2" /> Bulathkohupitiya{",  "} Sri Lanka
+                  <MapPinCheck className="mr-2" /> Bulathkohupitiya{",  "} Sri
+                  Lanka
                 </li>
                 <li className="font-poppins mt-3 flex text-white">
                   <Globe className="mr-2" />{" "}

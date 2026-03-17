@@ -31,10 +31,7 @@ const incomeRanges = [
   "$500,001+",
 ];
 
-const investmentType = [
-  "Buy a Villa",
-  "Invest in Resort"
-]
+const investmentType = ["Buy a Villa", "Invest in Resort"];
 
 // const purposeOfInvestment = [
 //   "Passive Income",
@@ -48,37 +45,44 @@ const Hero = () => {
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
 
- useEffect(() => {
-  const video = videoRef.current;
+  useEffect(() => {
+    const video = videoRef.current;
 
-  if (!video) return;
+    if (!video) return;
 
-  const videoSrc =
-    "https://duixj37yn5405.cloudfront.net/hls-videos/1fcd2fe3-d98c-4ebc-87e9-a2967046b0b2/1080p/index.m3u8";
+    let hls;
 
-  if (video.canPlayType("application/vnd.apple.mpegurl")) {
-    // Safari / iOS
-    video.src = videoSrc;
-    video.play();
-  } else if (Hls.isSupported()) {
-    // Chrome / Edge / Android
-    const hls = new Hls({
-      startLevel: -1,  //chooses best quality based on network conditions
-      enableWorker: true,  //web workers for background processing
-    });
+    const videoSrc =
+      "https://duixj37yn5405.cloudfront.net/hls-videos/1fcd2fe3-d98c-4ebc-87e9-a2967046b0b2/1080p/index.m3u8";
 
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
+    if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // Safari / iOS
+      video.src = videoSrc;
+      video.play().catch(() => { });
+    } else if (Hls.isSupported()) {
+      // Chrome / Edge / Android
+      hls = new Hls({
+        startLevel: -1, //chooses best quality based on network conditions
+        enableWorker: true, //web workers for background processing
+      });
 
-    hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      video.play();
-    });
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
 
-    hls.on(Hls.Events.ERROR, (event, data) => {
-      console.log("HLS ERROR:", data);
-    });
-  }
-}, []);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play();
+      });
+
+      hls.on(Hls.Events.ERROR, (_event, data) => {
+        console.log("HLS ERROR:", data);
+      });
+    }
+    return () => {
+      if (hls) {
+        hls.destroy();
+      }
+    }
+  }, []);
 
   const changeHandler = (selected) => {
     setValue(selected);
@@ -114,7 +118,7 @@ const Hero = () => {
     token: "",
   });
 
-  const payload ={...formData, option:formData.investmentType}
+  const payload = { ...formData, option: formData.investmentType };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -136,7 +140,7 @@ const Hero = () => {
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
     try {
-      const response = await axios.post(
+       await axios.post(
         "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions",
         payload,
         {
@@ -220,12 +224,20 @@ const Hero = () => {
             Invest in Sri Lanka’s First Nature-Integrated Luxury Resort at the
             Adventure Capital of the Island.
           </h2>
-          <h2 className="font-poppins italic ipadProText text-base leading-relaxed md:text-xl">
-            Be part of the Altaira vision by investing in the resort development or owning a private residence within the resort community.
+          <h2 className="font-poppins ipadProText text-base leading-relaxed italic md:text-xl">
+            Be part of the Altaira vision by investing in the resort development
+            or owning a private residence within the resort community.
           </h2>
-          <button onClick={()=>{
-            document.getElementById("residences")?.scrollIntoView({behavior:"smooth"});
-          }} className="bg-[rgba(255,255,255,0.08)] transition-transform hover:scale-105 hover:bg-[#D4AF37] duration-300 font-poppins cursor-pointer p-3 text-base md:text-lg backdrop-blur-lg border border-white/20 rounded-xl">Explore Opportunities</button>
+          <button
+            onClick={() => {
+              document
+                .getElementById("residences")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="font-poppins cursor-pointer rounded-xl border border-white/20 bg-[rgba(255,255,255,0.08)] p-3 text-base backdrop-blur-lg transition-transform duration-300 hover:scale-105 hover:bg-[#D4AF37] md:text-lg"
+          >
+            Explore Opportunities
+          </button>
         </div>
         <div className="w-full rounded-lg p-2 text-black md:w-[80vw] lg:h-auto lg:w-auto">
           <form

@@ -4,14 +4,14 @@ import { useState } from "react";
 // import adventurePark from "../../assets/adv.webp";
 import adventureZone from "../../assets/Experiences/adventureZone.webp";
 // import cloudWalkway from "../../assets/cloud.jpg";
-import cloudWalkwaysImage from "../../assets/Experiences/cloudWalkwaysImage.webp"
+import cloudWalkwaysImage from "../../assets/Experiences/cloudWalkwaysImage.webp";
 // import infinityPool from "../../assets/pool.webp";
 import infinityPoolImage from "../../assets/Experiences/infinityPoolImage.webp";
 import restaurantImg from "../../assets/Experiences/restaurant.png";
 import rainforestImage from "../../assets/Experiences/rainforestImage.webp";
 // import spaImg from "../../assets/spa.webp";
 // import villaImg from "../../assets/villa.webp";
-import residencesImage from "../../assets/Experiences/residencesImage.webp"
+import residencesImage from "../../assets/Experiences/residencesImage.webp";
 
 function Experiences() {
   const [count, setCount] = useState(0);
@@ -68,58 +68,63 @@ function Experiences() {
 
   return (
     <div className="bg-black py-10">
-      <div className="ml-10 mr-10">
+      <div className="mr-10 ml-10">
         <div className="mx-auto max-w-7xl">
           {/* <div> */}
-            <div className="mb-10 text-center">
-              <h1 className="font-montserrat mb-4 text-2xl font-semibold text-white sm:text-3xl">
-                See What You’re Investing In
-              </h1>
-              <p className="text-lg">
-                <em className="text-[#D4AF37]">
-                  Sky villas, Exclusive wellness Resort
-                </em>
-              </p>
-            </div>
+          <div className="mb-10 text-center">
+            <h1 className="font-montserrat mb-4 text-2xl font-semibold text-white sm:text-3xl">
+              See What You’re Investing In
+            </h1>
+            <p className="text-lg">
+              <em className="text-[#D4AF37]">
+                Sky villas, Exclusive wellness Resort
+              </em>
+            </p>
+          </div>
 
-            <div role="list" aria-label="Altaira Resort Experiences" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {galleryItems.map((item) => {
-                const isHovered = hoveredIndex === item.id;
-                return (
+          <div
+            role="list"
+            aria-label="Altaira Resort Experiences"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {galleryItems.map((item) => {
+              const isHovered = hoveredIndex === item.id;
+              return (
+                <div
+                  key={item.id}
+                  role="listitem"
+                  className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105"
+                  onMouseEnter={() => setHoveredIndex(item.id)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  {/* Image */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  {/* Content Overlay */}
                   <div
-                    key={item.id}
-                    role="listitem"
-                    className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105"
-                    onMouseEnter={() => setHoveredIndex(item.id)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                    style={{ aspectRatio: "4/3" }}
-                  >
-                    {/* Image */}
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                    {/* Content Overlay */}
-                    <div
-                      className={`absolute inset-0 flex transform flex-col items-center justify-center p-6 transition-all duration-500 ${isHovered
+                    className={`absolute inset-0 flex transform flex-col items-center justify-center p-6 transition-all duration-500 ${
+                      isHovered
                         ? "translate-y-0 opacity-100"
                         : "translate-y-8 opacity-0"
-                        }`}
-                    >
-                      <h3 className="font-montserrat mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
-                        {item.title}
-                      </h3>
+                    }`}
+                  >
+                    <h3 className="font-montserrat mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
+                      {item.title}
+                    </h3>
 
-                      <p className="font-poppins text-center text-sm text-white/90 sm:text-base">
-                        {item.description}
-                      </p>
+                    <p className="font-poppins text-center text-sm text-white/90 sm:text-base">
+                      {item.description}
+                    </p>
 
-                      {/* 
+                    {/* 
                     <div className="mt-6 flex gap-3">
                       <button className="bg-white text-gray-900 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors">
                         Explore
@@ -128,21 +133,22 @@ function Experiences() {
                         Details
                       </button>
                     </div> */}
-                    </div>
-
-                    {/* Bottom Label (visible when not hovered) */}
-                    <div
-                      className={`absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-500 ${isHovered ? "opacity-0" : "opacity-100"
-                        }`}
-                    >
-                      <h3 className="font-montserrat text-lg font-semibold text-white">
-                        {item.title}
-                      </h3>
-                    </div>
                   </div>
-                );
-              })}
-            </div>
+
+                  {/* Bottom Label (visible when not hovered) */}
+                  <div
+                    className={`absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-500 ${
+                      isHovered ? "opacity-0" : "opacity-100"
+                    }`}
+                  >
+                    <h3 className="font-montserrat text-lg font-semibold text-white">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
           {/* </div> */}
         </div>
       </div>

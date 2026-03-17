@@ -31,7 +31,7 @@ const NavBar = () => {
   };
 
   const toggleMenu = () => {
-    setOpenMenu(prevIsOpen=>!prevIsOpen);
+    setOpenMenu((prevIsOpen) => !prevIsOpen);
   };
 
   const [captchaToken, setCaptchaToken] = useState("");
@@ -61,12 +61,7 @@ const NavBar = () => {
     "$500,001+",
   ];
 
-
-  const investmentType = [
-    "Buy a Villa",
-    "Invest in Resort"
-  ];
-
+  const investmentType = ["Buy a Villa", "Invest in Resort"];
 
   // const purposeOfInvestment = [
   //   "Passive Income",
@@ -86,7 +81,7 @@ const NavBar = () => {
     designation: "",
     companyName: "",
     incomeRange: "",
-    investmentType:"",
+    investmentType: "",
     token: "",
   });
 
@@ -192,7 +187,7 @@ const NavBar = () => {
               <span onClick={handleShowForm}>Enquire Now</span>
             </li>
           </ul>
-        ):(
+        ) : (
           <button onClick={toggleMenu} className="text-white lg:hidden">
             {openMenu ? <X size={32} /> : <Menu size={32} />}
           </button>

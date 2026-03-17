@@ -2,10 +2,10 @@ import React from "react";
 
 function MapComponent() {
   return (
-    <div className="bg-gradient-to-b py-10 from-gray-900 to-gray-800">
-      <div className="ml-10 mr-10">
-        <div className="max-w-7xl mx-auto">
-          <div >
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800 py-10">
+      <div className="mr-10 ml-10">
+        <div className="mx-auto max-w-7xl">
+          <div>
             <div className="mb-8 text-center">
               <h1 className="font-montserrat mb-2 text-2xl font-semibold text-white md:text-3xl">
                 Find Us in the Highlands
@@ -33,7 +33,12 @@ function MapComponent() {
                 📍 Altaira, Bulathkohupitiya, Srilanka
               </p>
             </div>
-            <div onClick={()=>window.open("https://www.altaira.lk/")} className="text-center mt-5 cursor-pointer text-[#D4AF37] font-poppins underline underline-offset-7">Click here to visit our website </div>
+            <div
+              onClick={() => window.open("https://www.altaira.lk/")}
+              className="font-poppins mt-5 cursor-pointer text-center text-[#D4AF37] underline underline-offset-7"
+            >
+              Click here to visit our website{" "}
+            </div>
           </div>
         </div>
       </div>

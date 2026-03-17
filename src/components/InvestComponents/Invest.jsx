@@ -126,9 +126,9 @@ const Invest = () => {
     }
   };
   return (
-    <div className="ml-10 mr-10">
+    <div className="mr-10 ml-10">
       <div className="py-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl">
           <div className="bg-[#0a0a0a] text-white">
             <div className="flex flex-col items-center">
               <div className="mt-4" id="amenities">
@@ -141,7 +141,7 @@ const Invest = () => {
                 <img
                   src={invest1}
                   alt="Why Invest?"
-                  className="lg:h-[40vh] hidden h-[50vh] w-[100vw] rounded-md object-contain md:h-[70vh] md:w-[40vw] xl:h-[60vh] xl:w-[30vw] lg:block"
+                  className="hidden h-[50vh] w-[100vw] rounded-md object-contain md:h-[70vh] md:w-[40vw] lg:block lg:h-[40vh] xl:h-[60vh] xl:w-[30vw]"
                 />
                 <div>
                   <div className="flex flex-col gap-6 lg:justify-center">
@@ -163,7 +163,7 @@ const Invest = () => {
                       </div>
                     </div>
                     <div className="mb-2 pb-2">
-                      <div className="flex items-center justify-left gap-3">
+                      <div className="justify-left flex items-center gap-3">
                         <img
                           src={CurrencyAdvantage2}
                           className="h-10 w-10"
@@ -175,14 +175,14 @@ const Invest = () => {
                           </h2>
                           <h2 className="font-poppins text-base">
                             {" "}
-                            INR investments gain added appreciation from LKR value
-                            rise.
+                            INR investments gain added appreciation from LKR
+                            value rise.
                           </h2>
                         </div>
                       </div>
                     </div>
                     <div className="mb-2 pb-2">
-                      <div className="flex items-center justify-left gap-3">
+                      <div className="justify-left flex items-center gap-3">
                         <img
                           src={TourismGrowth1}
                           className="h-10 w-10"
@@ -231,8 +231,8 @@ const Invest = () => {
                           </h2>
                           <h2 className="font-poppins text-base">
                             {" "}
-                            Annual payouts, resale flexibility, and lifetime stay
-                            benefits.
+                            Annual payouts, resale flexibility, and lifetime
+                            stay benefits.
                           </h2>
                         </div>
                       </div>
