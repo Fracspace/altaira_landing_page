@@ -72,7 +72,7 @@ const Footer = () => {
                   <li className="font-poppins text-white">
                     <a
                       href="https://altaira.lk/refunds/"
-                      rel="noopener norefferer"
+                      rel="noopener noreferrer"
                       target="_blank"
                     >
                       Refunds & Cancellations
