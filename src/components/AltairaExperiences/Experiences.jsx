@@ -87,22 +87,22 @@ function Experiences() {
             aria-label="Altaira Resort Experiences"
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {galleryItems.map((item) => {
-              const isHovered = hoveredIndex === item.id;
+            {galleryItems.map((item,index) => {
+              const isHovered = hoveredIndex === index;
               return (
                 <div
                   key={item.id}
                   role="listitem"
-                  className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105"
-                  onMouseEnter={() => setHoveredIndex(item.id)}
+                  className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 aspect-[4/3]"
+                  onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  style={{ aspectRatio: "4/3" }}
                 >
                   {/* Image */}
                   <img
                     src={item.image}
                     alt={item.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
 
                   {/* Gradient Overlay */}

@@ -2,7 +2,6 @@ import React from "react";
 import { Mail, Phone, MapPinCheck } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
 import { Globe } from "lucide-react";
-import { Link as NavigationLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -52,29 +51,35 @@ const Footer = () => {
                       Enquire Now
                     </ScrollLink>
                   </li>
-                  <li className="font-poppins cursor-pointer text-white">
-                    <NavigationLink
-                      to="https://altaira.lk/terms-and-conditions/"
+                  <li className="font-poppins text-white">
+                    <a
+                      href="https://altaira.lk/terms-and-conditions/"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer"
                       target="_blank"
                     >
                       Terms of Service
-                    </NavigationLink>
+                    </a>
                   </li>
-                  <li className="font-poppins cursor-pointer text-white">
-                    <NavigationLink
-                      to="https://altaira.lk/privacypolicy/"
+                  <li className="font-poppins text-white">
+                    <a
+                      href="https://altaira.lk/privacypolicy/"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer"
                       target="_blank"
                     >
                       Privacy Policy
-                    </NavigationLink>
+                    </a>
                   </li>
-                  <li className="font-poppins cursor-pointer text-white">
-                    <NavigationLink
-                      to="https://altaira.lk/refunds/"
+                  <li className="font-poppins text-white">
+                    <a
+                      href="https://altaira.lk/refunds/"
+                      rel="noopener norefferer"
+                      className="cursor-pointer"
                       target="_blank"
                     >
                       Refunds & Cancellations
-                    </NavigationLink>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -123,20 +128,22 @@ const Footer = () => {
                 </li>
                 <li className="font-poppins mt-3 flex text-white">
                   <Globe className="mr-2" />{" "}
-                  <NavigationLink
-                    to="https://altaira.in"
-                    target="_blank"
+                  <a
+                    href="https://altaira.in"
+                    rel="noopener noreferrer"
                     className="mr-2 cursor-pointer"
+                    target="_blank"
                   >
                     altaira.in ,
-                  </NavigationLink>{" "}
-                  <NavigationLink
+                  </a>{" "}
+                  <a
                     className="cursor-pointer"
+                    rel="noopener noreferrer"
+                    href="https://altaira.lk"
                     target="_blank"
-                    to="https://altaira.lk"
                   >
                     altaira.lk
-                  </NavigationLink>
+                  </a>
                 </li>
               </ul>
             </div>
