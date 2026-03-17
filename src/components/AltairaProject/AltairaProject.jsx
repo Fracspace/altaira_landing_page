@@ -3,8 +3,6 @@ import altairaImg from "../../assets/altaira.webp";
 // import villaImg from "../../assets/Villa2.webp";
 import villaImage from "../../assets/villaImage.webp";
 import villaImg from "../../assets/resortHeroImage.webp";
-import villaDetails from "../../assets/villaDetails.webp";
-import restaurantImg from "../../assets/restaurant.webp";
 import ridgeSuites1 from "../../assets/ridgeSuites1.webp";
 import { ArrowRight } from "lucide-react";
 import axios from "axios";
@@ -16,7 +14,6 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 import ReCAPTCHA from "react-google-recaptcha";
-import { useNavigate } from "react-router-dom";
 
 function AltairaProject() {
   const [value, setValue] = useState("");
@@ -33,7 +30,6 @@ function AltairaProject() {
     }));
   };
 
-  const navigate = useNavigate();
   const [captchaToken, setCaptchaToken] = useState("");
   const handleCaptcha = (value) => {
     setCaptchaToken(value);
@@ -96,7 +92,7 @@ function AltairaProject() {
 
     // console.log("form data",formData);
     try {
-      const response = await axios.post(
+      await axios.post(
         "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
         formData,
         {

@@ -14,7 +14,6 @@ import rainforestImage from "../../assets/Experiences/rainforestImage.webp";
 import residencesImage from "../../assets/Experiences/residencesImage.webp";
 
 function Experiences() {
-  const [count, setCount] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const galleryItems = [
@@ -91,7 +90,7 @@ function Experiences() {
               const isHovered = hoveredIndex === index;
               return (
                 <div
-                  key={item.id}
+                  key={index}
                   role="listitem"
                   className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 aspect-[4/3]"
                   onMouseEnter={() => setHoveredIndex(index)}

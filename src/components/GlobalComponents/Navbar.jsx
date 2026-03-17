@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import { useMediaQuery } from "@react-hook/media-query";
 import { Link } from "react-scroll";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 import Select from "react-select";
 import countryList from "react-select-country-list";
@@ -20,7 +19,6 @@ const NavBar = () => {
   const isMobile = useMediaQuery("(max-width:820px)");
   const [openMenu, setOpenMenu] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const navigate = useNavigate();
 
   const changeHandler = (selected) => {
     setValue(selected);
@@ -197,44 +195,44 @@ const NavBar = () => {
       {isMobile && openMenu && (
         <div>
           <ul className="font-montserrat w-full border-t border-white bg-black pb-4 text-[#D4AF37]">
-            <li className="cursor-pointer pt-2 pb-2 text-center">
+            <li className="pt-2 pb-2 text-center">
               <Link
                 onClick={() => setOpenMenu(false)}
                 to="herosection"
                 smooth
                 duration={500}
+                className="cursor-pointer"
               >
                 Home
               </Link>
             </li>
-            <li className="cursor-pointer pb-2 text-center">
+            <li className="pb-2 text-center">
               <Link
                 onClick={() => setOpenMenu(false)}
                 to="amenities"
                 smooth
                 duration={500}
+                className="cursor-pointer"
               >
                 Highlights
               </Link>
             </li>
-            <li className="cursor-pointer pb-2 text-center">
+            <li className="pb-2 text-center">
               <Link
                 onClick={() => setOpenMenu(false)}
                 to="aboutAltairaProject"
                 smooth
                 duration={500}
+                className="cursor-pointer"
               >
                 About Us
               </Link>
             </li>
-            <li
-              className="cursor-pointer pb-2 text-center"
-              onClick={() => {
+            <li className="pb-2 text-center">
+              <button className="cursor-pointer w-full" onClick={() => {
                 setOpenMenu(false);
                 handleShowForm();
-              }}
-            >
-              Enquire Now
+              }}>Enquire Now</button>
             </li>
           </ul>
         </div>
