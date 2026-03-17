@@ -517,7 +517,7 @@ const Hero = () => {
 
             <button
               type="submit"
-              className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:bg-[#9c835a]"
+              className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:scale-105 duration-300"
             >
               Submit
             </button>
