@@ -140,7 +140,7 @@ const Hero = () => {
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
     try {
-       await axios.post(
+      await axios.post(
         "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions",
         payload,
         {
@@ -488,23 +488,23 @@ const Hero = () => {
                   {/* I consent to the Altaira team contacting me using the details
                   I have provided. */}
                   I agree to{" "}
-                  <span
-                    className="cursor-pointer underline"
-                    onClick={() =>
-                      window.open("https://altaira.lk/terms-and-conditions/")
-                    }
+                  <a
+                    className="underline"
+                    rel="noopener noreferrer"
+                    href="https://altaira.lk/terms-and-conditions/"
+                    target="_blank"
                   >
                     Terms
-                  </span>{" "}
+                  </a>{" "}
                   and{" "}
-                  <span
-                    className="cursor-pointer underline"
-                    onClick={() =>
-                      window.open("https://altaira.lk/privacypolicy/")
-                    }
+                  <a
+                    className="underline"
+                    href="https://altaira.lk/privacypolicy/"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
                     Privacy Policy
-                  </span>
+                  </a>
                   .
                 </span>
               </label>

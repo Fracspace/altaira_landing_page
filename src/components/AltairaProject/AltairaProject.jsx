@@ -149,7 +149,7 @@ function AltairaProject() {
         <div className="mx-auto max-w-7xl">
           <div
             id="aboutAltairaProject"
-            // className=" px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
+          // className=" px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
           >
             <div>
               {/* Header */}
@@ -536,25 +536,24 @@ function AltairaProject() {
                             {/* I consent to the Altaira team contacting me using the
                         details I have provided. */}
                             I agree to{" "}
-                            <span
-                              className="cursor-pointer text-blue-950 underline"
-                              onClick={() =>
-                                window.open(
-                                  "https://altaira.lk/terms-and-conditions/",
-                                )
-                              }
+                            <a
+                              className="text-blue-950 underline"
+                              href="https://altaira.lk/terms-and-conditions/"
+                              rel="noopener noreferrer"
+                              aria-label="View Terms and Conditions"
+                              target="_blank"
                             >
                               Terms
-                            </span>{" "}
+                            </a>{" "}
                             and{" "}
-                            <span
-                              className="cursor-pointer text-blue-950 underline"
-                              onClick={() =>
-                                window.open("https://altaira.lk/privacypolicy/")
-                              }
+                            <a
+                              className="text-blue-950 underline"
+                              href="https://altaira.lk/privacypolicy/"
+                              rel="noopener noreferrer"
+                              target="_blank"
                             >
                               Privacy Policy
-                            </span>
+                            </a>
                             .
                           </span>
                         </label>
