@@ -55,7 +55,6 @@ const Footer = () => {
                     <a
                       href="https://altaira.lk/terms-and-conditions/"
                       rel="noopener noreferrer"
-                      className="cursor-pointer"
                       target="_blank"
                     >
                       Terms of Service
@@ -65,7 +64,6 @@ const Footer = () => {
                     <a
                       href="https://altaira.lk/privacypolicy/"
                       rel="noopener noreferrer"
-                      className="cursor-pointer"
                       target="_blank"
                     >
                       Privacy Policy
@@ -75,7 +73,6 @@ const Footer = () => {
                     <a
                       href="https://altaira.lk/refunds/"
                       rel="noopener norefferer"
-                      className="cursor-pointer"
                       target="_blank"
                     >
                       Refunds & Cancellations
@@ -131,13 +128,12 @@ const Footer = () => {
                   <a
                     href="https://altaira.in"
                     rel="noopener noreferrer"
-                    className="mr-2 cursor-pointer"
+                    className="mr-2"
                     target="_blank"
                   >
                     altaira.in ,
                   </a>{" "}
                   <a
-                    className="cursor-pointer"
                     rel="noopener noreferrer"
                     href="https://altaira.lk"
                     target="_blank"
