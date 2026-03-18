@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 // import adventurePark from "../../assets/adv.webp";
 import adventureZone from "../../assets/Experiences/adventureZone.webp";
@@ -14,7 +13,6 @@ import rainforestImage from "../../assets/Experiences/rainforestImage.webp";
 import residencesImage from "../../assets/Experiences/residencesImage.webp";
 
 function Experiences() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const galleryItems = [
     {
@@ -22,7 +20,6 @@ function Experiences() {
       image: infinityPoolImage,
       title: "Infinity Pool",
       description: "Float above the forest in a pool that meets the horizon",
-      gradient: "from-blue-500 to-purple-600",
     },
     {
       id: 2,
@@ -30,7 +27,6 @@ function Experiences() {
       title: "Adventure Zone",
       description:
         "Glide above the canopy on thrilling ziplines, conquer the trails on ATVs, or trek through mist-laced mountain paths that lead to breathtaking valley views",
-      gradient: "from-cyan-500 to-blue-600",
     },
     {
       id: 3,
@@ -38,7 +34,6 @@ function Experiences() {
       title: "Residences",
       description:
         "At Altaira, your villa isn’t just a stay - it’s a private sanctuary suspended above the valley",
-      gradient: "from-green-500 to-teal-600",
     },
     {
       id: 4,
@@ -46,14 +41,12 @@ function Experiences() {
       title: "Cloudwalkway",
       description:
         "The Cloud Walkways - elevated paths that weave through misty ridges - let you literally walk among the clouds",
-      gradient: "from-orange-500 to-red-600",
     },
     {
       id: 5,
       image: restaurantImg,
       title: "Restaurant",
       description: "The Hilltop Restaurant - Dining Above the Clouds",
-      gradient: "from-violet-500 to-purple-600",
     },
     {
       id: 6,
@@ -61,7 +54,6 @@ function Experiences() {
       title: "Rainforest Spa",
       description:
         "At the heart of Altaira lies the Rainforest Spa, a sanctuary where mist, mineral water, and mountain air come together to revive your senses",
-      gradient: "from-indigo-500 to-pink-600",
     },
   ];
 
@@ -86,8 +78,7 @@ function Experiences() {
             aria-label="Altaira Resort Experiences"
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
-            {galleryItems.map((item,index) => {
-              const isHovered = hoveredIndex === index;
+            {galleryItems.map((item, index) => {
               return (
                 <div
                   key={index}
@@ -109,11 +100,7 @@ function Experiences() {
 
                   {/* Content Overlay */}
                   <div
-                    className={`absolute inset-0 flex transform flex-col items-center justify-center p-6 transition-all duration-500 ${
-                      isHovered
-                        ? "translate-y-0 opacity-100"
-                        : "translate-y-8 opacity-0"
-                    }`}
+                    className="absolute inset-0 flex transform flex-col items-center justify-center p-6 transition-all duration-500 group-hover:opacity-100  group-hover:translate-y-0 translate-y-8 opacity-0"
                   >
                     <h3 className="font-montserrat mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
                       {item.title}
@@ -136,9 +123,7 @@ function Experiences() {
 
                   {/* Bottom Label (visible when not hovered) */}
                   <div
-                    className={`absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-500 ${
-                      isHovered ? "opacity-0" : "opacity-100"
-                    }`}
+                    className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-500 group-hover:opacity-0 opacity-100"
                   >
                     <h3 className="font-montserrat text-lg font-semibold text-white">
                       {item.title}
