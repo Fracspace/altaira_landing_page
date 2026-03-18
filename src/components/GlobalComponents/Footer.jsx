@@ -27,18 +27,19 @@ const Footer = () => {
               </h2>
               <div>
                 <ul className="space-y-1">
-                  <li className="font-poppins cursor-pointer text-white">
-                    <ScrollLink to="herosection" smooth={true} duration={500}>
+                  <li className="font-poppins text-white">
+                    <ScrollLink className="cursor-pointer" to="herosection" smooth={true} duration={500}>
                       Home
                     </ScrollLink>
                   </li>
-                  <li className="font-poppins cursor-pointer text-white">
-                    <ScrollLink to="amenities" smooth={true} duration={500}>
+                  <li className="font-poppins text-white">
+                    <ScrollLink className="cursor-pointer" to="amenities" smooth={true} duration={500}>
                       Highlights
                     </ScrollLink>
                   </li>
-                  <li className="font-poppins cursor-pointer text-white">
+                  <li className="font-poppins text-white">
                     <ScrollLink
+                      className="cursor-pointer"
                       to="aboutAltairaProject"
                       smooth={true}
                       duration={500}
@@ -46,8 +47,8 @@ const Footer = () => {
                       About Us
                     </ScrollLink>
                   </li>
-                  <li className="font-poppins cursor-pointer text-white">
-                    <ScrollLink to="herosection" smooth={true} duration={500}>
+                  <li className="font-poppins text-white">
+                    <ScrollLink className="cursor-pointer" to="herosection" smooth={true} duration={500}>
                       Enquire Now
                     </ScrollLink>
                   </li>
@@ -88,7 +89,7 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li className="font-poppins flex text-white">
                   <Mail className="mr-2 text-white" />
-                  <a className="cursor-pointer" href="mailto:altaira.lk@fracspace.com">
+                  <a href="mailto:altaira.lk@fracspace.com">
                     altaira.lk@fracspace.com
                   </a>
                 </li>
@@ -97,12 +98,12 @@ const Footer = () => {
                   <Phone className="mr-2" />
                   <div className="contactDiv">
                     <span className="pr-2">
-                      <a href="tel:+94760312345" className="cursor-pointer">
+                      <a href="tel:+94760312345">
                         +94 76 031 2345{", "}
                       </a>
                     </span>
                     <span className="pr-2">
-                      <a href="tel:+919880626111" className="cursor-pointer">
+                      <a href="tel:+919880626111">
                         +91 98806 26111
                       </a>
                     </span>
