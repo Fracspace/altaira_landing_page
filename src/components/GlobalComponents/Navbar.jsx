@@ -159,10 +159,10 @@ const NavBar = () => {
     <nav className="fixed z-20 h-[15vh] w-full">
       <div className="flex h-[17vh] items-center justify-between bg-black/50 px-3 md:h-[13vh]">
         <div className="flex items-center justify-center">
-          <ScrollLink to="herosection" smooth={true} duration={500}>
+          <ScrollLink className="cursor-pointer" to="herosection" smooth={true} duration={500}>
             <img
               alt="Altaira logo"
-              className="h-[10vh] w-[30vw] cursor-pointer object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
+              className="h-[10vh] w-[30vw] object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
               src={AltairaLogo}
             />
           </ScrollLink>
