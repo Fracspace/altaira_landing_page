@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import AltairaLogo from "../../assets/Logo/AltairaLogo.png";
 import { Menu, X } from "lucide-react";
 import { useMediaQuery } from "@react-hook/media-query";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
 import axios from "axios";
 
 import Select from "react-select";
@@ -27,6 +27,10 @@ const NavBar = () => {
       country: selected?.label || "",
     }));
   };
+
+  const handleNavClick=()=>{
+    setOpenMenu(false);
+  }
 
   const toggleMenu = () => {
     setOpenMenu((prevIsOpen) => !prevIsOpen);
@@ -155,34 +159,34 @@ const NavBar = () => {
     <nav className="fixed z-20 h-[15vh] w-full">
       <div className="flex h-[17vh] items-center justify-between bg-black/50 px-3 md:h-[13vh]">
         <div className="flex items-center justify-center">
-          <Link to="herosection" smooth={true} duration={500}>
+          <ScrollLink to="herosection" smooth={true} duration={500}>
             <img
               alt="Altaira logo"
               className="h-[10vh] w-[30vw] cursor-pointer object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
               src={AltairaLogo}
             />
-          </Link>
+          </ScrollLink>
         </div>
 
         {!isMobile ? (
           <ul className="font-montserrat flex md:mt-4">
-            <li className="cursor-pointer pr-8 text-white">
-              <Link to="herosection" smooth={true} duration={500}>
+            <li className="pr-8 text-white">
+              <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to="herosection" smooth={true} duration={500}>
                 Home
-              </Link>
+              </ScrollLink>
             </li>
-            <li className="cursor-pointer pr-8 text-white">
-              <Link to="amenities" smooth={true} duration={500}>
+            <li className="pr-8 text-white">
+              <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to="amenities" smooth={true} duration={500}>
                 Highlights
-              </Link>
+              </ScrollLink>
             </li>
-            <li className="cursor-pointer pr-8 text-white">
-              <Link to="aboutAltairaProject" smooth={true} duration={500}>
+            <li className="pr-8 text-white">
+              <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to="aboutAltairaProject" smooth={true} duration={500}>
                 About Us
-              </Link>
+              </ScrollLink>
             </li>
-            <li className="cursor-pointer pr-8 text-white">
-              <span onClick={handleShowForm}>Enquire Now</span>
+            <li className="pr-8">
+              <button className="cursor-pointer text-white" onClick={handleShowForm}>Enquire Now</button>
             </li>
           </ul>
         ) : (
@@ -196,37 +200,37 @@ const NavBar = () => {
         <div>
           <ul className="font-montserrat w-full border-t border-white bg-black pb-4 text-[#D4AF37]">
             <li className="pt-2 pb-2 text-center">
-              <Link
-                onClick={() => setOpenMenu(false)}
+              <ScrollLink
+                onClick={handleNavClick}
                 to="herosection"
                 smooth
                 duration={500}
                 className="cursor-pointer"
               >
                 Home
-              </Link>
+              </ScrollLink>
             </li>
             <li className="pb-2 text-center">
-              <Link
-                onClick={() => setOpenMenu(false)}
+              <ScrollLink
+                onClick={handleNavClick}
                 to="amenities"
                 smooth
                 duration={500}
                 className="cursor-pointer"
               >
                 Highlights
-              </Link>
+              </ScrollLink>
             </li>
             <li className="pb-2 text-center">
-              <Link
-                onClick={() => setOpenMenu(false)}
+              <ScrollLink
+                onClick={handleNavClick}
                 to="aboutAltairaProject"
                 smooth
                 duration={500}
                 className="cursor-pointer"
               >
                 About Us
-              </Link>
+              </ScrollLink>
             </li>
             <li className="pb-2 text-center">
               <button className="cursor-pointer w-full" onClick={() => {
@@ -500,23 +504,23 @@ const NavBar = () => {
                     {/* I consent to the Altaira team contacting me using the
                     details I have provided. */}
                     I agree to{" "}
-                    <span
-                      className="cursor-pointer text-blue-950 underline"
-                      onClick={() =>
-                        window.open("https://altaira.lk/terms-and-conditions/")
-                      }
+                    <a
+                      className="text-blue-950 underline"
+                      href="https://altaira.lk/terms-and-conditions/"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
                       Terms
-                    </span>{" "}
+                    </a>{" "}
                     and{" "}
-                    <span
-                      className="cursor-pointer text-blue-950 underline"
-                      onClick={() =>
-                        window.open("https://altaira.lk/privacypolicy/")
-                      }
+                    <a
+                      className="text-blue-950 underline"
+                      rel="noopener noreferrer"
+                      href="https://altaira.lk/privacypolicy/"
+                      target="_blank"
                     >
                       Privacy Policy
-                    </span>
+                    </a>
                     .
                   </span>
                 </label>

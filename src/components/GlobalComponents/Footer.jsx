@@ -88,34 +88,23 @@ const Footer = () => {
               <ul className="space-y-1">
                 <li className="font-poppins flex text-white">
                   <Mail className="mr-2 text-white" />
-                  <span
-                    className="cursor-pointer"
-                    onClick={() =>
-                      window.open("mailto:altaira.lk@fracspace.com")
-                    }
-                  >
+                  <a className="cursor-pointer" href="mailto:altaira.lk@fracspace.com">
                     altaira.lk@fracspace.com
-                  </span>
+                  </a>
                 </li>
                 <li className="font-poppins mt-3 flex text-white">
                   {" "}
                   <Phone className="mr-2" />
                   <div className="contactDiv">
-                    <span
-                      onClick={() =>
-                        (window.location.href = "tel:+94760312345")
-                      }
-                      className="cursor-pointer pr-2"
-                    >
-                      +94 76 031 2345{", "}
+                    <span className="pr-2">
+                      <a href="tel:+94760312345" className="cursor-pointer">
+                        +94 76 031 2345{", "}
+                      </a>
                     </span>
-                    <span
-                      onClick={() =>
-                        (window.location.href = "tel:+91-9880626111")
-                      }
-                      className="cursor-pointer pr-2"
-                    >
-                      +91-98806 26111
+                    <span className="pr-2">
+                      <a href="tel:+919880626111" className="cursor-pointer">
+                        +91 98806 26111
+                      </a>
                     </span>
                   </div>
                 </li>
