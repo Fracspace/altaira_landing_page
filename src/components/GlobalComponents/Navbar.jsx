@@ -28,7 +28,7 @@ const NavBar = () => {
     }));
   };
 
-  const handleNavClick=()=>{
+  const handleNavClick = () => {
     setOpenMenu(false);
   }
 
@@ -37,6 +37,7 @@ const NavBar = () => {
   };
 
   const [captchaToken, setCaptchaToken] = useState("");
+
   const handleCaptcha = (value) => {
     setCaptchaToken(value);
     setFormData((prev) => ({
@@ -44,6 +45,12 @@ const NavBar = () => {
       token: value,
     }));
   };
+
+  const navItems = [
+    { label: "Home", to: "herosection" },
+    { label: "Highlights", to: "amenities" },
+    { label: "About Us", to: "aboutAltairaProject" },
+  ]
 
   // const investmentLocations = [
   //   "Hyderabad",
@@ -90,6 +97,11 @@ const NavBar = () => {
   const handleShowForm = () => setShowForm(true);
   const handleCloseForm = () => setShowForm(false);
 
+  const handleEnquireClick = () => {
+    setOpenMenu(false);
+    handleShowForm();
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -105,9 +117,10 @@ const NavBar = () => {
       return;
     }
     //console.log("form data",formData);
+    const apiUrl = 'https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm'
     try {
       await axios.post(
-        "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
+        apiUrl,
         formData,
         {
           headers: {
@@ -170,27 +183,19 @@ const NavBar = () => {
 
         {!isMobile ? (
           <ul className="font-montserrat flex md:mt-4">
-            <li className="pr-8 text-white">
-              <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to="herosection" smooth={true} duration={500}>
-                Home
-              </ScrollLink>
-            </li>
-            <li className="pr-8 text-white">
-              <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to="amenities" smooth={true} duration={500}>
-                Highlights
-              </ScrollLink>
-            </li>
-            <li className="pr-8 text-white">
-              <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to="aboutAltairaProject" smooth={true} duration={500}>
-                About Us
-              </ScrollLink>
-            </li>
+            {navItems.map((navItem) => (
+              <li key={navItem.to} className="pr-8 text-white">
+                <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to={navItem.to} smooth={true} duration={500}>
+                  {navItem.label}
+                </ScrollLink>
+              </li>
+            ))}
             <li className="pr-8">
               <button className="cursor-pointer text-white" onClick={handleShowForm}>Enquire Now</button>
             </li>
           </ul>
         ) : (
-          <button onClick={toggleMenu} className="text-white lg:hidden">
+          <button aria-label="Toggle menu" onClick={toggleMenu} className="text-white lg:hidden">
             {openMenu ? <X size={32} /> : <Menu size={32} />}
           </button>
         )}
@@ -199,44 +204,21 @@ const NavBar = () => {
       {isMobile && openMenu && (
         <div>
           <ul className="font-montserrat w-full border-t border-white bg-black pb-4 text-[#D4AF37]">
-            <li className="pt-2 pb-2 text-center">
-              <ScrollLink
-                onClick={handleNavClick}
-                to="herosection"
-                smooth
-                duration={500}
-                className="cursor-pointer"
-              >
-                Home
-              </ScrollLink>
-            </li>
+            {navItems.map((navItem) => (
+              <li key={navItem.to} className="pt-2 pb-2 text-center">
+                <ScrollLink
+                  onClick={handleNavClick}
+                  to={navItem.to}
+                  smooth
+                  duration={500}
+                  className="cursor-pointer"
+                >
+                  {navItem.label}
+                </ScrollLink>
+              </li>
+            ))}
             <li className="pb-2 text-center">
-              <ScrollLink
-                onClick={handleNavClick}
-                to="amenities"
-                smooth
-                duration={500}
-                className="cursor-pointer"
-              >
-                Highlights
-              </ScrollLink>
-            </li>
-            <li className="pb-2 text-center">
-              <ScrollLink
-                onClick={handleNavClick}
-                to="aboutAltairaProject"
-                smooth
-                duration={500}
-                className="cursor-pointer"
-              >
-                About Us
-              </ScrollLink>
-            </li>
-            <li className="pb-2 text-center">
-              <button className="cursor-pointer w-full" onClick={() => {
-                setOpenMenu(false);
-                handleShowForm();
-              }}>Enquire Now</button>
+              <button className="cursor-pointer w-full" onClick={handleEnquireClick}>Enquire Now</button>
             </li>
           </ul>
         </div>
