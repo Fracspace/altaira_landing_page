@@ -139,9 +139,10 @@ const Hero = () => {
     }
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
+    const apiUrl ='https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions'
     try {
       await axios.post(
-        "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions",
+        apiUrl,
         payload,
         {
           headers: {
@@ -292,11 +293,11 @@ const Hero = () => {
                   const numberOnly = digitsOnly.startsWith(dial)
                     ? digitsOnly.slice(dial.length)
                     : digitsOnly;
-                  setFormData({
-                    ...formData,
+                  setFormData((prev)=>({
+                    ...prev,
                     phoneNumber: numberOnly,
                     countryCode: `${dial}`,
-                  });
+                  }));
                 }}
                 placeholder="Mobile"
                 inputClass="w-full"

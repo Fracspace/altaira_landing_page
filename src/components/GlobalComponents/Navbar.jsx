@@ -172,7 +172,7 @@ const NavBar = () => {
     <nav className="fixed z-20 h-[15vh] w-full">
       <div className="flex h-[17vh] items-center justify-between bg-black/50 px-3 md:h-[13vh]">
         <div className="flex items-center justify-center">
-          <ScrollLink className="cursor-pointer" to="herosection" smooth={true} duration={500}>
+          <ScrollLink role="button" className="cursor-pointer" to="herosection" smooth={true} duration={500}>
             <img
               alt="Altaira logo"
               className="h-[10vh] w-[30vw] object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
@@ -184,7 +184,7 @@ const NavBar = () => {
         {!isMobile ? (
           <ul className="font-montserrat flex md:mt-4">
             {navItems.map((navItem) => (
-              <li key={navItem.to} className="pr-8 text-white">
+              <li key={navItem.label} className="pr-8 text-white">
                 <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to={navItem.to} smooth={true} duration={500}>
                   {navItem.label}
                 </ScrollLink>
@@ -205,7 +205,7 @@ const NavBar = () => {
         <div>
           <ul className="font-montserrat w-full border-t border-white bg-black pb-4 text-[#D4AF37]">
             {navItems.map((navItem) => (
-              <li key={navItem.to} className="pt-2 pb-2 text-center">
+              <li key={navItem.label} className="pt-2 pb-2 text-center">
                 <ScrollLink
                   onClick={handleNavClick}
                   to={navItem.to}
@@ -327,11 +327,11 @@ const NavBar = () => {
                     const numberOnly = digitsOnly.startsWith(dial)
                       ? digitsOnly.slice(dial.length)
                       : digitsOnly;
-                    setFormData({
-                      ...formData,
+                    setFormData((prev)=>({
+                      ...prev,
                       phoneNumber: numberOnly,
                       countryCode: `${dial}`,
-                    });
+                    }));
                   }}
                   placeholder="Mobile"
                   inputClass="w-full"

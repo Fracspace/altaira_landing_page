@@ -91,9 +91,10 @@ function AltairaProject() {
     }
 
     // console.log("form data",formData);
+    const apiUrl="https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm"
     try {
       await axios.post(
-        "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm",
+        apiUrl,
         formData,
         {
           headers: {
@@ -369,11 +370,11 @@ function AltairaProject() {
                             const numberOnly = digitsOnly.startsWith(dial)
                               ? digitsOnly.slice(dial.length)
                               : digitsOnly;
-                            setFormData({
-                              ...formData,
+                            setFormData((prev)=>({
+                              ...prev,
                               phoneNumber: numberOnly,
                               countryCode: `${dial}`,
-                            });
+                            }));
                           }}
                           placeholder="Mobile"
                           inputClass="w-full"
