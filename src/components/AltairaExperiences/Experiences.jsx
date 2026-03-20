@@ -6,7 +6,8 @@ import adventureZone from "../../assets/Experiences/adventureZone.webp";
 import cloudWalkwaysImage from "../../assets/Experiences/cloudWalkwaysImage.webp";
 // import infinityPool from "../../assets/pool.webp";
 import infinityPoolImage from "../../assets/Experiences/infinityPoolImage.webp";
-import restaurantImg from "../../assets/Experiences/restaurant.png";
+//import restaurantImg from "../../assets/Experiences/restaurant.png";
+import restaurantImg from "../../assets/Experiences/restaurantImg.webp"
 import rainforestImage from "../../assets/Experiences/rainforestImage.webp";
 // import spaImg from "../../assets/spa.webp";
 // import villaImg from "../../assets/villa.webp";
@@ -24,7 +25,7 @@ function Experiences() {
     {
       id: 2,
       image: adventureZone,
-      title: "Adventure Zone",
+      title: "Adventure Park",
       description:
         "Glide above the canopy on thrilling ziplines, conquer the trails on ATVs, or trek through mist-laced mountain paths that lead to breathtaking valley views",
     },
