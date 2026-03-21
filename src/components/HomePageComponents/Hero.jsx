@@ -2,7 +2,6 @@ import React, { useMemo, useState, useRef, useEffect } from "react";
 import Hls from "hls.js";
 // import AltairaVideo from "../../videos/AltairaVideo.mp4";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 import Select from "react-select";
 import countryList from "react-select-country-list";
@@ -94,7 +93,6 @@ const Hero = () => {
 
   //  const recaptcha =useRef(null);
 
-  const navigate = useNavigate();
   const [captchaToken, setCaptchaToken] = useState("");
   const handleCaptcha = (value) => {
     setCaptchaToken(value);

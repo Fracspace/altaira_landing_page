@@ -1,7 +1,6 @@
 import React from "react";
-import { Mail, Phone, MapPinCheck } from "lucide-react";
+import { Mail, Phone, MapPinCheck, Globe } from "lucide-react";
 import { Link as ScrollLink } from "react-scroll";
-import { Globe } from "lucide-react";
 
 const Footer = () => {
   return (
