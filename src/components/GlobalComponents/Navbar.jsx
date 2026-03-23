@@ -116,6 +116,22 @@ const NavBar = () => {
       alert("Please verify the captcha");
       return;
     }
+
+    const {countryCode,phoneNumber}=formData;
+
+    let updatedPhoneNumber = phoneNumber;
+
+    if (countryCode === "91" && phoneNumber.startsWith("0")) {
+     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: updatedPhoneNumber,
+      }))
+      alert("Enter 10 digit mobile number");
+      return;
+    }
+
+    
     //console.log("form data",formData);
     const apiUrl = 'https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm'
     try {

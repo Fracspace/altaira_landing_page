@@ -135,6 +135,20 @@ const Hero = () => {
       alert("Please verify the captcha");
       return;
     }
+
+    const { countryCode, phoneNumber } = formData;
+
+    let updatedPhoneNumber = phoneNumber;
+
+    if (countryCode === "91" && phoneNumber.startsWith("0")) {
+     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      setFormData((prev) => ({
+        ...prev,
+        phoneNumber: updatedPhoneNumber,
+      }))
+      alert("Enter 10 digit mobile number");
+      return;
+    }
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
     const apiUrl ='https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions'
@@ -177,7 +191,7 @@ const Hero = () => {
       console.log("error occured while submitting form", error);
     }
 
-    // // Log the form data here
+    // Log the form data here
     // console.log("FORM DATA:", formData);
 
     // alert("Form submitted successfully!");
@@ -291,7 +305,7 @@ const Hero = () => {
                   const numberOnly = digitsOnly.startsWith(dial)
                     ? digitsOnly.slice(dial.length)
                     : digitsOnly;
-                  setFormData((prev)=>({
+                  setFormData((prev) => ({
                     ...prev,
                     phoneNumber: numberOnly,
                     countryCode: `${dial}`,
