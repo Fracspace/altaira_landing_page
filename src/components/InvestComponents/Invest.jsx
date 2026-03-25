@@ -141,7 +141,7 @@ const Invest = () => {
                 <img
                   src={invest1}
                   alt="Why Invest?"
-                  className="hidden h-[50vh] w-[100vw] rounded-md object-contain md:h-[70vh] md:w-[40vw] lg:block lg:h-[40vh] xl:h-[60vh] xl:w-[30vw]"
+                  className="hidden h-[50vh] w-[100vw] rounded-md object-contain md:h-[70vh] md:w-[40vw] lg:block lg:h-[60vh] xl:h-[60vh] xl:w-[30vw]"
                 />
                 <div>
                   <div className="flex flex-col gap-6 lg:justify-center">

@@ -105,7 +105,7 @@ const PrivateResidences = () => {
                   <img
                     src={residence}
                     alt="Residence"
-                    className="h-[40vh] w-full object-cover md:h-[40vh] lg:h-auto"
+                    className="h-[40vh] w-full object-cover md:h-[40vh] lg:h-[50vh] xl:h-auto"
                   />
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-10 p-4 text-center">
                     <h3 className="font-poppins text-xl font-medium text-white md:text-2xl">

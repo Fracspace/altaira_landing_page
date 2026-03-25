@@ -172,7 +172,7 @@ function AltairaProject() {
                 The Altaira Project
               </h1>
               <div className="grid grid-cols-1 gap-5 xl:grid-cols-2 xl:gap-12">
-                <div className="space-y-8">
+                <div className="space-y-8 lg:flex lg:flex-col lg:items-center lg:text-center xl:block xl:text-left xl:items-start">
                   <div>
                     <h2 className="font-montserrat mb-6 text-xl font-semibold text-[#D4AF37] md:text-2xl">
                       26 Acres of Elevated Living - Key Highlights:
@@ -233,7 +233,7 @@ function AltairaProject() {
                       Register Now <ArrowRight />
                     </button>
                   </div>
-                  <div className="block h-[40vh] overflow-hidden shadow-2xl md:h-auto xl:hidden">
+                  <div className="block h-[40vh] overflow-hidden shadow-2xl md:h-auto lg:hidden">
                     <img
                       src={altairaImg}
                       alt="Altaira Restaurant"
@@ -283,7 +283,7 @@ function AltairaProject() {
 
               {showForm && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-                  <div className="relative w-full rounded bg-white p-6 shadow-lg sm:w-[80%] sm:p-8 md:w-[60%] lg:w-[30vw]">
+                  <div className="relative w-full rounded bg-white p-6 shadow-lg sm:w-[80%] sm:p-8 md:w-[60%] lg:w-[60vw] xl:w-[30vw]">
                     <button
                       onClick={handleCloseForm}
                       className="absolute top-3 right-3 text-4xl font-bold text-gray-500 hover:text-gray-800"
@@ -298,7 +298,7 @@ function AltairaProject() {
                       <h2 className="font-montserrat flex items-center justify-center text-xl font-bold text-[#D4AF37]">
                         Enquire Now
                       </h2>
-                      <div className="scrollbar-hide h-auto space-y-3 overflow-y-auto lg:h-[75vh]">
+                      <div className="scrollbar-hide h-auto space-y-3 overflow-y-auto lg:h-[45vh] xl:h-[75vh]">
                         <input
                           type="text"
                           id="name"
