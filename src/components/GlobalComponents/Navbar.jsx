@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import AltairaLogo from "../../assets/Logo/AltairaLogo.png";
 import { Menu, X } from "lucide-react";
 import { useMediaQuery } from "@react-hook/media-query";
-import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-scroll";
 import axios from "axios";
 
 import Select from "react-select";
@@ -188,22 +188,22 @@ const NavBar = () => {
     <nav className="fixed z-20 h-[15vh] w-full">
       <div className="flex h-[17vh] items-center justify-between bg-black/50 px-3 md:h-[13vh]">
         <div className="flex items-center justify-center">
-          <ScrollLink role="button" className="cursor-pointer" to="herosection" smooth={true} duration={500}>
+          <Link role="button" className="cursor-pointer" to="herosection" smooth={true} duration={500}>
             <img
               alt="Altaira logo"
               className="h-[10vh] w-[30vw] object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
               src={AltairaLogo}
             />
-          </ScrollLink>
+          </Link>
         </div>
 
         {!isMobile ? (
           <ul className="font-montserrat flex md:mt-4">
             {navItems.map((navItem) => (
               <li key={navItem.label} className="pr-8 text-white">
-                <ScrollLink className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to={navItem.to} smooth={true} duration={500}>
+                <Link className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to={navItem.to} smooth={true} duration={500}>
                   {navItem.label}
-                </ScrollLink>
+                </Link>
               </li>
             ))}
             <li className="pr-8">
@@ -222,7 +222,7 @@ const NavBar = () => {
           <ul className="font-montserrat w-full border-t border-white bg-black pb-4 text-[#D4AF37]">
             {navItems.map((navItem) => (
               <li key={navItem.label} className="pt-2 pb-2 text-center">
-                <ScrollLink
+                <Link
                   onClick={handleNavClick}
                   to={navItem.to}
                   smooth
@@ -230,7 +230,7 @@ const NavBar = () => {
                   className="cursor-pointer"
                 >
                   {navItem.label}
-                </ScrollLink>
+                </Link>
               </li>
             ))}
             <li className="pb-2 text-center">
