@@ -30,7 +30,7 @@ const NavBar = () => {
 
   const handleNavClick = () => {
     setOpenMenu(false);
-  }
+  };
 
   const toggleMenu = () => {
     setOpenMenu((prevIsOpen) => !prevIsOpen);
@@ -50,7 +50,7 @@ const NavBar = () => {
     { label: "Home", to: "herosection" },
     { label: "Highlights", to: "amenities" },
     { label: "About Us", to: "aboutAltairaProject" },
-  ]
+  ];
 
   // const investmentLocations = [
   //   "Hyderabad",
@@ -100,7 +100,7 @@ const NavBar = () => {
   const handleEnquireClick = () => {
     setOpenMenu(false);
     handleShowForm();
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -117,34 +117,30 @@ const NavBar = () => {
       return;
     }
 
-    const {countryCode,phoneNumber}=formData;
+    const { countryCode, phoneNumber } = formData;
 
     let updatedPhoneNumber = phoneNumber;
 
     if (countryCode === "91" && phoneNumber.startsWith("0")) {
-     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
       setFormData((prev) => ({
         ...prev,
         phoneNumber: updatedPhoneNumber,
-      }))
+      }));
       alert("Enter 10 digit mobile number");
       return;
     }
 
-    
     //console.log("form data",formData);
-    const apiUrl = 'https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm'
+    const apiUrl =
+      "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm";
     try {
-      await axios.post(
-        apiUrl,
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "Fracspace@2024",
-          },
+      await axios.post(apiUrl, formData, {
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "Fracspace@2024",
         },
-      );
+      });
 
       // await fetch(
       //   "https://script.google.com/macros/s/AKfycbywRlGKyS3uAqkFqARQtuteiU0Vtatiw6dvzY4AUMSRkPNLBS2gjWubpci18YebEWTU/exec",
@@ -188,7 +184,13 @@ const NavBar = () => {
     <nav className="fixed z-20 h-[15vh] w-full">
       <div className="flex h-[17vh] items-center justify-between bg-black/50 px-3 md:h-[13vh]">
         <div className="flex items-center justify-center">
-          <Link role="button" className="cursor-pointer" to="herosection" smooth={true} duration={500}>
+          <Link
+            role="button"
+            className="cursor-pointer"
+            to="herosection"
+            smooth={true}
+            duration={500}
+          >
             <img
               alt="Altaira logo"
               className="h-[10vh] w-[30vw] object-contain md:mt-auto md:h-[10vh] md:w-[30vw] xl:w-[20vw]"
@@ -201,17 +203,33 @@ const NavBar = () => {
           <ul className="font-montserrat flex md:mt-4">
             {navItems.map((navItem) => (
               <li key={navItem.label} className="pr-8 text-white">
-                <Link className="cursor-pointer" spy={true} activeClass="text-[#D4AF37]" to={navItem.to} smooth={true} duration={500}>
+                <Link
+                  className="cursor-pointer"
+                  spy={true}
+                  activeClass="text-[#D4AF37]"
+                  to={navItem.to}
+                  smooth={true}
+                  duration={500}
+                >
                   {navItem.label}
                 </Link>
               </li>
             ))}
             <li className="pr-8">
-              <button className="cursor-pointer text-white" onClick={handleShowForm}>Enquire Now</button>
+              <button
+                className="cursor-pointer text-white"
+                onClick={handleShowForm}
+              >
+                Enquire Now
+              </button>
             </li>
           </ul>
         ) : (
-          <button aria-label="Toggle menu" onClick={toggleMenu} className="text-white lg:hidden">
+          <button
+            aria-label="Toggle menu"
+            onClick={toggleMenu}
+            className="text-white lg:hidden"
+          >
             {openMenu ? <X size={32} /> : <Menu size={32} />}
           </button>
         )}
@@ -234,7 +252,12 @@ const NavBar = () => {
               </li>
             ))}
             <li className="pb-2 text-center">
-              <button className="cursor-pointer w-full" onClick={handleEnquireClick}>Enquire Now</button>
+              <button
+                className="w-full cursor-pointer"
+                onClick={handleEnquireClick}
+              >
+                Enquire Now
+              </button>
             </li>
           </ul>
         </div>
@@ -343,7 +366,7 @@ const NavBar = () => {
                     const numberOnly = digitsOnly.startsWith(dial)
                       ? digitsOnly.slice(dial.length)
                       : digitsOnly;
-                    setFormData((prev)=>({
+                    setFormData((prev) => ({
                       ...prev,
                       phoneNumber: numberOnly,
                       countryCode: `${dial}`,
@@ -547,7 +570,7 @@ const NavBar = () => {
 
                 <button
                   type="submit"
-                  className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:scale-105 duration-300"
+                  className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition duration-300 hover:scale-105"
                 >
                   Submit
                 </button>

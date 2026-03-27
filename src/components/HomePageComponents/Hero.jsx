@@ -57,7 +57,7 @@ const Hero = () => {
     if (video.canPlayType("application/vnd.apple.mpegurl")) {
       // Safari / iOS
       video.src = videoSrc;
-      video.play().catch(() => { });
+      video.play().catch(() => {});
     } else if (Hls.isSupported()) {
       // Chrome / Edge / Android
       hls = new Hls({
@@ -80,7 +80,7 @@ const Hero = () => {
       if (hls) {
         hls.destroy();
       }
-    }
+    };
   }, []);
 
   const changeHandler = (selected) => {
@@ -141,28 +141,25 @@ const Hero = () => {
     let updatedPhoneNumber = phoneNumber;
 
     if (countryCode === "91" && phoneNumber.startsWith("0")) {
-     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
       setFormData((prev) => ({
         ...prev,
         phoneNumber: updatedPhoneNumber,
-      }))
+      }));
       alert("Enter 10 digit mobile number");
       return;
     }
     // console.log("formdata:",formData);
     // console.log("consoling formadata")
-    const apiUrl ='https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions'
+    const apiUrl =
+      "https://apitest.fracspace.com/api/v1/webApi/altaira/enquiryFormWithInvestmentOptions";
     try {
-      await axios.post(
-        apiUrl,
-        payload,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "Fracspace@2024",
-          },
+      await axios.post(apiUrl, payload, {
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "Fracspace@2024",
         },
-      );
+      });
 
       //console.log("response", formData);
 
@@ -530,7 +527,7 @@ const Hero = () => {
 
             <button
               type="submit"
-              className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition hover:scale-105 duration-300"
+              className="font-montserrat w-full cursor-pointer rounded bg-[#D4AF37] px-3 py-2 text-sm font-semibold text-white transition duration-300 hover:scale-105"
             >
               Submit
             </button>

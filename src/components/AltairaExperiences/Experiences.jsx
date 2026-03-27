@@ -7,14 +7,13 @@ import cloudWalkwaysImage from "../../assets/Experiences/cloudWalkwaysImage.webp
 // import infinityPool from "../../assets/pool.webp";
 import infinityPoolImage from "../../assets/Experiences/infinityPoolImage.webp";
 //import restaurantImg from "../../assets/Experiences/restaurant.png";
-import restaurantImg from "../../assets/Experiences/restaurantImg.webp"
+import restaurantImg from "../../assets/Experiences/restaurantImg.webp";
 import rainforestImage from "../../assets/Experiences/rainforestImage.webp";
 // import spaImg from "../../assets/spa.webp";
 // import villaImg from "../../assets/villa.webp";
 import residencesImage from "../../assets/Experiences/residencesImage.webp";
 
 function Experiences() {
-
   const galleryItems = [
     {
       id: 1,
@@ -84,7 +83,7 @@ function Experiences() {
                 <div
                   key={index}
                   role="listitem"
-                  className="group relative transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105 aspect-[4/3]"
+                  className="group relative aspect-[4/3] transform cursor-pointer overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:scale-105"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
@@ -100,9 +99,7 @@ function Experiences() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                   {/* Content Overlay */}
-                  <div
-                    className="absolute inset-0 flex transform flex-col items-center justify-center p-6 transition-all duration-500 group-hover:opacity-100  group-hover:translate-y-0 translate-y-8 opacity-0"
-                  >
+                  <div className="absolute inset-0 flex translate-y-8 transform flex-col items-center justify-center p-6 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <h3 className="font-montserrat mb-3 text-center text-2xl font-bold text-white sm:text-3xl">
                       {item.title}
                     </h3>
@@ -123,9 +120,7 @@ function Experiences() {
                   </div>
 
                   {/* Bottom Label (visible when not hovered) */}
-                  <div
-                    className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity duration-500 group-hover:opacity-0 opacity-100"
-                  >
+                  <div className="absolute right-0 bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-100 transition-opacity duration-500 group-hover:opacity-0">
                     <h3 className="font-montserrat text-lg font-semibold text-white">
                       {item.title}
                     </h3>

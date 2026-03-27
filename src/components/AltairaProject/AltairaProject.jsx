@@ -90,33 +90,30 @@ function AltairaProject() {
       return;
     }
 
-    const {countryCode,phoneNumber}=formData;
+    const { countryCode, phoneNumber } = formData;
 
     let updatedPhoneNumber = phoneNumber;
 
     if (countryCode === "91" && phoneNumber.startsWith("0")) {
-     updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
+      updatedPhoneNumber = phoneNumber.replace(/^0+/, "");
       setFormData((prev) => ({
         ...prev,
         phoneNumber: updatedPhoneNumber,
-      }))
+      }));
       alert("Enter 10 digit mobile number");
       return;
     }
 
     // console.log("form data",formData);
-    const apiUrl="https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm"
+    const apiUrl =
+      "https://apitest.fracspace.com/api/users/altairaPromotionalEnquiryForm";
     try {
-      await axios.post(
-        apiUrl,
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "Fracspace@2024",
-          },
+      await axios.post(apiUrl, formData, {
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "Fracspace@2024",
         },
-      );
+      });
 
       // await fetch(
       //   "https://script.google.com/macros/s/AKfycbywRlGKyS3uAqkFqARQtuteiU0Vtatiw6dvzY4AUMSRkPNLBS2gjWubpci18YebEWTU/exec",
@@ -164,7 +161,7 @@ function AltairaProject() {
         <div className="mx-auto max-w-7xl">
           <div
             id="aboutAltairaProject"
-          // className=" px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
+            // className=" px-4 py-13 pb-15 sm:px-6 md:h-[110vh] lg:px-8 xl:min-h-screen"
           >
             <div>
               {/* Header */}
@@ -172,7 +169,7 @@ function AltairaProject() {
                 The Altaira Project
               </h1>
               <div className="grid grid-cols-1 gap-5 xl:grid-cols-2 xl:gap-12">
-                <div className="space-y-8 lg:flex lg:flex-col lg:items-center lg:text-center xl:block xl:text-left xl:items-start">
+                <div className="space-y-8 lg:flex lg:flex-col lg:items-center lg:text-center xl:block xl:items-start xl:text-left">
                   <div>
                     <h2 className="font-montserrat mb-6 text-xl font-semibold text-[#D4AF37] md:text-2xl">
                       26 Acres of Elevated Living - Key Highlights:
@@ -384,7 +381,7 @@ function AltairaProject() {
                             const numberOnly = digitsOnly.startsWith(dial)
                               ? digitsOnly.slice(dial.length)
                               : digitsOnly;
-                            setFormData((prev)=>({
+                            setFormData((prev) => ({
                               ...prev,
                               phoneNumber: numberOnly,
                               countryCode: `${dial}`,

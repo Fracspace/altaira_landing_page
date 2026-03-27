@@ -27,12 +27,22 @@ const Footer = () => {
               <div>
                 <ul className="space-y-1">
                   <li className="font-poppins text-white">
-                    <ScrollLink className="cursor-pointer" to="herosection" smooth={true} duration={500}>
+                    <ScrollLink
+                      className="cursor-pointer"
+                      to="herosection"
+                      smooth={true}
+                      duration={500}
+                    >
                       Home
                     </ScrollLink>
                   </li>
                   <li className="font-poppins text-white">
-                    <ScrollLink className="cursor-pointer" to="amenities" smooth={true} duration={500}>
+                    <ScrollLink
+                      className="cursor-pointer"
+                      to="amenities"
+                      smooth={true}
+                      duration={500}
+                    >
                       Highlights
                     </ScrollLink>
                   </li>
@@ -47,7 +57,12 @@ const Footer = () => {
                     </ScrollLink>
                   </li>
                   <li className="font-poppins text-white">
-                    <ScrollLink className="cursor-pointer" to="herosection" smooth={true} duration={500}>
+                    <ScrollLink
+                      className="cursor-pointer"
+                      to="herosection"
+                      smooth={true}
+                      duration={500}
+                    >
                       Enquire Now
                     </ScrollLink>
                   </li>
@@ -97,14 +112,10 @@ const Footer = () => {
                   <Phone className="mr-2" />
                   <div className="contactDiv">
                     <span className="pr-2">
-                      <a href="tel:+94760312345">
-                        +94 76 031 2345{", "}
-                      </a>
+                      <a href="tel:+94760312345">+94 76 031 2345{", "}</a>
                     </span>
                     <span className="pr-2">
-                      <a href="tel:+919880626111">
-                        +91 98806 26111
-                      </a>
+                      <a href="tel:+919880626111">+91 98806 26111</a>
                     </span>
                   </div>
                 </li>

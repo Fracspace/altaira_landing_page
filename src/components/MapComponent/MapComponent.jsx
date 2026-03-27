@@ -20,7 +20,7 @@ function MapComponent() {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7918.357570206037!2d80.3310226383134!3d7.1052682180792655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae30efe5a2e1cab%3A0x66e4b8966396e2ea!2sBulathkohupitiya%2C%20Sri%20Lanka!5e0!3m2!1sen!2sin!4v1764817133800!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
-                className="border-0 invert hue-rotate-180"
+                className="border-0 hue-rotate-180 invert"
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -35,7 +35,7 @@ function MapComponent() {
                 📍 Altaira, Bulathkohupitiya, Sri Lanka
               </p>
             </div>
-            
+
             <a
               href="https://www.altaira.lk/"
               target="_blank"
@@ -44,7 +44,6 @@ function MapComponent() {
             >
               Click here to visit our website{" "}
             </a>
-            
           </div>
         </div>
       </div>
