@@ -76,11 +76,7 @@ const Hero = () => {
         console.log("HLS ERROR:", data);
       });
     }
-    return () => {
-      if (hls) {
-        hls.destroy();
-      }
-    };
+    return () => hls?.destroy();
   }, []);
 
   const changeHandler = (selected) => {
